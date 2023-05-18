@@ -43,13 +43,13 @@ public class Jelo extends OpstaDomenskaKlasa {
 	private Kuvar kuvar;
 
 	/**
-	 * Konstruise novu instancu klase i postavlja atribute na default vrednosti.
+	 * Konstruise novu instancu klase i postavlja atribute na default vrednosti
 	 */
 	public Jelo() {
 	}
 
 	/**
-	 * Konstruise novu instancu klase i postavlja atribute na prosledjene vrednosti.
+	 * Konstruise novu instancu klase i postavlja atribute na prosledjene vrednosti
 	 * 
 	 * @param jeloId   ID jela
 	 * @param tip      tip jela
@@ -68,7 +68,7 @@ public class Jelo extends OpstaDomenskaKlasa {
 	}
 
 	/**
-	 * Vraca ID jela.
+	 * Vraca ID jela
 	 * 
 	 * @return ID jela
 	 */
@@ -86,7 +86,7 @@ public class Jelo extends OpstaDomenskaKlasa {
 	}
 
 	/**
-	 * Vraca naziv jela.
+	 * Vraca naziv jela
 	 * 
 	 * @return naziv jela
 	 */
@@ -95,7 +95,7 @@ public class Jelo extends OpstaDomenskaKlasa {
 	}
 
 	/**
-	 * Vraca cenu jela.
+	 * Vraca cenu jela
 	 * 
 	 * @return cena jela
 	 */
@@ -104,7 +104,7 @@ public class Jelo extends OpstaDomenskaKlasa {
 	}
 
 	/**
-	 * Vraca kolicinu jela.
+	 * Vraca kolicinu jela
 	 * 
 	 * @return kolicina jela
 	 */
