@@ -6,186 +6,304 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Jelo extends OpstaDomenskaKlasa{
+/**
+ * Predstavlja jelo na planu ishrane pacijenta.
+ * 
+ * Ova klasa nasledjuje klasu {@link OpstaDomenskaKlasa}.
+ * 
+ * @author Iva Stanisic
+ *
+ */
+public class Jelo extends OpstaDomenskaKlasa {
 
-    private Long jeloId;
-    private TipJela tip;
-    private String naziv;
-    private BigDecimal cena;
-    private int kolicina;
-    private Kuvar kuvar;
+	/**
+	 * ID jela kao Long
+	 */
+	private Long jeloId;
 
-    public Jelo() {
-    }
+	/**
+	 * Tip jela (vegeterijansko, sa mesom)..
+	 */
+	private TipJela tip;
+	/**
+	 * Naziv jela kao String
+	 */
+	private String naziv;
+	/**
+	 * Cena jela u dinarima
+	 */
+	private BigDecimal cena;
+	/**
+	 * Jelo u gramima
+	 */
+	private int kolicina;
+	/**
+	 * Kuvar jela
+	 */
+	private Kuvar kuvar;
 
-    public Jelo(Long jeloId, TipJela tip, String naziv, BigDecimal cena, int kolicina, Kuvar kuvar) {
-        this.jeloId = jeloId;
-        this.tip = tip;
-        this.naziv = naziv;
-        this.cena = cena;
-        this.kolicina = kolicina;
-        this.kuvar = kuvar;
-    }
+	/**
+	 * Konstruise novu instancu klase i postavlja atribute na default vrednosti.
+	 */
+	public Jelo() {
+	}
 
-    public Long getJeloId() {
-        return jeloId;
-    }
+	/**
+	 * Konstruise novu instancu klase i postavlja atribute na prosledjene vrednosti.
+	 * 
+	 * @param jeloId   ID jela
+	 * @param tip      tip jela
+	 * @param naziv    naziv jela
+	 * @param cena     cena jela
+	 * @param kolicina kolicina jela
+	 * @param kuvar    kuvar jela
+	 */
+	public Jelo(Long jeloId, TipJela tip, String naziv, BigDecimal cena, int kolicina, Kuvar kuvar) {
+		this.jeloId = jeloId;
+		this.tip = tip;
+		this.naziv = naziv;
+		this.cena = cena;
+		this.kolicina = kolicina;
+		this.kuvar = kuvar;
+	}
 
-    public TipJela getTip() {
-        return tip;
-    }
+	/**
+	 * Vraca ID jela.
+	 * 
+	 * @return ID jela
+	 */
+	public Long getJeloId() {
+		return jeloId;
+	}
 
-    public String getNaziv() {
-        return naziv;
-    }
+	/**
+	 * Vraca tip jela.
+	 * 
+	 * @return tip jela
+	 */
+	public TipJela getTip() {
+		return tip;
+	}
 
-    public BigDecimal getCena() {
-        return cena;
-    }
+	/**
+	 * Vraca naziv jela.
+	 * 
+	 * @return naziv jela
+	 */
+	public String getNaziv() {
+		return naziv;
+	}
 
-    public int getKolicina() {
-        return kolicina;
-    }
+	/**
+	 * Vraca cenu jela.
+	 * 
+	 * @return cena jela
+	 */
+	public BigDecimal getCena() {
+		return cena;
+	}
 
-    public Kuvar getKuvar() {
-        return kuvar;
-    }
+	/**
+	 * Vraca kolicinu jela.
+	 * 
+	 * @return kolicina jela
+	 */
+	public int getKolicina() {
+		return kolicina;
+	}
 
-    public void setJeloId(Long jeloId) {
-        this.jeloId = jeloId;
-    }
+	/**
+	 * Vraca kuvara jela
+	 * 
+	 * @return kuvar jela
+	 */
+	public Kuvar getKuvar() {
+		return kuvar;
+	}
 
-    public void setTip(TipJela tip) {
-        this.tip = tip;
-    }
+	/**
+	 * Postavlja vrednost atributa jeloId
+	 * 
+	 * @param jeloId ID jela
+	 */
+	public void setJeloId(Long jeloId) {
+		this.jeloId = jeloId;
+	}
 
-    public void setNaziv(String naziv) {
-        this.naziv = naziv;
-    }
+	/**
+	 * Postavlja tip jela
+	 * 
+	 * @param tip jela
+	 */
+	public void setTip(TipJela tip) {
+		this.tip = tip;
+	}
 
-    public void setCena(BigDecimal cena) {
-        this.cena = cena;
-    }
+	/**
+	 * Postavlja naziv jela
+	 * 
+	 * @param naziv jela
+	 */
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
 
-    public void setKolicina(int kolicina) {
-        this.kolicina = kolicina;
-    }
+	/**
+	 * Postavlja cenu jela, izrazenu u dinarima
+	 * 
+	 * @param cena jela
+	 */
+	public void setCena(BigDecimal cena) {
+		this.cena = cena;
+	}
 
-    public void setKuvar(Kuvar kuvar) {
-        this.kuvar = kuvar;
-    }
+	/**
+	 * Postavlja kolicinu jela u gramima
+	 * 
+	 * @param kolicina jela
+	 */
+	public void setKolicina(int kolicina) {
+		this.kolicina = kolicina;
+	}
 
-    @Override
-    public String toString() {
-        return "Jelo{" + "jeloId=" + jeloId + ", tip=" + tip + ", naziv=" + naziv + ", cena=" + cena + ", kolicina=" + kolicina + ", kuvar=" + kuvar + '}';
-    }
+	/**
+	 * Postavlja kuvara jela
+	 * 
+	 * @param kuvar jela
+	 */
+	public void setKuvar(Kuvar kuvar) {
+		this.kuvar = kuvar;
+	}
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        return hash;
-    }
+	/**
+	 * Vraca String vrednost sa svim atributima objekta
+	 * 
+	 * @return String sa svim vrednostima atrinuta domenskog objekta
+	 */
+	@Override
+	public String toString() {
+		return "Jelo{" + "jeloId=" + jeloId + ", tip=" + tip + ", naziv=" + naziv + ", cena=" + cena + ", kolicina="
+				+ kolicina + ", kuvar=" + kuvar + '}';
+	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Jelo other = (Jelo) obj;
-        return Objects.equals(this.naziv, other.naziv);
-    }
+	/**
+	 * Vraca hash code
+	 * 
+	 * @return hash code
+	 */
+	@Override
+	public int hashCode() {
+		int hash = 5;
+		return hash;
+	}
 
-    @Override
-    public String imeTabele() {
-        return "jelo";
-    }
+	/**
+	 * Poredi dva jela prema nazivu
+	 * 
+	 * @return true ako je unet isti objekat ili ako su nazivi jela isti, false u ostalim slucajevima
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final Jelo other = (Jelo) obj;
+		return Objects.equals(this.naziv, other.naziv);
+	}
 
-    @Override
-    public String spajanje() {
-        return " j join tipjela tj on (j.tip_id = tj.tipId) join kuvar k on (j.kuvar_id = k.kuvarId) ";
-    }
+	@Override
+	public String imeTabele() {
+		return "jelo";
+	}
 
-    @Override
-    public String vratiParametre() {
-        return String.format(" '%s', %s, %s, %s, %s", naziv, cena,
-                kolicina, tip.vratiPrimarniKljuc(), kuvar.vratiPrimarniKljuc());
-    }
+	@Override
+	public String spajanje() {
+		return " j join tipjela tj on (j.tip_id = tj.tipId) join kuvar k on (j.kuvar_id = k.kuvarId) ";
+	}
 
-    @Override
-    public String vratiNaziveParametara() {
-        return "(naziv, cena, kolicina, tip_id, kuvar_id) ";
-    }
+	@Override
+	public String vratiParametre() {
+		return String.format(" '%s', %s, %s, %s, %s", naziv, cena, kolicina, tip.vratiPrimarniKljuc(),
+				kuvar.vratiPrimarniKljuc());
+	}
 
-    @Override
-    public String vratiNazivPrimarnogKljuca() {
-        return "jeloId";
-    }
+	@Override
+	public String vratiNaziveParametara() {
+		return "(naziv, cena, kolicina, tip_id, kuvar_id) ";
+	}
 
-    @Override
-    public Long vratiPrimarniKljuc() {
-        return jeloId;
-    }
+	@Override
+	public String vratiNazivPrimarnogKljuca() {
+		return "jeloId";
+	}
 
-    @Override
-    public List<OpstaDomenskaKlasa> konvertujUListu(ResultSet rs) {
-        List<OpstaDomenskaKlasa> lista = new ArrayList<>();
-        try {
-            while (rs.next()) {
-                Long jeloIdBaza = rs.getLong("j.jeloId");
-                String nazivBaza = rs.getString("j.naziv");
-                BigDecimal cenaBaza = rs.getBigDecimal("j.cena");
-                int kolicinaBaza = rs.getInt("j.kolicina");
-                Long tipId = rs.getLong("j.tip_id");
-                Long kuvarId = rs.getLong("j.kuvar_id");
+	@Override
+	public Long vratiPrimarniKljuc() {
+		return jeloId;
+	}
 
-                String vrsta = rs.getString("tj.vrsta");
-                String ime = rs.getString("k.ime");
-                String prezime = rs.getString("k.prezime");
+	@Override
+	public List<OpstaDomenskaKlasa> konvertujUListu(ResultSet rs) {
+		List<OpstaDomenskaKlasa> lista = new ArrayList<>();
+		try {
+			while (rs.next()) {
+				Long jeloIdBaza = rs.getLong("j.jeloId");
+				String nazivBaza = rs.getString("j.naziv");
+				BigDecimal cenaBaza = rs.getBigDecimal("j.cena");
+				int kolicinaBaza = rs.getInt("j.kolicina");
+				Long tipId = rs.getLong("j.tip_id");
+				Long kuvarId = rs.getLong("j.kuvar_id");
 
-                lista.add(new Jelo(jeloIdBaza, new TipJela(tipId, vrsta),
-                        nazivBaza, cenaBaza, kolicinaBaza, new Kuvar(kuvarId, ime, prezime, "", "")));
-            }
-        } catch (Exception e) {
-            System.err.println("Greska u konvertovanju ReseultSet-a u Jelo klasi "+e.getMessage());
-        }
-        return lista;
-    }
+				String vrsta = rs.getString("tj.vrsta");
+				String ime = rs.getString("k.ime");
+				String prezime = rs.getString("k.prezime");
 
-    @Override
-    public String uslovZaIzmenu() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+				lista.add(new Jelo(jeloIdBaza, new TipJela(tipId, vrsta), nazivBaza, cenaBaza, kolicinaBaza,
+						new Kuvar(kuvarId, ime, prezime, "", "")));
+			}
+		} catch (Exception e) {
+			System.err.println("Greska u konvertovanju ReseultSet-a u Jelo klasi " + e.getMessage());
+		}
+		return lista;
+	}
 
-    @Override
-    public String uslovZaJednog() {
-        return null;
-    }
+	@Override
+	public String uslovZaIzmenu() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
-    @Override
-    public String vratiSlozenPrimarniKljuc() {
-        return null;
-    }
+	@Override
+	public String uslovZaJednog() {
+		return null;
+	}
 
-    @Override
-    public String uslovZaVise() {
-        if (tip == null && kuvar != null) {
-            return " j.kuvar_id = " + kuvar.getKuvarId();
-        }
-        if (kuvar == null && tip != null) {
-            return "j.tip_id = " + tip.getTipId();
-        }
-        return "j.tip_id = " + tip.getTipId() + " AND j.kuvar_id = " + kuvar.getKuvarId();
-    }
+	@Override
+	public String vratiSlozenPrimarniKljuc() {
+		return null;
+	}
 
-    @Override
-    public String uslovZaBrisanjeVise() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+	@Override
+	public String uslovZaVise() {
+		if (tip == null && kuvar != null) {
+			return " j.kuvar_id = " + kuvar.getKuvarId();
+		}
+		if (kuvar == null && tip != null) {
+			return "j.tip_id = " + tip.getTipId();
+		}
+		return "j.tip_id = " + tip.getTipId() + " AND j.kuvar_id = " + kuvar.getKuvarId();
+	}
+
+	@Override
+	public String uslovZaBrisanjeVise() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
 }
