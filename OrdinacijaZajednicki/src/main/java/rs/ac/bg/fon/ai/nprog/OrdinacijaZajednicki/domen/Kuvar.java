@@ -5,175 +5,277 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Kuvar extends OpstaDomenskaKlasa{
+/**
+ * Predstavlja kuvara jela
+ * 
+ * Ova klasa nasledjuje klasu {@link OpstaDomenskaKlasa}
+ * 
+ * @author Iva Stanisic
+ *
+ */
+public class Kuvar extends OpstaDomenskaKlasa {
 
+	/**
+	 * ID kuvara kao Long
+	 */
 	private Long kuvarId;
-    private String ime;
-    private String prezime;
-    private String adresa;
-    private String telefon;
+	/**
+	 * Ime kuvara kao String
+	 */
+	private String ime;
+	/**
+	 * Prezime kuvara kao String
+	 */
+	private String prezime;
+	/**
+	 * Adresa kuvara kao String
+	 */
+	private String adresa;
+	/**
+	 * Telefon kuvara kao String
+	 */
+	private String telefon;
 
-    public Kuvar() {
-    }
+	/**
+	 * Konstruise novu instancu klase i postavlja atribute na default vrednosti
+	 */
+	public Kuvar() {
+	}
 
-    public Kuvar(Long kuvarId, String ime, String prezime, String adresa, String telefon) {
-        this.kuvarId = kuvarId;
-        this.ime = ime;
-        this.prezime = prezime;
-        this.adresa = adresa;
-        this.telefon = telefon;
-    }
+	/**
+	 * Konstruise novu instancu klase i postavlja atribute na prosledjene vrednosti
+	 * 
+	 * @param kuvarId ID kuvara
+	 * @param ime     ime kuvara
+	 * @param prezime prezime kuvara
+	 * @param adresa  adresa kuvara
+	 * @param telefon telefon kuvara
+	 */
+	public Kuvar(Long kuvarId, String ime, String prezime, String adresa, String telefon) {
+		this.kuvarId = kuvarId;
+		this.ime = ime;
+		this.prezime = prezime;
+		this.adresa = adresa;
+		this.telefon = telefon;
+	}
 
-    public Kuvar(Long kuvarId, String ime, String prezime) {
-        this.kuvarId = kuvarId;
-        this.ime = ime;
-        this.prezime = prezime;
-    }
-    
-    
+	/**
+	 * Konstruise novu instancu klase i postavlja atribute kuvarId, ime i prezime na
+	 * prosledjene vrednosti
+	 * 
+	 * @param kuvarId ID kuvara
+	 * @param ime     ime kuvara
+	 * @param prezime prezime kuvara
+	 */
+	public Kuvar(Long kuvarId, String ime, String prezime) {
+		this.kuvarId = kuvarId;
+		this.ime = ime;
+		this.prezime = prezime;
+	}
 
-    public Long getKuvarId() {
-        return kuvarId;
-    }
+	/**
+	 * Vraca ID kuvara
+	 * 
+	 * @return ID kuvara kao Long
+	 */
+	public Long getKuvarId() {
+		return kuvarId;
+	}
 
-    public String getIme() {
-        return ime;
-    }
+	/**
+	 * Vraca ime kuvara
+	 * 
+	 * @return ime kuvara
+	 */
+	public String getIme() {
+		return ime;
+	}
 
-    public String getPrezime() {
-        return prezime;
-    }
+	/**
+	 * Vraca prezime kuvara
+	 * 
+	 * @return prezime kuvara
+	 */
+	public String getPrezime() {
+		return prezime;
+	}
+/**
+ * Vraca adresu kuvara
+ * 
+ * @return adresa kuvara
+ */
+	public String getAdresa() {
+		return adresa;
+	}
+/**
+ * Vraca telefon kuvara
+ * 
+ * @return telefon kuvara
+ */
+	public String getTelefon() {
+		return telefon;
+	}
+/**
+ * Postavlja vrednost atributa kuvarId
+ * 
+ * @param kuvarId ID kuvara
+ */
+	public void setKuvarId(Long kuvarId) {
+		this.kuvarId = kuvarId;
+	}
+/**
+ * Postavlja ime kuvara
+ * 
+ * @param ime kuvara
+ */
+	public void setIme(String ime) {
+		this.ime = ime;
+	}
+/**
+ * Postavlja prezime kuvara
+ * 
+ * @param prezime kuvara
+ */
+	public void setPrezime(String prezime) {
+		this.prezime = prezime;
+	}
+/**
+ * Postavlja adresu kuvara
+ * 
+ * @param adresa kuvara
+ */
+	public void setAdresa(String adresa) {
+		this.adresa = adresa;
+	}
+/**
+ * Postavlja telefon kuvara
+ * 
+ * @param telefon kuvara
+ */
+	public void setTelefon(String telefon) {
+		this.telefon = telefon;
+	}
 
-    public String getAdresa() {
-        return adresa;
-    }
+	/**
+	 * Vraca hash code izracunat na osnovu ID-a kuvara
+	 * 
+	 * @return hash code na osnovu kuvarId
+	 */
+	@Override
+	public int hashCode() {
+		int hash = 7;
+		hash = 89 * hash + Objects.hashCode(this.kuvarId);
+		return hash;
+	}
 
-    public String getTelefon() {
-        return telefon;
-    }
+	/**
+	 * Poredi dva kuvara na osnovu ID-a
+	 * 
+	 * @return true ako dva kuvara imaju isti ID, false u suprotnom
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final Kuvar other = (Kuvar) obj;
+		return Objects.equals(this.kuvarId, other.kuvarId);
+	}
+	/**
+	 * Vraca String vrednost sa svim atributima objekta
+	 * 
+	 * @return String sa svim vrednostima atrinuta domenskog objekta
+	 */
+	@Override
+	public String toString() {
+		return ime + " " + prezime;
+	}
 
-    public void setKuvarId(Long kuvarId) {
-        this.kuvarId = kuvarId;
-    }
+	@Override
+	public String imeTabele() {
+		return "kuvar";
+	}
 
-    public void setIme(String ime) {
-        this.ime = ime;
-    }
+	@Override
+	public String vratiParametre() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
-    public void setPrezime(String prezime) {
-        this.prezime = prezime;
-    }
+	@Override
+	public String vratiNaziveParametara() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
-    public void setAdresa(String adresa) {
-        this.adresa = adresa;
-    }
+	@Override
+	public String vratiNazivPrimarnogKljuca() {
+		return "kuvarId";
+	}
 
-    public void setTelefon(String telefon) {
-        this.telefon = telefon;
-    }
+	@Override
+	public Long vratiPrimarniKljuc() {
+		return kuvarId;
+	}
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.kuvarId);
-        return hash;
-    }
+	@Override
+	public List<OpstaDomenskaKlasa> konvertujUListu(ResultSet rs) {
+		List<OpstaDomenskaKlasa> kuvari = new ArrayList<>();
+		try {
+			while (rs.next()) {
+				Long kuvarId = rs.getLong("kuvarId");
+				String ime = rs.getString("ime");
+				String prezime = rs.getString("prezime");
+				String adresa = rs.getString("adresa");
+				String telefon = rs.getString("telefon");
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Kuvar other = (Kuvar) obj;
-        return Objects.equals(this.kuvarId, other.kuvarId);
-    }
+				kuvari.add(new Kuvar(kuvarId, ime, prezime, adresa, telefon));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Error in converting list in Kuvari!\n");
+		}
+		return kuvari;
+	}
 
-    @Override
-    public String toString() {
-        return   ime + " " + prezime;
-    }
-    
+	@Override
+	public String uslovZaIzmenu() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
-    @Override
-    public String imeTabele() {
-        return "kuvar";
-    }
+	@Override
+	public String uslovZaJednog() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
-    @Override
-    public String vratiParametre() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+	@Override
+	public String spajanje() {
+		return "";
+	}
 
-    @Override
-    public String vratiNaziveParametara() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+	@Override
+	public String vratiSlozenPrimarniKljuc() {
+		return null;
+	}
 
-    @Override
-    public String vratiNazivPrimarnogKljuca() {
-        return "kuvarId";
-    }
+	@Override
+	public String uslovZaVise() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
-    @Override
-    public Long vratiPrimarniKljuc() {
-        return kuvarId;
-    }
+	@Override
+	public String uslovZaBrisanjeVise() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from
+																		// nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 
-
-    @Override
-    public List<OpstaDomenskaKlasa> konvertujUListu(ResultSet rs) {
-        List<OpstaDomenskaKlasa> kuvari = new ArrayList<>();
-        try {
-            while(rs.next()) {
-                Long kuvarId = rs.getLong("kuvarId");
-                String ime = rs.getString("ime");
-                String prezime = rs.getString("prezime");
-                String adresa = rs.getString("adresa");
-                String telefon = rs.getString("telefon");
-                
-                kuvari.add(new Kuvar(kuvarId, ime, prezime, adresa, telefon));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error in converting list in Kuvari!\n");
-        }
-        return kuvari;
-    }
-
-    @Override
-    public String uslovZaIzmenu() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String uslovZaJednog() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String spajanje() {
-        return "";
-    }
-
-    @Override
-    public String vratiSlozenPrimarniKljuc() {
-        return null;
-    }
-
-    @Override
-    public String uslovZaVise() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String uslovZaBrisanjeVise() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }
