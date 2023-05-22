@@ -1,5 +1,11 @@
 package rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.operacije;
 
+/**
+ * Enum Operacije predstavlja moguce operacije aplikacije
+ * 
+ * @author Iva Stanisic
+ *
+ */
 public enum Operacije {
 	PRIJAVI_SE,
     VRATI_NUTRICIONISTE,
