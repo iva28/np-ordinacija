@@ -8,7 +8,7 @@ import rs.ac.bg.fon.ai.nprog.OrdinacijaServer.form.koordinator.*;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        KoordinatorS.vratiInstancu().otvoriServerFormu();
-    }
+	public static void main(String[] args) {
+		 KoordinatorS.vratiInstancu().otvoriServerFormu();
+	}
 }
