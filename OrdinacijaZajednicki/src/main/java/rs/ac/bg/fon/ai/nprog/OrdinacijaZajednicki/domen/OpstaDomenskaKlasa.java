@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @author Iva Stanisic
  *
  */
-public abstract class OpstaDomenskaKlasa {
+public abstract class OpstaDomenskaKlasa implements Serializable{
 
 	/**
 	 * Vraca ime tabele u bazi podataka, koje odgovara domeskom objektu
