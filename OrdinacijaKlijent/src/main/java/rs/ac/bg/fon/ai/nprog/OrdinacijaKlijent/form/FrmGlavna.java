@@ -271,7 +271,10 @@ public class FrmGlavna extends javax.swing.JFrame {
 	private void jMenuItemPretragaPlanaActionPerformed(java.awt.event.ActionEvent evt) {
 	}
 
+	/*
 	/**
+	 * Argumenti komandne linije
+	 * 
 	 * @param args the command line arguments
 	 */
 
@@ -435,7 +438,7 @@ public class FrmGlavna extends javax.swing.JFrame {
 	/**
 	 * Postavlja JTextField komponentu za unos prezimena
 	 *
-	 * @param txtOrd JTextField komponenta za unos prezimena
+	 * @param txtPrezime JTextField komponenta za unos prezimena
 	 */
 	public void setTxtPrezime(JTextField txtPrezime) {
 		this.txtPrezime = txtPrezime;

@@ -296,8 +296,9 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 
 	private void btnDetaljiActionPerformed(java.awt.event.ActionEvent evt) {
 	}
-
-	/**
+	/*
+	 * /**
+	 * 
 	 * @param args the command line arguments
 	 */
 
@@ -365,6 +366,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JButton getBtnRefresh() {
 		return btnRefresh;
 	}
+
 	/**
 	 * Vraca JButton komponentu za pretragu
 	 *
@@ -373,6 +375,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JButton getBtnSearch() {
 		return btnSearch;
 	}
+
 	/**
 	 * Vraca JButton komponentu za prelazak u rezim pretrage
 	 *
@@ -381,6 +384,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JButton getBtnSearchMode1() {
 		return btnSearchMode;
 	}
+
 	/**
 	 * Vraca JScrollPane komponentu koja se koristi u formi za tabelu pacijenata.
 	 *
@@ -389,6 +393,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JScrollPane getjScrollPane1() {
 		return jScrollPane1;
 	}
+
 	/**
 	 * Vraca JScrollPane komponentu koja se koristi u formi za tabelu pretrage
 	 *
@@ -397,6 +402,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JScrollPane getjScrollPane2() {
 		return jScrollPane2;
 	}
+
 	/**
 	 * Vraca JPanel komponentu koja sadrzi opcije
 	 *
@@ -405,6 +411,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JPanel getPnlOpcije() {
 		return pnlOpcije;
 	}
+
 	/**
 	 * Vraca JPanel komponentu koja sadrzi sekciju za pretragu u formi
 	 *
@@ -413,6 +420,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JPanel getPnlSearch() {
 		return pnlSearch;
 	}
+
 	/**
 	 * Vraca JTable komponentu koja se koristi za prikaz tabele pacijenata u formi
 	 *
@@ -421,6 +429,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JTable getTblPacijenti() {
 		return tblPacijenti;
 	}
+
 	/**
 	 * Vraca JTable komponentu koja se koristi za prikaz tabele pretrage u formi
 	 *
@@ -429,6 +438,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JTable getTblSearch() {
 		return tblSearch;
 	}
+
 	/**
 	 * Vraca JTextField komponentu koja se koristi za unos teksta pretrage
 	 *
@@ -437,6 +447,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JTextField getTxtSearch() {
 		return txtSearch;
 	}
+
 	/**
 	 * Postavlja JLabel komponentu za prikaz greske pretrage
 	 *
@@ -445,6 +456,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void setLblSearchError(JLabel lblSearchError) {
 		this.lblSearchError = lblSearchError;
 	}
+
 	/**
 	 * Vraca JLabel komponentu koja se koristi za prikaz greske pretrage
 	 *
@@ -453,6 +465,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public JLabel getLblSearchError() {
 		return lblSearchError;
 	}
+
 	/**
 	 * Postavlja JTextField komponentu koja se koristi za unos teksta pretrage
 	 *
@@ -461,6 +474,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void setTxtSearch(JTextField txtSearch) {
 		this.txtSearch = txtSearch;
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnDodaj
 	 *
@@ -469,6 +483,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void addbtnDodajActionListener(ActionListener actionListener) {
 		btnDodaj.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnDelete
 	 *
@@ -477,6 +492,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void addbtnDeleteActionListener(ActionListener actionListener) {
 		btnDelete.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnChange
 	 *
@@ -485,6 +501,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void addbtnChangeActionListener(ActionListener actionListener) {
 		btnChange.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnSearchMode
 	 *
@@ -493,6 +510,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void addbtnSearchModeActionListener(ActionListener actionListener) {
 		btnSearchMode.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnRefresh
 	 *
@@ -501,6 +519,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void addbtnRefreshActionListener(ActionListener actionListener) {
 		btnRefresh.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnSearch
 	 *
@@ -509,6 +528,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void addbtnSearchActionListener(ActionListener actionListener) {
 		btnSearch.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnCloseSearch
 	 *
@@ -517,6 +537,7 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	public void addbtnCloseSearchActionListener(ActionListener actionListener) {
 		btnCloseSearch.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnDetalji
 	 *

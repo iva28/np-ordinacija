@@ -177,7 +177,6 @@ public class Koordinator {
 	 * o gresci na standardni izlaz. Bez obzira na rezultat odjavljivanja, zatvara
 	 * glavnu formu.
 	 * 
-	 * @throws Exception ako dodje do greske pri odjavljivanju nutricioniste
 	 */
 	public void odjaviSe() {
 		try {

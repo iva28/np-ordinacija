@@ -193,8 +193,9 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 
 	private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {
 	}
-
-	/**
+	/*
+	 * /**
+	 * 
 	 * @param args the command line arguments
 	 */
 
@@ -360,6 +361,7 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 	public void setjScrollPane1(JScrollPane jScrollPane1) {
 		this.jScrollPane1 = jScrollPane1;
 	}
+
 	/**
 	 * Postavlja JLabel lblJela
 	 *
@@ -368,6 +370,7 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 	public void setLblJela(JLabel lblJela) {
 		this.lblJela = lblJela;
 	}
+
 	/**
 	 * Postavlja JLabel lblKuvar
 	 *
@@ -376,6 +379,7 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 	public void setLblKuvar(JLabel lblKuvar) {
 		this.lblKuvar = lblKuvar;
 	}
+
 	/**
 	 * Postavlja JTable tblJela
 	 *
@@ -384,6 +388,7 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 	public void setTblJela(JTable tblJela) {
 		this.tblJela = tblJela;
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnSearch
 	 *
@@ -392,6 +397,7 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 	public void addbtnSearchActionListener(ActionListener actionListener) {
 		btnSearch.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnRefresh
 	 *
@@ -400,6 +406,7 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 	public void addbtnRefreshActionListener(ActionListener actionListener) {
 		btnRefresh.addActionListener(actionListener);
 	}
+
 	/**
 	 * Dodaje ActionListener na dugme btnNewJelo
 	 *

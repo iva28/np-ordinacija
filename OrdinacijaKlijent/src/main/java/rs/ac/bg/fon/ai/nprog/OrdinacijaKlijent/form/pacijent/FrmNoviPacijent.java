@@ -384,8 +384,9 @@ public class FrmNoviPacijent extends javax.swing.JDialog {
 	private void btnSaveChangesActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}
-
-	/**
+	/*
+	 * /**
+	 * 
 	 * @param args the command line arguments
 	 */
 

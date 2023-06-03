@@ -31,7 +31,7 @@ public class ModelTableSviPacijenti extends AbstractTableModel {
 	 * Konstruktor koji inicijalizuje ModelTableSviPacijenti sa datom listom
 	 * pacijenata
 	 * 
-	 * @param lista lista objekata klase Pacijent koja se prikazuje u tabeli
+	 * @param patients lista objekata klase Pacijent koja se prikazuje u tabeli
 	 */
 	public ModelTableSviPacijenti(List<Pacijent> patients) {
 		this.pacijenti = patients;
@@ -76,7 +76,7 @@ public class ModelTableSviPacijenti extends AbstractTableModel {
 	/**
 	 * Postavlja da li je dozvoljeno menjanje polja na prosledjenu boolean vrednost
 	 * 
-	 * @param menjanje boolean vrednost da li je ili nije dozvoljeno menjanje polja
+	 * @param editable boolean vrednost da li je ili nije dozvoljeno menjanje polja
 	 *                 u tabeli
 	 */
 	public void setEditable(boolean editable) {

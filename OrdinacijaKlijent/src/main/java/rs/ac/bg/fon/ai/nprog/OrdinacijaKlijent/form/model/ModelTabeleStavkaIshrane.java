@@ -36,7 +36,7 @@ public class ModelTabeleStavkaIshrane extends AbstractTableModel {
 	 * Konstruktor koji inicijalizuje ModelTabeleStavkaIshrane sa datom listom
 	 * stavki plana ishrane
 	 * 
-	 * @param lista lista objekata klase StavkaPlanaIshrane koja se prikazuje u
+	 * @param stavke lista objekata klase StavkaPlanaIshrane koja se prikazuje u
 	 *              tabeli
 	 */
 	public ModelTabeleStavkaIshrane(List<StavkaPlanaIshrane> stavke) {

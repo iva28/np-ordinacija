@@ -135,8 +135,9 @@ public class FrmPrijava extends javax.swing.JFrame {
 
 	private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
 	}
-
-	/**
+	/*
+	 * /**
+	 * 
 	 * @param args the command line arguments
 	 */
 
