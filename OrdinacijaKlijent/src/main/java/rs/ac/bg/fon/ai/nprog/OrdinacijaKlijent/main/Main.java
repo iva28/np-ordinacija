@@ -9,11 +9,18 @@ import rs.ac.bg.fon.ai.nprog.OrdinacijaKlijent.form.koordinator.Koordinator;
  */
 public class Main {
 	/**
+	 * Instancira objekat klase Main
+	 */
+	public Main() {
+
+	}
+
+	/**
 	 * Pokrece aplikaciju otvaranjem forme za prijavu preko Koordinatora
 	 * 
 	 * @param args Argumenti komandne linije
 	 */
-    public static void main(String[] args) {
-       Koordinator.vratiInstancu().otvoriLoginFormu();
-    }
+	public static void main(String[] args) {
+		Koordinator.vratiInstancu().otvoriLoginFormu();
+	}
 }

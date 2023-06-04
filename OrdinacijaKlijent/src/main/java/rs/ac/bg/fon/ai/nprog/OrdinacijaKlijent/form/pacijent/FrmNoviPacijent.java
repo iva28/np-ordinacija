@@ -391,27 +391,111 @@ public class FrmNoviPacijent extends javax.swing.JDialog {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za dodavanje.
+	 */
 	private javax.swing.JButton btnInsert;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za brisanje.
+	 */
 	private javax.swing.JButton btnObrisi;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za resetovanje.
+	 */
 	private javax.swing.JButton btnReset;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za čuvanje izmena.
+	 */
 	private javax.swing.JButton btnSaveChanges;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za promenu režima izmena.
+	 */
 	private javax.swing.JButton btnSetChangeMode;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor pola.
+	 */
 	private javax.swing.JComboBox<Object> cmbPol;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za email.
+	 */
 	private javax.swing.JLabel lblEmail;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri unosu emaila.
+	 */
 	private javax.swing.JLabel lblEmailError;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri unosu imena.
+	 */
 	private javax.swing.JLabel lblErrorIme;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri unosu prezimena.
+	 */
 	private javax.swing.JLabel lblErrorPrezime;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za ime.
+	 */
 	private javax.swing.JLabel lblIme;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za pol.
+	 */
 	private javax.swing.JLabel lblPol;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri unosu pola.
+	 */
 	private javax.swing.JLabel lblPolError;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za prezime.
+	 */
 	private javax.swing.JLabel lblPrezime;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za telefon.
+	 */
 	private javax.swing.JLabel lblTelefon;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri unosu telefona.
+	 */
 	private javax.swing.JLabel lblTelefonError;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel pacijenta.
+	 */
 	private javax.swing.JPanel pnlPacijent;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za email.
+	 */
 	private javax.swing.JTextField txtEmail;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za ime.
+	 */
 	private javax.swing.JTextField txtIme;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za prezime.
+	 */
 	private javax.swing.JTextField txtPrezime;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za telefon.
+	 */
 	private javax.swing.JTextField txtTelefon;
+
 
 	// End of variables declaration
 	/**

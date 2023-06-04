@@ -193,17 +193,65 @@ public class FrmNovoJelo extends javax.swing.JDialog {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za jelo.
+	 */
 	private javax.swing.JButton btnJelo;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor kuvara.
+	 */
 	private javax.swing.JComboBox<Object> cbKuvar;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor tipa jela.
+	 */
 	private javax.swing.JComboBox<Object> cbTipJela;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel.
+	 */
 	private javax.swing.JPanel jPanel1;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za cenu.
+	 */
 	private javax.swing.JLabel lblCena;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za količinu.
+	 */
 	private javax.swing.JLabel lblKolicina;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za kuvara.
+	 */
 	private javax.swing.JLabel lblKuvar;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za naziv.
+	 */
 	private javax.swing.JLabel lblNaziv;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za tip jela.
+	 */
 	private javax.swing.JLabel lblTipJela;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za cenu.
+	 */
 	private javax.swing.JTextField txtCena;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za
+	 * količinu.
+	 */
 	private javax.swing.JTextField txtKolicina;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za naziv.
+	 */
 	private javax.swing.JTextField txtNaziv;
 
 	// End of variables declaration

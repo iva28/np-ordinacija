@@ -9,13 +9,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
- *
- * @author Iva
+ * Forma koja umogucuje nutricionisti pretragu svih planova ishrana za pacijente
+ * 
+ * @author Iva Stanisic
  */
 public class FrmPretragaPlanaIshrane extends javax.swing.JFrame {
 
 	/**
-	 * Creates new form FrmPretragaPlanaIshrane
+	 * Kreira novu instancu klase FrmPretragaPlanaIshrane
+	 * 
 	 */
 	public FrmPretragaPlanaIshrane() {
 		initComponents();
@@ -247,103 +249,250 @@ public class FrmPretragaPlanaIshrane extends javax.swing.JFrame {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za pretragu.
+	 */
 	private javax.swing.JButton btnPretraga;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za prikazivanje svih
+	 * stavki.
+	 */
 	private javax.swing.JButton btnPrikaziSve;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za resetovanje.
+	 */
 	private javax.swing.JButton btnResetuj;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za učitavanje.
+	 */
 	private javax.swing.JButton btnUcitaj;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja padajuću listu nutricionista.
+	 */
 	private javax.swing.JComboBox<Object> cmbNutricionista;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja padajuću listu pacijenata.
+	 */
 	private javax.swing.JComboBox<Object> cmbPacijenti;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel.
+	 */
 	private javax.swing.JPanel jPanel1;
+
+	/**
+	 * Referenca na JScrollPane objekat koji predstavlja okvir za tabelu.
+	 */
 	private javax.swing.JScrollPane jScrollPane1;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za nutricionistu.
+	 */
 	private javax.swing.JLabel lblNutricionista;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za pacijenta.
+	 */
 	private javax.swing.JLabel lblPacijent;
+
+	/**
+	 * Referenca na JTable objekat koji predstavlja tabelu plana.
+	 */
 	private javax.swing.JTable tblPlan;
+
 	// End of variables declaration
 
+	/**
+	 * Vraca JButton btnResetuj
+	 *
+	 * @return JButton btnResetuj
+	 */
 	public JButton getBtnResetuj() {
 		return btnResetuj;
 	}
 
+	/**
+	 * Vraca JComboBox cmbNutricionista
+	 *
+	 * @return JComboBox cmbNutricionista
+	 */
 	public JComboBox<Object> getCmbNutricionista() {
 		return cmbNutricionista;
 	}
 
+	/**
+	 * Vraca JComboBox cmbPacijenti
+	 *
+	 * @return JComboBox cmbPacijenti
+	 */
 	public JComboBox<Object> getCmbPacijenti() {
 		return cmbPacijenti;
 	}
 
+	/**
+	 * Vraca JButton btnPrikaziSve
+	 *
+	 * @return JButton btnPrikaziSve
+	 */
 	public JButton getjButton1() {
 		return btnPrikaziSve;
 	}
 
+	/**
+	 * Vraca JPanel jPanel1
+	 *
+	 * @return JPanel jPanel1
+	 */
 	public JPanel getjPanel1() {
 		return jPanel1;
 	}
 
+	/**
+	 * Vraca JScrollPane jScrollPane1
+	 *
+	 * @return JScrollPane jScrollPane1
+	 */
 	public JScrollPane getjScrollPane1() {
 		return jScrollPane1;
 	}
 
+	/**
+	 * Vraca JLabel lblNutricionista
+	 * 
+	 * @return lblNutricionista nutricionista plana
+	 */
 	public JLabel getLblNutricionista() {
 		return lblNutricionista;
 	}
 
+	/**
+	 * Vraca JLabel lblPacijent
+	 * 
+	 * @return lblPacijent pacijent plana
+	 */
 	public JLabel getLblPacijent() {
 		return lblPacijent;
 	}
 
+	/**
+	 * Vraca JTable tblPlan za prikaz planova na sistemu
+	 *
+	 * @return JTable tblPlan
+	 */
 	public JTable getTblPlan() {
 		return tblPlan;
 	}
 
+	/**
+	 * Postavlja JButton btnResetuj
+	 *
+	 * @param btnResetuj JButton dugme
+	 */
 	public void setBtnResetuj(JButton btnResetuj) {
 		this.btnResetuj = btnResetuj;
 	}
 
+	/**
+	 * Postavlja JComboBox sa nutricionistima
+	 * 
+	 * @param cmbNutricionista nutricionistima
+	 */
 	public void setCmbNutricionista(JComboBox<Object> cmbNutricionista) {
 		this.cmbNutricionista = cmbNutricionista;
 	}
 
+	/**
+	 * Postavlja JComboBox sa pacijentima
+	 * 
+	 * @param cmbPacijenti pacijenti
+	 */
 	public void setCmbPacijenti(JComboBox<Object> cmbPacijenti) {
 		this.cmbPacijenti = cmbPacijenti;
 	}
 
+	/**
+	 * Postavlja JButton jButton1
+	 *
+	 * @param jButton1 JButton dugme
+	 */
 	public void setjButton1(JButton jButton1) {
 		this.btnPrikaziSve = jButton1;
 	}
 
+	/**
+	 * Postavlja JPanel jPanel1
+	 * 
+	 * @param jPanel1 panel
+	 */
 	public void setjPanel1(JPanel jPanel1) {
 		this.jPanel1 = jPanel1;
 	}
-
+	/**
+	 * Postavlja JScrollPane jScrollPane1
+	 * 
+	 * @param jScrollPane1 scroll panel
+	 */
 	public void setjScrollPane1(JScrollPane jScrollPane1) {
 		this.jScrollPane1 = jScrollPane1;
 	}
-
+	/**
+	 * Postavlja JLabel lblNutricionista
+	 * 
+	 * @param lblNutricionista labela koja se postavlja
+	 */
 	public void setLblNutricionista(JLabel lblNutricionista) {
 		this.lblNutricionista = lblNutricionista;
 	}
-
+	/**
+	 * Postavlja JLabel lblPacijent
+	 * 
+	 * @param lblPacijent labela koja se postavlja
+	 */
 	public void setLblPacijent(JLabel lblPacijent) {
 		this.lblPacijent = lblPacijent;
 	}
-
+	/**
+	 * Postavlja JTable tblPlan
+	 * 
+	 * @param tblPlan tabela koja se postavlja
+	 */
 	public void setTblPlan(JTable tblPlan) {
 		this.tblPlan = tblPlan;
 	}
-
+	/**
+	 * Dodaje ActionListener na dugme btnPretraga
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnPretragaActionListener(ActionListener actionListener) {
 		btnPretraga.addActionListener(actionListener);
 	}
-
+	/**
+	 * Dodaje ActionListener na dugme btnResetuj
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnResetujActionListener(ActionListener actionListener) {
 		btnResetuj.addActionListener(actionListener);
 	}
-
+	/**
+	 * Dodaje ActionListener na dugme btnPrikaziSve
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnPrikaziSveActionListener(ActionListener actionListener) {
 		btnPrikaziSve.addActionListener(actionListener);
 	}
-
+	/**
+	 * Dodaje ActionListener na dugme btnUcitaj
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnUcitajActionListener(ActionListener actionListener) {
 		btnUcitaj.addActionListener(actionListener);
 	}

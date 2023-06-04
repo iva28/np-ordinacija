@@ -142,12 +142,42 @@ public class FrmPrijava extends javax.swing.JFrame {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za prijavu.
+	 */
 	private javax.swing.JButton btnLogin;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za lozinku.
+	 */
 	private javax.swing.JLabel lblPassword;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri unosu
+	 * lozinke.
+	 */
 	private javax.swing.JLabel lblPasswordError;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za korisničko ime.
+	 */
 	private javax.swing.JLabel lblUsername;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri unosu
+	 * korisničkog imena.
+	 */
 	private javax.swing.JLabel lblUsernameError;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za
+	 * korisničko ime.
+	 */
 	private javax.swing.JTextField txtKorisnickoIme;
+
+	/**
+	 * Referenca na JPasswordField objekat koji predstavlja polje za unos lozinke.
+	 */
 	private javax.swing.JPasswordField txtLozinka;
 	// End of variables declaration
 

@@ -303,23 +303,91 @@ public class FrmSviPacijenti extends javax.swing.JFrame {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za promenu.
+	 */
 	private javax.swing.JButton btnChange;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za zatvaranje pretrage.
+	 */
 	private javax.swing.JButton btnCloseSearch;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za brisanje.
+	 */
 	private javax.swing.JButton btnDelete;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za detalje.
+	 */
 	private javax.swing.JButton btnDetalji;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za dodavanje.
+	 */
 	private javax.swing.JButton btnDodaj;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za osvežavanje.
+	 */
 	private javax.swing.JButton btnRefresh;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za pretragu.
+	 */
 	private javax.swing.JButton btnSearch;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za prelazak u režim pretrage.
+	 */
 	private javax.swing.JButton btnSearchMode;
+
+	/**
+	 * Referenca na JScrollPane objekat koji predstavlja okvir za tabelu pacijenata.
+	 */
 	private javax.swing.JScrollPane jScrollPane1;
+
+	/**
+	 * Referenca na JScrollPane objekat koji predstavlja okvir za tabelu pretrage.
+	 */
 	private javax.swing.JScrollPane jScrollPane2;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za administratora.
+	 */
 	private javax.swing.JLabel lblAdministrator;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za grešku pri pretrazi.
+	 */
 	private javax.swing.JLabel lblSearchError;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel opcija.
+	 */
 	private javax.swing.JPanel pnlOpcije;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel pretrage.
+	 */
 	private javax.swing.JPanel pnlSearch;
+
+	/**
+	 * Referenca na JTable objekat koji predstavlja tabelu pacijenata.
+	 */
 	private javax.swing.JTable tblPacijenti;
+
+	/**
+	 * Referenca na JTable objekat koji predstavlja tabelu pretrage.
+	 */
 	private javax.swing.JTable tblSearch;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za pretragu.
+	 */
 	private javax.swing.JTextField txtSearch;
+
 
 	// End of variables declaration
 	/**

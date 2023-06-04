@@ -92,6 +92,8 @@ public class Koordinator {
 	 * 
 	 * Kreira novu instancu klase KontrolerNoviPacijent sa datom formom
 	 * FrmNoviPacijent i otvara je
+	 * 
+	 * @param p pacijent
 	 */
 	public void otvoriFrmNoviPacijent(Pacijent p) {
 		KontrolerNoviPacijent kontrolerNoviP = new KontrolerNoviPacijent(

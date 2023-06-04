@@ -200,18 +200,56 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za dodavanje novog jela.
+	 */
 	private javax.swing.JButton btnNewJelo;
-	private javax.swing.JButton btnRefresh;
-	private javax.swing.JButton btnSearch;
-	private javax.swing.JComboBox<Object
 
-	> cbKuvar;
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za osvežavanje podataka.
+	 */
+	private javax.swing.JButton btnRefresh;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za pretragu.
+	 */
+	private javax.swing.JButton btnSearch;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor kuvara.
+	 */
+	private javax.swing.JComboBox<Object> cbKuvar;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor tipa jela.
+	 */
 	private javax.swing.JComboBox<Object> cbTipJela;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel.
+	 */
 	private javax.swing.JPanel jPanel1;
+
+	/**
+	 * Referenca na JScrollPane objekat koji omogućava klizanje za tabelu jela.
+	 */
 	private javax.swing.JScrollPane jScrollPane1;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za jela.
+	 */
 	private javax.swing.JLabel lblJela;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za kuvara.
+	 */
 	private javax.swing.JLabel lblKuvar;
+
+	/**
+	 * Referenca na JTable objekat koji predstavlja tabelu jela.
+	 */
 	private javax.swing.JTable tblJela;
+
 	// End of variables declaration
 
 	/**
@@ -349,6 +387,11 @@ public class FrmPretragaJela extends javax.swing.JFrame {
 		this.cbTipJela = cbTipJela;
 	}
 
+	/**
+	 * Postavlja JPanel jPanel1
+	 *
+	 * @param jPanel1 JPanel koji treba postaviti
+	 */
 	public void setjPanel1(JPanel jPanel1) {
 		this.jPanel1 = jPanel1;
 	}

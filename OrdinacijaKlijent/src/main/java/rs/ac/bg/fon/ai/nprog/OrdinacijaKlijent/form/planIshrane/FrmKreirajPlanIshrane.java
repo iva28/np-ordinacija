@@ -12,13 +12,15 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
- *
- * @author Iva
+ * Forma koja umogucuje nutricionisti da unese nove planove ishrana za pacijente
+ * 
+ * @author Iva Stanisic
  */
 public class FrmKreirajPlanIshrane extends javax.swing.JFrame {
 
 	/**
-	 * Creates new form FrmKreirajPlanIshrane
+	 * Kreira novu instancu klase FrmKreirajPlanIshrane
+	 * 
 	 */
 	public FrmKreirajPlanIshrane() {
 		initComponents();
@@ -523,341 +525,865 @@ public class FrmKreirajPlanIshrane extends javax.swing.JFrame {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za dodavanje.
+	 */
 	private javax.swing.JButton btnAdd;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za brisanje.
+	 */
 	private javax.swing.JButton btnDelete;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za osvežavanje.
+	 */
 	private javax.swing.JButton btnFresh;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za izbor.
+	 */
 	private javax.swing.JButton btnIzaberi;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za kreiranje plana.
+	 */
 	private javax.swing.JButton btnKreirajPlan;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za promenu datuma.
+	 */
 	private javax.swing.JButton btnPromeniDatum;
+
+	/**
+	 * Referenca na JButton objekat koji predstavlja dugme za pretragu.
+	 */
 	private javax.swing.JButton btnSearch;
-	private javax.swing.JComboBox<Object
 
-	> cbKuvar;
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor kuvara.
+	 */
+	private javax.swing.JComboBox<Object> cbKuvar;
+
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor tipa jela.
+	 */
 	private javax.swing.JComboBox<Object> cbTipJela;
-	private javax.swing.JComboBox<Object> cmbPacijenti;
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JScrollPane jScrollPane1;
-	private javax.swing.JScrollPane jScrollPane2;
-	private javax.swing.JLabel lbCount;
-	private javax.swing.JPanel lblAdmin;
-	private javax.swing.JLabel lblDate;
-	private javax.swing.JLabel lblDay;
-	private javax.swing.JLabel lblImeNutricioniste;
-	private javax.swing.JLabel lblImePacijenta;
-	private javax.swing.JLabel lblJela;
-	private javax.swing.JLabel lblKuvar;
-	private javax.swing.JLabel lblPrezimeNutricioniste;
-	private javax.swing.JLabel lblPrezimePacijenta;
-	private javax.swing.JPanel pnlPI;
-	private javax.swing.JPanel pnlPatient;
-	private javax.swing.JSpinner spiner;
-	private javax.swing.JTable tblJela;
-	private javax.swing.JTable tblStavke;
-	private javax.swing.JTextField txtDate;
-	private javax.swing.JTextField txtDay;
-	private javax.swing.JTextField txtImeNutricioniste;
-	private javax.swing.JTextField txtImePacijenta;
-	private javax.swing.JTextField txtPrezimeNutricioniste;
-	private javax.swing.JTextField txtPrezimePacijenta;
-	// End of variables declaration
 
+	/**
+	 * Referenca na JComboBox objekat koji predstavlja izbor pacijenata.
+	 */
+	private javax.swing.JComboBox<Object> cmbPacijenti;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku "jLabel1".
+	 */
+	private javax.swing.JLabel jLabel1;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel 1.
+	 */
+	private javax.swing.JPanel jPanel1;
+
+	/**
+	 * Referenca na JScrollPane objekat koji predstavlja okvir za tabelu 1.
+	 */
+	private javax.swing.JScrollPane jScrollPane1;
+
+	/**
+	 * Referenca na JScrollPane objekat koji predstavlja okvir za tabelu 2.
+	 */
+	private javax.swing.JScrollPane jScrollPane2;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja brojač.
+	 */
+	private javax.swing.JLabel lbCount;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel za administratora.
+	 */
+	private javax.swing.JPanel lblAdmin;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za datum.
+	 */
+	private javax.swing.JLabel lblDate;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za dan.
+	 */
+	private javax.swing.JLabel lblDay;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za ime nutricioniste.
+	 */
+	private javax.swing.JLabel lblImeNutricioniste;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za ime pacijenta.
+	 */
+	private javax.swing.JLabel lblImePacijenta;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za jela.
+	 */
+	private javax.swing.JLabel lblJela;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za kuvara.
+	 */
+	private javax.swing.JLabel lblKuvar;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za prezime nutricioniste.
+	 */
+	private javax.swing.JLabel lblPrezimeNutricioniste;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za prezime pacijenta.
+	 */
+	private javax.swing.JLabel lblPrezimePacijenta;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel za plan ishrane.
+	 */
+	private javax.swing.JPanel pnlPI;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel za pacijenta.
+	 */
+	private javax.swing.JPanel pnlPatient;
+
+	/**
+	 * Referenca na JSpinner objekat koji predstavlja spinner.
+	 */
+	private javax.swing.JSpinner spiner;
+
+	/**
+	 * Referenca na JTable objekat koji predstavlja tabelu jela.
+	 */
+	private javax.swing.JTable tblJela;
+
+	/**
+	 * Referenca na JTable objekat koji predstavlja tabelu stavki.
+	 */
+	private javax.swing.JTable tblStavke;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za datum.
+	 */
+	private javax.swing.JTextField txtDate;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za dan.
+	 */
+	private javax.swing.JTextField txtDay;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za ime
+	 * nutricioniste.
+	 */
+	private javax.swing.JTextField txtImeNutricioniste;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za ime
+	 * pacijenta.
+	 */
+	private javax.swing.JTextField txtImePacijenta;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za prezime
+	 * nutricioniste.
+	 */
+	private javax.swing.JTextField txtPrezimeNutricioniste;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za prezime
+	 * pacijenta.
+	 */
+	private javax.swing.JTextField txtPrezimePacijenta;
+
+	// End of variables declaration
+	/**
+	 * Vraca JButton btnAdd
+	 *
+	 * @return JButton btnAdd
+	 */
 	public JButton getBtnAdd() {
 		return btnAdd;
 	}
 
+	/**
+	 * Vraca JButton btnIzaberi
+	 *
+	 * @return JButton btnIzaberi
+	 */
 	public JButton getBtnAdd1() {
 		return btnIzaberi;
 	}
 
+	/**
+	 * Vraca JButton btnDelete
+	 *
+	 * @return JButton btnDelete
+	 */
 	public JButton getBtnDelete() {
 		return btnDelete;
 	}
 
+	/**
+	 * Vraca JButton btnKreirajPlan
+	 *
+	 * @return JButton btnKreirajPlan
+	 */
 	public JButton getBtnDelete1() {
 		return btnKreirajPlan;
 	}
 
+	/**
+	 * Vraca JButton btnFresh
+	 *
+	 * @return JButton btnFresh
+	 */
 	public JButton getBtnFresh() {
 		return btnFresh;
 	}
 
+	/**
+	 * Vraca JButton btnSearch
+	 *
+	 * @return JButton btnSearch
+	 */
 	public JButton getBtnSearch() {
 		return btnSearch;
 	}
 
+	/**
+	 * Vraca JComboBox cbKuvar
+	 *
+	 * @return JComboBox cbKuvar
+	 */
 	public JComboBox<Object> getCbKuvar() {
 		return cbKuvar;
 	}
 
+	/**
+	 * Vraca JComboBox cbTipJela
+	 *
+	 * @return JComboBox cbTipJela
+	 */
 	public JComboBox<Object> getCbTipJela() {
 		return cbTipJela;
 	}
 
+	/**
+	 * Vraca JLabel jLabel1
+	 *
+	 * @return JLabel jLabel1
+	 */
 	public JLabel getjLabel1() {
 		return jLabel1;
 	}
 
+	/**
+	 * Vraca JPanel jPanel1
+	 *
+	 * @return JPanel jPanel1
+	 */
 	public JPanel getjPanel1() {
 		return jPanel1;
 	}
 
+	/**
+	 * Vraca JScrollPane jScrollPane1
+	 *
+	 * @return JScrollPane jScrollPane1
+	 */
 	public JScrollPane getjScrollPane1() {
 		return jScrollPane1;
 	}
 
+	/**
+	 * Vraca JScrollPane jScrollPane2
+	 *
+	 * @return JScrollPane jScrollPane2
+	 */
 	public JScrollPane getjScrollPane2() {
 		return jScrollPane2;
 	}
 
+	/**
+	 * Vraca JLabel lbCount
+	 *
+	 * @return JLabel lbCount
+	 */
 	public JLabel getLbCount() {
 		return lbCount;
 	}
 
+	/**
+	 * Vraca JLabel lblAdmin
+	 *
+	 * @return JLabel lblAdmin
+	 */
 	public JPanel getLblAdmin() {
 		return lblAdmin;
 	}
 
+	/**
+	 * Vraca JLabel lblDate
+	 *
+	 * @return JLabel lblDate
+	 */
 	public JLabel getLblDate() {
 		return lblDate;
 	}
 
+	/**
+	 * Vraca JLabel lblDay
+	 *
+	 * @return JLabel lblDay
+	 */
 	public JLabel getLblDay() {
 		return lblDay;
 	}
 
+	/**
+	 * Vraca JLabel lblImeNutricioniste
+	 *
+	 * @return JLabel lblImeNutricioniste
+	 */
 	public JLabel getLblImeNutricioniste() {
 		return lblImeNutricioniste;
 	}
 
+	/**
+	 * Vraca JLabel lblImePacijenta
+	 *
+	 * @return JLabel lblImePacijenta
+	 */
 	public JLabel getLblImePacijenta() {
 		return lblImePacijenta;
 	}
 
+	/**
+	 * Vraca JLabel lblJela
+	 *
+	 * @return JLabel lblJela
+	 */
 	public JLabel getLblJela() {
 		return lblJela;
 	}
 
+	/**
+	 * Vraca JLabel lblKuvar
+	 *
+	 * @return JLabel lblKuvar
+	 */
 	public JLabel getLblKuvar() {
 		return lblKuvar;
 	}
 
+	/**
+	 * Vraca JLabel lblPrezimeNutricioniste
+	 *
+	 * @return JLabel lblPrezimeNutricioniste
+	 */
 	public JLabel getLblPrezimeNutricioniste() {
 		return lblPrezimeNutricioniste;
 	}
 
+	/**
+	 * Vraca JLabel lblPrezimePacijenta
+	 *
+	 * @return JLabel lblPrezimePacijenta
+	 */
 	public JLabel getLblPrezimePacijenta() {
 		return lblPrezimePacijenta;
 	}
 
+	/**
+	 * Vraca JPanel pnlPI
+	 *
+	 * @return JPanel pnlPI
+	 */
 	public JPanel getPnlPI() {
 		return pnlPI;
 	}
 
+	/**
+	 * Vraca JPanel pnlPatient
+	 *
+	 * @return JPanel pnlPatient
+	 */
 	public JPanel getPnlPatient() {
 		return pnlPatient;
 	}
 
+	/**
+	 * Vraca JSpinner spiner
+	 *
+	 * @return JSpinner spiner
+	 */
 	public JSpinner getSpiner() {
 		return spiner;
 	}
 
+	/**
+	 * Vraca JTable tblJela za prikaz jela na sistemu
+	 *
+	 * @return JTable tblJela
+	 */
 	public JTable getTblJela() {
 		return tblJela;
 	}
 
+	/**
+	 * Vraca JTable tblStavke za prikaz stavki plana ishrane
+	 *
+	 * @return JTable tblStavke
+	 */
 	public JTable getTblStavke() {
 		return tblStavke;
 	}
 
+	/**
+	 * Vraca JTextField txtDate za prikaz stavki plana ishrane
+	 *
+	 * @return JTextField txtDate
+	 */
 	public JTextField getTxtDate() {
 		return txtDate;
 	}
 
+	/**
+	 * Vraca JTextField txtDay za unos broja trajanja plana ishrane
+	 *
+	 * @return JTextField txtDay
+	 */
 	public JTextField getTxtDay() {
 		return txtDay;
 	}
 
+	/**
+	 * Vraca JTextField txtImeNutricioniste za unos imena nutricioniste koji vodi
+	 * plana ishrane
+	 *
+	 * @return JTextField txtImeNutricioniste
+	 */
 	public JTextField getTxtImeNutricioniste() {
 		return txtImeNutricioniste;
 	}
 
+	/**
+	 * Vraca JTextField txtImePacijenta za unos imena pacijenta za kojeg se kreira
+	 * plana ishrane
+	 *
+	 * @return JTextField txtImePacijenta
+	 */
 	public JTextField getTxtImePacijenta() {
 		return txtImePacijenta;
 	}
 
+	/**
+	 * Vraca JTextField txtPrezimeNutricioniste za unos prezimena nutricioniste koji
+	 * vodi plana ishrane
+	 *
+	 * @return JTextField txtPrezimeNutricioniste
+	 */
 	public JTextField getTxtPrezimeNutricioniste() {
 		return txtPrezimeNutricioniste;
 	}
 
+	/**
+	 * Vraca JTextField txtImePacijenta za unos prezimena pacijenta za kojeg se
+	 * kreira plana ishrane
+	 *
+	 * @return JTextField txtImePacijenta
+	 */
 	public JTextField getTxtPrezimePacijenta() {
 		return txtPrezimePacijenta;
 	}
 
+	/**
+	 * Postavlja JButton btnAdd
+	 *
+	 * @param btnAdd JButton dugme za dodavanje jela u stavku plana
+	 */
 	public void setBtnAdd(JButton btnAdd) {
 		this.btnAdd = btnAdd;
 	}
 
+	/**
+	 * Postavlja JButton btnIzaberi
+	 *
+	 * @param btnAdd1 JButton dugme za dodavanje stavki plana
+	 */
 	public void setBtnAdd1(JButton btnAdd1) {
 		this.btnIzaberi = btnAdd1;
 	}
 
+	/**
+	 * Postavlja JButton btnDelete
+	 *
+	 * @param btnDelete JButton dugme za brisanje jela na stavki plana
+	 */
 	public void setBtnDelete(JButton btnDelete) {
 		this.btnDelete = btnDelete;
 	}
 
+	/**
+	 * Postavlja JButton btnKreirajPlan
+	 *
+	 * @param btnDelete1 JButton dugme za kreiranje plana
+	 */
 	public void setBtnDelete1(JButton btnDelete1) {
 		this.btnKreirajPlan = btnDelete1;
 	}
 
+	/**
+	 * Postavlja JButton btnFresh
+	 *
+	 * @param btnFresh JButton dugme za osvezavanje panela sa jelima
+	 */
 	public void setBtnFresh(JButton btnFresh) {
 		this.btnFresh = btnFresh;
 	}
 
+	/**
+	 * Postavlja JButton btnSearch
+	 *
+	 * @param btnSearch JButton dugme za pretragu
+	 */
 	public void setBtnSearch(JButton btnSearch) {
 		this.btnSearch = btnSearch;
 	}
 
+	/**
+	 * Postavlja JComboBox komponentu za kuvare koja se koristi u formi
+	 *
+	 * @param cbKuvar JComboBox komponenta za kuvare
+	 */
 	public void setCbKuvar(JComboBox<Object> cbKuvar) {
 		this.cbKuvar = cbKuvar;
 	}
 
+	/**
+	 * Postavlja JComboBox komponentu za tipove jela koja se koristi u formi
+	 *
+	 * @param cbTipJela JComboBox komponenta za tipove jela
+	 */
 	public void setCbTipJela(JComboBox<Object> cbTipJela) {
 		this.cbTipJela = cbTipJela;
 	}
 
-	public void setjLabel1(JLabel jLabel1) {
+	/**
+	 * Postavlja JLabel JLabel
+	 * 
+	 * @param JLabel labela koja se postavlja
+	 */
+	public void setjLabel1(JLabel JLabel) {
 		this.jLabel1 = jLabel1;
 	}
 
+	/**
+	 * Postavlja JPanel jPanel1
+	 * 
+	 * @param jPanel1 panel koja se postavlja
+	 */
 	public void setjPanel1(JPanel jPanel1) {
 		this.jPanel1 = jPanel1;
 	}
 
+	/**
+	 * Postavlja JScrollPane jScrollPane1
+	 * 
+	 * @param jScrollPane1 scrollpanel koja se postavlja
+	 */
 	public void setjScrollPane1(JScrollPane jScrollPane1) {
 		this.jScrollPane1 = jScrollPane1;
 	}
 
+	/**
+	 * Postavlja JScrollPane jScrollPane2
+	 * 
+	 * @param jScrollPane2 scrollpanel koja se postavlja
+	 */
 	public void setjScrollPane2(JScrollPane jScrollPane2) {
 		this.jScrollPane2 = jScrollPane2;
 	}
 
+	/**
+	 * Postavlja JLabel lbCount
+	 * 
+	 * @param lbCount labela koja se postavlja
+	 */
 	public void setLbCount(JLabel lbCount) {
 		this.lbCount = lbCount;
 	}
 
+	/**
+	 * Postavlja JLabel lblAdmin
+	 * 
+	 * @param lblAdmin labela koja se postavlja
+	 */
 	public void setLblAdmin(JPanel lblAdmin) {
 		this.lblAdmin = lblAdmin;
 	}
 
+	/**
+	 * Postavlja JLabel lblDate
+	 * 
+	 * @param lblDate labela koja se postavlja
+	 */
 	public void setLblDate(JLabel lblDate) {
 		this.lblDate = lblDate;
 	}
 
+	/**
+	 * Postavlja JLabel lblDay
+	 * 
+	 * @param lblDay labela koja se postavlja
+	 */
 	public void setLblDay(JLabel lblDay) {
 		this.lblDay = lblDay;
 	}
 
+	/**
+	 * Postavlja JLabel lblImeNutricioniste
+	 * 
+	 * @param lblImeNutricioniste labela koja se postavlja
+	 */
 	public void setLblImeNutricioniste(JLabel lblImeNutricioniste) {
 		this.lblImeNutricioniste = lblImeNutricioniste;
 	}
 
+	/**
+	 * Postavlja JLabel lblImePacijenta
+	 * 
+	 * @param lblImePacijenta labela koja se postavlja
+	 */
 	public void setLblImePacijenta(JLabel lblImePacijenta) {
 		this.lblImePacijenta = lblImePacijenta;
 	}
 
+	/**
+	 * Postavlja JLabel lblJela
+	 * 
+	 * @param lblJela labela koja se postavlja
+	 */
 	public void setLblJela(JLabel lblJela) {
 		this.lblJela = lblJela;
 	}
 
+	/**
+	 * Postavlja JLabel lblKuvar
+	 * 
+	 * @param lblKuvar labela koja se postavlja
+	 */
 	public void setLblKuvar(JLabel lblKuvar) {
 		this.lblKuvar = lblKuvar;
 	}
 
+	/**
+	 * Postavlja JLabel lblPrezimeNutricioniste
+	 * 
+	 * @param lblPrezimeNutricioniste labela koja se postavlja
+	 */
 	public void setLblPrezimeNutricioniste(JLabel lblPrezimeNutricioniste) {
 		this.lblPrezimeNutricioniste = lblPrezimeNutricioniste;
 	}
 
+	/**
+	 * Postavlja JLabel lblPrezimePacijenta
+	 * 
+	 * @param lblPrezimePacijenta labela koja se postavlja
+	 */
 	public void setLblPrezimePacijenta(JLabel lblPrezimePacijenta) {
 		this.lblPrezimePacijenta = lblPrezimePacijenta;
 	}
 
+	/**
+	 * Postavlja JPanel pnlPI
+	 * 
+	 * @param pnlPI panel koji se postavlja
+	 */
 	public void setPnlPI(JPanel pnlPI) {
 		this.pnlPI = pnlPI;
 	}
 
+	/**
+	 * Postavlja JPanel pnlPatient za prikaz pacijenata
+	 * 
+	 * @param pnlPatient panel koji se postavlja
+	 */
 	public void setPnlPatient(JPanel pnlPatient) {
 		this.pnlPatient = pnlPatient;
 	}
 
+	/**
+	 * Postavlja JSpinner spiner
+	 * 
+	 * @param spiner spiner koji se postavlja
+	 */
 	public void setSpiner(JSpinner spiner) {
 		this.spiner = spiner;
 	}
 
+	/**
+	 * Postavlja JTable tblJela za prikaz jela
+	 * 
+	 * @param tblJela tabela koja se postavlja
+	 */
 	public void setTblJela(JTable tblJela) {
 		this.tblJela = tblJela;
 	}
 
+	/**
+	 * Postavlja JTable tblStavke za prikaz stavki plana ishrana
+	 * 
+	 * @param tblStavke tabela koja se postavlja
+	 */
 	public void setTblStavke(JTable tblStavke) {
 		this.tblStavke = tblStavke;
 	}
 
+	/**
+	 * Postavlja JTextField txtDate za prikaz datuma plana ishrana
+	 * 
+	 * @param txtDate polje koja se postavlja za datum plana
+	 */
 	public void setTxtDate(JTextField txtDate) {
 		this.txtDate = txtDate;
 	}
 
+	/**
+	 * Postavlja JTextField txtDay za prikaz broja dana plana ishrana
+	 * 
+	 * @param txtDay polje koja se postavlja za broj dana trajanja plana
+	 */
 	public void setTxtDay(JTextField txtDay) {
 		this.txtDay = txtDay;
 	}
 
+	/**
+	 * Postavlja JTextField txtImeNutricioniste za prikaz imena nutricioniste
+	 * 
+	 * @param txtImeNutricioniste polje koja se postavlja za prikaz imena
+	 *                            nutricioniste
+	 */
 	public void setTxtImeNutricioniste(JTextField txtImeNutricioniste) {
 		this.txtImeNutricioniste = txtImeNutricioniste;
 	}
 
+	/**
+	 * Postavlja JTextField txtImePacijenta za prikaz imena pacijenta
+	 * 
+	 * @param txtImePacijenta polje koja se postavlja za prikaz imena pacijenta
+	 */
 	public void setTxtImePacijenta(JTextField txtImePacijenta) {
 		this.txtImePacijenta = txtImePacijenta;
 	}
 
+	/**
+	 * Postavlja JTextField txtPrezimeNutricioniste za prikaz prezimena
+	 * nutricioniste
+	 * 
+	 * @param txtPrezimeNutricioniste polje koja se postavlja za prikaz prezimena
+	 *                                nutricioniste
+	 */
 	public void setTxtPrezimeNutricioniste(JTextField txtPrezimeNutricioniste) {
 		this.txtPrezimeNutricioniste = txtPrezimeNutricioniste;
 	}
 
+	/**
+	 * Postavlja JTextField txtPrezimePacijenta za prikaz prezimena pacijenta
+	 * 
+	 * @param txtPrezimePacijenta polje koja se postavlja za prikaz prezimena
+	 *                            pacijenta
+	 */
 	public void setTxtPrezimePacijenta(JTextField txtPrezimePacijenta) {
 		this.txtPrezimePacijenta = txtPrezimePacijenta;
 	}
 
+	/**
+	 * Vraca JComboBox sa pacijentima
+	 * 
+	 * @return cmbPacijenti combobox sa pacijentima
+	 */
 	public JComboBox<Object> getCmbPacijenti() {
 		return cmbPacijenti;
 	}
 
+	/**
+	 * Postavlja JComboBox cmbPacijenti za prikaz pacijenta
+	 * 
+	 * @param cmbPacijenti koja se postavlja za prikaz pacijenata
+	 */
 	public void setCmbPacijenti(JComboBox<Object> cmbPacijenti) {
 		this.cmbPacijenti = cmbPacijenti;
 	}
 
+	/**
+	 * Dodaje ActionListener na dugme btnAdd
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnAddActionListener(ActionListener actionListener) {
 		btnAdd.addActionListener(actionListener);
 	}
 
+	/**
+	 * Dodaje ActionListener na dugme btnSearch
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnSearchActionListener(ActionListener actionListener) {
 		btnSearch.addActionListener(actionListener);
 	}
 
+	/**
+	 * Dodaje ActionListener na dugme btnDelete
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnDeleteActionListener(ActionListener actionListener) {
 		btnDelete.addActionListener(actionListener);
 	}
 
+	/**
+	 * Dodaje ActionListener na dugme btnIzaberi
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnIzaberiActionListener(ActionListener actionListener) {
 		btnIzaberi.addActionListener(actionListener);
 	}
 
+	/**
+	 * Dodaje ActionListener na dugme btnKreirajPlan
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnKreirajPlansActionListener(ActionListener actionListener) {
 		btnKreirajPlan.addActionListener(actionListener);
 	}
 
+	/**
+	 * Dodaje ActionListener na dugme btnFresh
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnFreshPlansActionListener(ActionListener actionListener) {
 		btnFresh.addActionListener(actionListener);
 	}
 
+	/**
+	 * Dodaje ActionListener na dugme btnPromeniDatum
+	 *
+	 * @param actionListener ActionListener koji treba dodati
+	 */
 	public void addbtnPromeniDatumActionListener(ActionListener actionListener) {
 		btnPromeniDatum.addActionListener(actionListener);
 	}

@@ -279,29 +279,122 @@ public class FrmGlavna extends javax.swing.JFrame {
 	 */
 
 	// Variables declaration - do not modify
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku.
+	 */
 	private javax.swing.JLabel jLabel1;
+
+	/**
+	 * Referenca na JMenu objekat koji predstavlja meni 1.
+	 */
 	private javax.swing.JMenu jMenu1;
+
+	/**
+	 * Referenca na JMenu objekat koji predstavlja meni 2.
+	 */
 	private javax.swing.JMenu jMenu2;
+
+	/**
+	 * Referenca na JMenu objekat koji predstavlja meni 3.
+	 */
 	private javax.swing.JMenu jMenu3;
+
+	/**
+	 * Referenca na JMenu objekat koji predstavlja meni 4.
+	 */
 	private javax.swing.JMenu jMenu4;
+
+	/**
+	 * Referenca na JMenu objekat koji predstavlja meni 6.
+	 */
 	private javax.swing.JMenu jMenu6;
+
+	/**
+	 * Referenca na JMenuBar objekat koji predstavlja traku sa menijima.
+	 */
 	private javax.swing.JMenuBar jMenuBar1;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za dodavanje jela.
+	 */
 	private javax.swing.JMenuItem jMenuItemDodajJ;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za dodavanje pacijenta.
+	 */
 	private javax.swing.JMenuItem jMenuItemDodajP;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za izmenu pacijenta.
+	 */
 	private javax.swing.JMenuItem jMenuItemIzmeniP;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za kreiranje plana ishrane.
+	 */
 	private javax.swing.JMenuItem jMenuItemKreirajPI;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za manipulaciju planovima ishrane.
+	 */
 	private javax.swing.JMenuItem jMenuItemManipulacijaPl;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za odjavu.
+	 */
 	private javax.swing.JMenuItem jMenuItemOdjava;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za pretragu jela.
+	 */
 	private javax.swing.JMenuItem jMenuItemPretragaJ;
+
+	/**
+	 * Referenca na JMenuItem objekat koji predstavlja stavku menija za pretragu plana ishrane.
+	 */
 	private javax.swing.JMenuItem jMenuItemPretragaPlana;
+
+	/**
+	 * Referenca na JMenu objekat koji predstavlja meni pacijent.
+	 */
 	private javax.swing.JMenu jPacijent;
+
+	/**
+	 * Referenca na JPanel objekat koji predstavlja panel.
+	 */
 	private javax.swing.JPanel jPanel1;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za ime.
+	 */
 	private javax.swing.JLabel lblIme;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za ordinaciju.
+	 */
 	private javax.swing.JLabel lblOrdinacija;
+
+	/**
+	 * Referenca na JLabel objekat koji predstavlja oznaku za prezime.
+	 */
 	private javax.swing.JLabel lblPrezime;
+
+	/**
+	 * Referenca na JMenuBar objekat koji predstavlja traku sa menijima.
+	 */
 	private javax.swing.JMenuBar menuBar;
+
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za ime.
+	 */
 	private javax.swing.JTextField txtIme;
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za ordinaciju.
+	 */
 	private javax.swing.JTextField txtOrd;
+	/**
+	 * Referenca na JTextField objekat koji predstavlja tekstualno polje za prezime.
+	 */
 	private javax.swing.JTextField txtPrezime;
 	// End of variables declaration
 

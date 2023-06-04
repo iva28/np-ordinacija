@@ -7,6 +7,12 @@ package rs.ac.bg.fon.ai.nprog.OrdinacijaKlijent.form.konstante;
  */
 public class Konstante {
 	/**
+	 * Instancira objekat klase Konstante
+	 */
+	public Konstante (){
+		
+	}
+	/**
 	 * Konstanta koja predstavlja ulogu nutricioniste
 	 */
     public static final String NUTRICIONISTA = "NUTRICIONISTA";
