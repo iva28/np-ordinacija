@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.util.List;
 

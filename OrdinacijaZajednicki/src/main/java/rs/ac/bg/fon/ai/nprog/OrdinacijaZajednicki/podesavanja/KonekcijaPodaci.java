@@ -31,7 +31,7 @@ public class KonekcijaPodaci {
 	private KonekcijaPodaci() {
 		try {
 			props = new Properties();
-			props.load(new FileInputStream("../OrdinacijaZajednicki/konekcija/konekcija.properties"));
+			props.load(new FileInputStream("../OrdinacijaZajednicki/src/main/resources/konekcija.properties"));
 		} catch (Exception ex) {
 			System.err.println("Greška pri učitavanju konekcija properties fajla! " + ex.getMessage());
 		}
@@ -70,8 +70,7 @@ public class KonekcijaPodaci {
 	public void postaviAdresu(String adresa) throws Exception{
 		try {
 			props.setProperty("adresa", adresa);
-//            props.store(new FileOutputStream(new File("C:\\Users\\DELL\\Desktop\\seminarskiPS\\OrdinacijaZajednicki\\konekcija\\konekcija.properties")), null);
-			props.store(new FileOutputStream(new File("../OrdinacijaZajednicki/konekcija/konekcija.properties")), null);
+			props.store(new FileOutputStream(new File("../OrdinacijaZajednicki/src/main/resources/konekcija.properties")), null);
 		} catch (Exception ex) {
 			System.err.println("Greška pri upisu adrese u properties fajl\n" + ex.getMessage());
 		}
@@ -86,8 +85,7 @@ public class KonekcijaPodaci {
 	public void postaviPort(String port) throws Exception {
 		try {
 			props.setProperty("port", port);
-//            props.store(new FileOutputStream(new File("C:\\Users\\DELL\\Desktop\\seminarskiPS\\OrdinacijaZajednicki\\konekcija\\konekcija.properties")), null);
-			props.store(new FileOutputStream(new File("../OrdinacijaZajednicki/konekcija/konekcija.properties")), null);
+			props.store(new FileOutputStream(new File("../OrdinacijaZajednicki/src/main/resources/konekcija.properties")), null);
 		} catch (Exception ex) {
 			System.err.println("Greška pri upisu porta u properties fajl\n" + ex.getMessage());
 		}
