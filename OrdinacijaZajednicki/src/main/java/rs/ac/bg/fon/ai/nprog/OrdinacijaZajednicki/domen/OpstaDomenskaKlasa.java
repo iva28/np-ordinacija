@@ -12,6 +12,12 @@ import java.util.List;
  *
  */
 public abstract class OpstaDomenskaKlasa {
+	/**
+	 * Podrazumevani konstruktor
+	 */
+	public OpstaDomenskaKlasa() {
+		
+	}
 
 	/**
 	 * Vraca ime tabele u bazi podataka, koje odgovara domeskom objektu

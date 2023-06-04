@@ -43,7 +43,7 @@ public class Receiver {
 	 * @throws IOException ako dodje do greske u IO streamu
 	 * @throws ClassNotFoundException ako je prosledjena instance pogresne klase
 	 */
-	public Object primiZahtev() {
+	public Object primiZahtev() throws IOException, ClassNotFoundException{
 		try {
 			ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 			return in.readObject();

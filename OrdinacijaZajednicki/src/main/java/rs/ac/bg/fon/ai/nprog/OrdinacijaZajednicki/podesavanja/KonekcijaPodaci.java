@@ -67,7 +67,7 @@ public class KonekcijaPodaci {
 	 * @param adresa serverskog soketa
 	 * @throws Exception ako dodje do greske pri upisu adrese u fajl
 	 */
-	public void postaviAdresu(String adresa) {
+	public void postaviAdresu(String adresa) throws Exception{
 		try {
 			props.setProperty("adresa", adresa);
 //            props.store(new FileOutputStream(new File("C:\\Users\\DELL\\Desktop\\seminarskiPS\\OrdinacijaZajednicki\\konekcija\\konekcija.properties")), null);
@@ -83,7 +83,7 @@ public class KonekcijaPodaci {
 	 * @param port serverskog soketa
 	 * @throws Exception ako dodje do greske pri upisu porta u fajl
 	 */
-	public void postaviPort(String port) {
+	public void postaviPort(String port) throws Exception {
 		try {
 			props.setProperty("port", port);
 //            props.store(new FileOutputStream(new File("C:\\Users\\DELL\\Desktop\\seminarskiPS\\OrdinacijaZajednicki\\konekcija\\konekcija.properties")), null);

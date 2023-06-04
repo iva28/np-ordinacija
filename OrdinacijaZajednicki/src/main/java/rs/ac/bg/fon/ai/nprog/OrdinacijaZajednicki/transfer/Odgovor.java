@@ -1,35 +1,72 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.transfer;
 
 import java.io.Serializable;
 
 /**
+ * Predstavlja odgovor u komunikaciji izmedju klijent i server strane
  *
- * @author iva
+ * @author Iva Stanisic
  */
-public class Odgovor implements Serializable{
-    private Object rezultat;
-    private Exception exception;
+public class Odgovor implements Serializable {
+	/**
+	 * Predstavlja odgovor
+	 */
+	private Object rezultat;
+	/**
+	 * Predstavlja gresku koja je nastala
+	 */
+	private Exception exception;
 
-    public Odgovor() {
-    }
-    public Odgovor(Object result, Exception exception) {
-        this.rezultat = result;
-        this.exception = exception;
-    }
-    public Object getRezultat() {
-        return rezultat;
-    }
-    public Exception getException() {
-        return exception;
-    }
-    public void setRezultat(Object rezultat) {
-        this.rezultat = rezultat;
-    }
-    public void setException(Exception exception) {
-        this.exception = exception;
-    }
+	/**
+	 * Prazan konstruktor
+	 */
+	public Odgovor() {
+	}
+
+	/**
+	 * Parametrizovan konstruktor
+	 * 
+	 * @param result    odgovor koji je poslat
+	 * @param exception greska koja je nastala
+	 */
+	public Odgovor(Object result, Exception exception) {
+		this.rezultat = result;
+		this.exception = exception;
+	}
+
+	/**
+	 * Vraca rezultat odgovora
+	 * 
+	 * @return rezultat rezultat odgovora
+	 */
+	public Object getRezultat() {
+		return rezultat;
+	}
+
+	/**
+	 * Vraca gresku odgovora
+	 * 
+	 * @return greska greska odgovora
+	 */
+	public Exception getException() {
+		return exception;
+	}
+
+	/**
+	 * Postavlja rezultat odgovora
+	 * 
+	 * @param rezultat rezultat odgovora
+	 */
+	public void setRezultat(Object rezultat) {
+		this.rezultat = rezultat;
+	}
+
+	/**
+	 * Postavlja gresku odgovora
+	 * 
+	 * @param exception greska
+	 */
+	public void setException(Exception exception) {
+		this.exception = exception;
+	}
 }
