@@ -1,8 +1,9 @@
 package rs.ac.bg.fon.ai.nprog.OrdinacijaServer.repozitorijum.db;
 
 /**
- *
- * @author Iva
+ * Sadrzi podatke za uspostavljanje konekcije sa bazom podataka
+ * 
+ * @author Iva Stanisic
  */
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,14 +13,27 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 public class KonekcijaSaBazom {
-
+	 /**
+     * Staticko privatno polje koje cuva jedinstvenu instancu klase KonekcijaSaBazom
+     */
 	private static KonekcijaSaBazom instanca;
+	/**
+     * Polje koje predstavlja trenutnu konekciju sa bazom podataka
+     */
 	private Connection konekcija;
 
+	/**
+	 * Privatni konstruktor koji sprecava direktno instanciranje klase
+	 */
 	private KonekcijaSaBazom() {
 
 	}
 
+	/**
+	 * Vraca jedinstvenu instancu klase KonekcijaSaBazom
+	 *
+	 * @return Instanca klase KonekcijaSaBazom
+	 */
 	public static KonekcijaSaBazom getInstanca() {
 		if (instanca == null) {
 			instanca = new KonekcijaSaBazom();
@@ -27,6 +41,12 @@ public class KonekcijaSaBazom {
 		return instanca;
 	}
 
+	/**
+	 * Ootvara konekciju sa bazom podataka
+	 *
+	 * @return Objekat klase Connection koji predstavlja otvorenu konekciju
+	 * @throws Exception ako dodje do greske prilikom izvrsavanja metode
+	 */
 	public Connection otvoriKonekciju() throws Exception {
 		try {
 			if (konekcija == null || konekcija.isClosed()) {
@@ -50,16 +70,30 @@ public class KonekcijaSaBazom {
 		}
 	}
 
+	/**
+	 * Zatvara konekciju sa bazom podataka
+	 * 
+	 * @throws Exception ako dodje do greske prilikom izvrsavanja metode
+	 */
 	public void zatvoriKonekciju() throws Exception {
 		konekcija.close();
 		System.out.println("Zatvorena konekcija..");
 	}
 
+	/**
+	 * Potvrdjuje transakciju nad bazom podataka (radi commit transakcije)
+	 * 
+	 * @throws Exception ako dodje do greske prilikom izvrsavanja metode
+	 */
 	public void potvrdiTransakciju() throws Exception {
 		konekcija.commit();
 		System.out.println("Transakcija je potvrđena :)");
 	}
-
+	/**
+	 * Ponistava transakciju nad bazom podataka (radi rollback transakcije)
+	 * 
+	 * @throws Exception ako dodje do greske prilikom izvrsavanja metode
+	 */
 	public void ponistiTransakciju() throws Exception {
 		konekcija.rollback();
 		System.err.println("Transakcija je poništena :(");

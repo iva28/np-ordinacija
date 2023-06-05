@@ -8,8 +8,11 @@ import rs.ac.bg.fon.ai.nprog.OrdinacijaServer.repozitorijum.db.KonekcijaSaBazom;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.OpstaDomenskaKlasa;
 
 /**
+ * Predstavlja broker za pristup bazi podataka koji implementira interfejs IRepozitorijum.
+ * 
+ * Omogucava izvrsavanje osnovnih operacija nad objektima tipa OpstaDomenskaKlasa
  *
- * @author Iva
+ * @author Iva Stanisic
  */
 public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 
