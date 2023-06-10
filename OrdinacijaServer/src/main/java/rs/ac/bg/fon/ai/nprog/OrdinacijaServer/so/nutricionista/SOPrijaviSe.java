@@ -30,7 +30,8 @@ public class SOPrijaviSe extends OpstaSO {
 
 	/**
 	 * Postavlja prijavljenog nutricionistu
-	 * @param nutricionista
+	 * 
+	 * @param nutricionista nutricionista koji se prijavljuje
 	 */
 	public void setNutricionista(Nutricionista nutricionista) {
 		this.nutricionista = nutricionista;
@@ -45,6 +46,14 @@ public class SOPrijaviSe extends OpstaSO {
 	protected void validiraj(OpstaDomenskaKlasa obj) throws Exception {
 		if (obj == null || !(obj instanceof Nutricionista))
 			throw new Exception("Mora biti Nutricionista!\n");
+	}
+
+	/**
+	 * Default konstruktor
+	 */
+	public SOPrijaviSe() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 }

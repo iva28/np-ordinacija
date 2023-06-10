@@ -22,7 +22,7 @@ public class SOUcitajPacijenta extends OpstaSO {
 	/**
 	 * Ucitani pacijent
 	 * 
-	 * @return
+	 * @return pacijent koji je ucitan
 	 */
 	public Pacijent getPacijent() {
 		return pacijent;
@@ -37,6 +37,14 @@ public class SOUcitajPacijenta extends OpstaSO {
 	protected void validiraj(OpstaDomenskaKlasa obj) throws Exception {
 		if (obj == null || !(obj instanceof Pacijent))
 			throw new Exception("Mora biti Pacijent!\n");
+	}
+
+	/**
+	 * Default konstruktor
+	 */
+	public SOUcitajPacijenta() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 }

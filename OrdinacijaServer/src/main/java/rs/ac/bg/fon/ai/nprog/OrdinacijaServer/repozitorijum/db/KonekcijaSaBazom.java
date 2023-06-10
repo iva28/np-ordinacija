@@ -1,17 +1,17 @@
 package rs.ac.bg.fon.ai.nprog.OrdinacijaServer.repozitorijum.db;
 
-/**
- * Sadrzi podatke za uspostavljanje konekcije sa bazom podataka
- * 
- * @author Iva Stanisic
- */
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-
+/**
+ * Sadrzi podatke za uspostavljanje konekcije sa bazom podataka
+ * 
+ * @author Iva Stanisic
+ */
 public class KonekcijaSaBazom {
 	 /**
      * Staticko privatno polje koje cuva jedinstvenu instancu klase KonekcijaSaBazom

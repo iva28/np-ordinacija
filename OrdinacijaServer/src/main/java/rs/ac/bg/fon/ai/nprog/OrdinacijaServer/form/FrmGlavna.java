@@ -319,7 +319,7 @@ public class FrmGlavna extends javax.swing.JFrame {
 	/**
 	 * Postavlja dugme za pokretanje serverskog soketa
 	 * 
-	 * @param btnPodesiKonekciju dugme za pokretanje serverskog soketa
+	 * @param btnStart dugme za pokretanje serverskog soketa
 	 */
 	public void setBtnStart(JButton btnStart) {
 		this.btnStart = btnStart;
@@ -328,7 +328,7 @@ public class FrmGlavna extends javax.swing.JFrame {
 	/**
 	 * Postavlja dugme za zaustavljanje serverskog soketa
 	 * 
-	 * @param btnPodesiKonekciju dugme za zaustavljanje serverskog soketa
+	 * @param btnStop dugme za zaustavljanje serverskog soketa
 	 */
 	public void setBtnStop(JButton btnStop) {
 		this.btnStop = btnStop;

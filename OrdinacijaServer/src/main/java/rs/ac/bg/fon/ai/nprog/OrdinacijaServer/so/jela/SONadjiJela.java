@@ -42,4 +42,12 @@ public class SONadjiJela extends OpstaSO {
 			throw new Exception("Mora biti Jelo!\n");
 	}
 
+	/**
+	 * Default konstruktor
+	 */
+	public SONadjiJela() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

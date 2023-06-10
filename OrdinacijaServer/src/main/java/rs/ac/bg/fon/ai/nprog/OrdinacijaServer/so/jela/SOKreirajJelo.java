@@ -45,4 +45,13 @@ public class SOKreirajJelo extends OpstaSO {
 		}
 	}
 
+	/**
+	 * Default konstruktor
+	 */
+	public SOKreirajJelo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
 }

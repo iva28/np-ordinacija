@@ -17,7 +17,7 @@ public class FrmKonfiguracijaKonekcije extends javax.swing.JDialog {
 	 * Kreira novu instancu klase FrmKonfiguracijaKonekcije
 	 * 
 	 * @param parent roditeljska forma
-	 * @param model modalnost dialoga
+	 * @param modal modalnost dialoga
 	 */
 	public FrmKonfiguracijaKonekcije(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);

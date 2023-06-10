@@ -17,29 +17,37 @@ public class SOKreirajPacijenta extends OpstaSO {
 	/**
 	 * Atribut koji predstavlja da li je uspesno kreiran pacijent
 	 */
-    private boolean uspeh;
-    /**
+	private boolean uspeh;
+
+	/**
 	 * Vraca uspeh izvrsenja operacije kreiranja
 	 * 
 	 * @return true-uspeh, false inace
 	 */
-    public boolean isUspeh() {
-        return uspeh;
-    }
+	public boolean isUspeh() {
+		return uspeh;
+	}
 
-    @Override
-    protected void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception {
-          Long signal = db.dodaj(obj);
-          if (signal >  0)
-              uspeh = true;
-    }
+	@Override
+	protected void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception {
+		Long signal = db.dodaj(obj);
+		if (signal > 0)
+			uspeh = true;
+	}
 
+	@Override
+	protected void validiraj(OpstaDomenskaKlasa obj) throws Exception {
+		if (obj == null || !(obj instanceof Pacijent)) {
+			throw new Exception("Mora biti Pacijent!\n");
+		}
+	}
 
-@Override
-protected void validiraj(OpstaDomenskaKlasa obj) throws Exception {
-        if (obj == null || !(obj instanceof Pacijent)) {
-            throw new Exception("Mora biti Pacijent!\n");
-        }
-    }
+	/**
+	 * Default konstruktor
+	 */
+	public SOKreirajPacijenta() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }

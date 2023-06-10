@@ -41,4 +41,12 @@ public class SOUcitajKuvare extends OpstaSO {
 			throw new Exception("Mora biti Kuvar!\n");
 	}
 
+	/**
+	 * Default konstruktor
+	 */
+	public SOUcitajKuvare() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

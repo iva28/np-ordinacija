@@ -42,4 +42,12 @@ public class SOUcitajListuNutricionista extends OpstaSO {
 		}
 	}
 
+	/**
+	 * Default konstruktor
+	 */
+	public SOUcitajListuNutricionista() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

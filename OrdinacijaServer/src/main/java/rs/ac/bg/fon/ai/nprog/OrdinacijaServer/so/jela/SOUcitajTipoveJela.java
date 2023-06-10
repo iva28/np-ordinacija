@@ -16,6 +16,7 @@ import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.TipJela;
  *
  * @author Iva Stanisic
  */
+@SuppressWarnings("comment")
 public class SOUcitajTipoveJela extends OpstaSO {
 	/**
 	 * Predstavlja listu tipova jela (vegeterijansko, sa mesom..)
@@ -41,5 +42,13 @@ public class SOUcitajTipoveJela extends OpstaSO {
 		if (obj == null || !(obj instanceof TipJela))
 			throw new Exception("Mora biti TipJela!\n");
 	}
+	/**
+	 * Default konstruktor
+	 */
+	public SOUcitajTipoveJela() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	
 }

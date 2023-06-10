@@ -41,18 +41,31 @@ public abstract class OpstaSO {
 			KonekcijaSaBazom.getInstanca().zatvoriKonekciju();
 		}
 	}
-	 /**
-     * Apstraktna metoda koja predstavlja specificnu operaciju koja se izvrsava nad objektom domenske klase
-     *
-     * @param obj Objekat domenske klase nad kojim se vrsi operacija
-	 * @throws Exception U slucaju da dodje do greske prilikom izvrsavanja operacije
-     */
-	protected abstract void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception;
+
 	/**
-     * Apstraktna metoda koja vrsi validaciju objekta domenske klase pre izvrsavanja operacije
-     *
-     * @param obj Objekat domenske klase koji se validira
+	 * Apstraktna metoda koja predstavlja specificnu operaciju koja se izvrsava nad
+	 * objektom domenske klase
+	 *
+	 * @param obj Objekat domenske klase nad kojim se vrsi operacija
 	 * @throws Exception U slucaju da dodje do greske prilikom izvrsavanja operacije
-     */
+	 */
+	protected abstract void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception;
+
+	/**
+	 * Apstraktna metoda koja vrsi validaciju objekta domenske klase pre izvrsavanja
+	 * operacije
+	 *
+	 * @param obj Objekat domenske klase koji se validira
+	 * @throws Exception U slucaju da dodje do greske prilikom izvrsavanja operacije
+	 */
 	protected abstract void validiraj(OpstaDomenskaKlasa obj) throws Exception;
+
+	/**
+	 * Default konstruktor
+	 */
+	public OpstaSO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

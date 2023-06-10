@@ -9,13 +9,22 @@ import rs.ac.bg.fon.ai.nprog.OrdinacijaServer.form.koordinator.*;
  */
 public class Main {
 	/**
-     * Metoda main je pocetna tacka aplikacije
-     * 
-     * Poziva se metoda otvoriServerFormu() klase KoordinatorS kako bi se otvorila forma servera.
-     *
-     * @param args Argumenti komandne linije koji se prosledjuju aplikaciji 
-     */
+	 * Metoda main je pocetna tacka aplikacije
+	 * 
+	 * Poziva se metoda otvoriServerFormu() klase KoordinatorS kako bi se otvorila
+	 * forma servera.
+	 *
+	 * @param args Argumenti komandne linije koji se prosledjuju aplikaciji
+	 */
 	public static void main(String[] args) {
-		 KoordinatorS.vratiInstancu().otvoriServerFormu();
+		KoordinatorS.vratiInstancu().otvoriServerFormu();
+	}
+
+	/**
+	 * Default konstruktor
+	 */
+	public Main() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 }

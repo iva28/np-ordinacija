@@ -9,13 +9,24 @@ import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.PlanIshrane;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.StavkaPlanaIshrane;
 
 /**
+ * Predstavlja specificnu operaciju za pretragu planova ishrana
+ * 
+ * Nasledjuje apstraktnu klasu OpstaSO i implementira apstraktne metode iz te
+ * klase. Ova klasa definise logiku za validaciju i izvrsavanje operacije
+ * nalazenja planova ishrana.
  *
- * @author Iva
+ * @author Iva Stanisic
  */
 public class SONadjiPlanoveIshrana extends OpstaSO {
-
+	/**
+	 * Predstavlja listu nadjenih planova ishrana
+	 */
     private List<OpstaDomenskaKlasa> lista;
-
+    /**
+	 * Vraca listu nadjenih planova ishrana
+	 * 
+	 * @return lista planova ishrana
+	 */
     public List<OpstaDomenskaKlasa> vratiListu() {
         return lista;
     }
@@ -34,7 +45,14 @@ public class SONadjiPlanoveIshrana extends OpstaSO {
         }
     }
 
-    @Override
+    /**
+     * Default konstruktor
+     */
+    public SONadjiPlanoveIshrana() {
+		super();
+	}
+
+	@Override
     protected void validiraj(OpstaDomenskaKlasa obj) throws Exception {
         if (obj == null || !(obj instanceof PlanIshrane)) {
             throw new Exception("Mora biti Plan Ishrane!\n");

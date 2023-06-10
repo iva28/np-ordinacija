@@ -39,4 +39,12 @@ public class SOObrisiPacijenta extends OpstaSO {
 			throw new Exception("Mora biti Pacijent!\n");
 	}
 
+	/**
+	 * Default konstruktor
+	 */
+	public SOObrisiPacijenta() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

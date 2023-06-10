@@ -42,4 +42,12 @@ public class SOUcitajListuPacijenata extends OpstaSO {
 		return lista;
 	}
 
+	/**
+	 * Default konstruktor
+	 */
+	public SOUcitajListuPacijenata() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

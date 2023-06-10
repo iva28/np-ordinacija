@@ -41,5 +41,14 @@ public class SOUcitajListuJela extends OpstaSO {
 			throw new Exception("Mora biti Jelo!\n");
 		}
 	}
+	
+	/**
+	 * Default konstruktor
+	 */
+	public SOUcitajListuJela() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	
 }
