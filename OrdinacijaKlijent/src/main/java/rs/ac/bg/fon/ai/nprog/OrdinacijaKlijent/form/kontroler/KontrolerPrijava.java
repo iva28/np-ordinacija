@@ -65,7 +65,7 @@ public class KontrolerPrijava {
 					String username = frmPrijava.getTxtKorisnickoIme().getText().trim();
 					String password = String.valueOf(frmPrijava.getTxtLozinka().getPassword());
 					validiraj(username, password);
-
+					
 					Nutricionista n = Komunikacija.vratiInstancu().login(username, password);
 					if (n == null) {
 						JOptionPane.showMessageDialog(frmPrijava,
@@ -84,6 +84,7 @@ public class KontrolerPrijava {
 					Koordinator.vratiInstancu().dodajParametar(Konstante.NUTRICIONISTA, n);
 					Koordinator.vratiInstancu().otvoriGlavnuFormu();
 				} catch (Exception ex) {
+					ex.printStackTrace();
 					System.err.println("Greška u formi za prijavu " + ex.getMessage());
 					JOptionPane.showMessageDialog(frmPrijava, ex.getMessage(), "GREŠKA", JOptionPane.ERROR_MESSAGE);
 				}
