@@ -122,6 +122,10 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param rb redni broj stavke
 	 */
 	public void setRb(Long rb) {
+		if (rb == null) 
+			throw new NullPointerException("Id ne sme biti null");
+		if (rb < 0)
+			throw new IllegalArgumentException("Id ne sme biti manji od nule");
 		this.rb = rb;
 	}
 
