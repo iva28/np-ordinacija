@@ -87,6 +87,10 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param nutricionistaId ID nutricioniste
  */
 	public void setNutricionistaId(Long nutricionistaId) {
+		if (nutricionistaId == null)
+			throw new NullPointerException("Id ne sme biti null");
+		if (nutricionistaId < 0)
+			throw new IllegalArgumentException("Id ne sme biti manji od 0");
 		this.nutricionistaId = nutricionistaId;
 	}
 /**

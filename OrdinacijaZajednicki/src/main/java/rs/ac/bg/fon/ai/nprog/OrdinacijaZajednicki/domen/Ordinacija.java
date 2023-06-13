@@ -102,6 +102,10 @@ public class Ordinacija extends OpstaDomenskaKlasa {
 	 * @param ordinacijaId ID ordinacije
 	 */
 	public void setOrdinacijaId(Long ordinacijaId) {
+		if (ordinacijaId == null)
+			throw new NullPointerException("Id ne sme biti null");
+		if (ordinacijaId < 0)
+			throw new IllegalArgumentException("Id ne sme biti manji od 0");
 		this.ordinacijaId = ordinacijaId;
 	}
 
