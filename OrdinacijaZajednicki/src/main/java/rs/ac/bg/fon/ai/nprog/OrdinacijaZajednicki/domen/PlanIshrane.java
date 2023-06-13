@@ -183,7 +183,11 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param planIshraneId ID plana
 	 */
 	public void setPlanIshraneId(Long planIshraneId) {
-		this.planIshraneId = planIshraneId;
+		if (planIshraneId == null)
+			throw new NullPointerException("Id ne sme biti null");
+		if (planIshraneId < 0)
+			throw new IllegalArgumentException("Id ne sme biti manji od nula");
+			this.planIshraneId = planIshraneId;
 	}
 
 	/**
@@ -254,6 +258,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 
 	/**
 	 * Racuna hash code na osnovu ID plana ishrane
+	 * 
 	 * @return hash code na osnovu planIshraneId
 	 */
 	@Override
@@ -262,12 +267,14 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 		hash = 97 * hash + Objects.hashCode(this.planIshraneId);
 		return hash;
 	}
-/**
- * Poredi dva plana na osnovu datuma, pacijenta i nutricioniste
- * 
- * @param obj drugi plan ishrane - sa kojim se poredi
- * @return true ako planovi imaju isti datum, pacijenta i nutricionistu. False u suprotnom.
- */
+
+	/**
+	 * Poredi dva plana na osnovu datuma, pacijenta i nutricioniste
+	 * 
+	 * @param obj drugi plan ishrane - sa kojim se poredi
+	 * @return true ako planovi imaju isti datum, pacijenta i nutricionistu. False u
+	 *         suprotnom.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

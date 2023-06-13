@@ -153,6 +153,10 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pacijentId ID pacijenta
 	 */
 	public void setPacijentId(Long pacijentId) {
+		if (pacijentId == null)
+			throw new NullPointerException("Id ne sme biti null");
+		if (pacijentId < 0)
+			throw new IllegalArgumentException("Id ne sme biti manji od 0");
 		this.pacijentId = pacijentId;
 	}
 

@@ -65,6 +65,10 @@ public class TipJela extends OpstaDomenskaKlasa {
 	 * @param tipId tip jela ID
 	 */
 	public void setTipId(Long tipId) {
+		if (tipId == null)
+			throw new NullPointerException("Ne moze id biti null");
+		if (tipId < 0)
+			throw new IllegalArgumentException("ID Ne sme biti manji od 0");
 		this.tipId = tipId;
 	}
 

@@ -127,6 +127,10 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param jeloId ID jela
 	 */
 	public void setJeloId(Long jeloId) {
+		if (jeloId == null)
+			throw new NullPointerException();
+		if (jeloId < 0)
+			throw new IllegalArgumentException("Id ne sme biti manji od 0");
 		this.jeloId = jeloId;
 	}
 
