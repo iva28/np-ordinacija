@@ -58,7 +58,7 @@ public class KonekcijaSaBazom {
 					String password = jsonObject.get("password").getAsString();
 					konekcija = DriverManager.getConnection(url, username, password);
 					konekcija.setAutoCommit(false);
-					System.out.println("Otvorena konekcija..");
+					//System.out.println("Otvorena konekcija..");
 				} catch (IOException e) {
 					System.err.println("Greška pri čitanju fajla: " + e.getMessage());
 				}
@@ -77,7 +77,7 @@ public class KonekcijaSaBazom {
 	 */
 	public void zatvoriKonekciju() throws Exception {
 		konekcija.close();
-		System.out.println("Zatvorena konekcija..");
+		//System.out.println("Zatvorena konekcija..");
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class KonekcijaSaBazom {
 	 */
 	public void potvrdiTransakciju() throws Exception {
 		konekcija.commit();
-		System.out.println("Transakcija je potvrđena :)");
+		//System.out.println("Transakcija je potvrđena :)");
 	}
 	/**
 	 * Ponistava transakciju nad bazom podataka (radi rollback transakcije)
@@ -96,6 +96,6 @@ public class KonekcijaSaBazom {
 	 */
 	public void ponistiTransakciju() throws Exception {
 		konekcija.rollback();
-		System.err.println("Transakcija je poništena :(");
+		//System.err.println("Transakcija je poništena :(");
 	}
 }

@@ -52,6 +52,7 @@ public class SOKreirajJelo extends OpstaSO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	
 }

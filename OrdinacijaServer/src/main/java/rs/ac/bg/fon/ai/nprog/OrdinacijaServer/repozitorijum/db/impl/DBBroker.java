@@ -33,7 +33,7 @@ public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 			}
 			return id;
 		} catch (Exception e) {
-			System.err.println("Ne može da sačuva: " + param.imeTabele());
+			//System.err.println("Ne može da sačuva: " + param.imeTabele());
 			throw e;
 		}
 	}
