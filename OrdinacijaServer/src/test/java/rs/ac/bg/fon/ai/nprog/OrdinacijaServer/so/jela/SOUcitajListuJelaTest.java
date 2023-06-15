@@ -26,7 +26,7 @@ class SOUcitajListuJelaTest {
 
 	@Test
 	void testizvrsiSpecificnuOperaciju() throws Exception {
-		ucitajJela.izvrsiSpecificnuOperaciju(new Jelo());
+		ucitajJela.izvrsiOperaciju(new Jelo());
 		assertNotNull(ucitajJela.vratiListu());
 		assertTrue(ucitajJela.vratiListu().size() > 0);
 		for (OpstaDomenskaKlasa j : ucitajJela.vratiListu()) {

@@ -12,7 +12,7 @@ import java.util.List;
  * @author Iva Stanisic
  *
  */
-public abstract class OpstaDomenskaKlasa {
+public abstract class OpstaDomenskaKlasa implements Serializable{
 	/**
 	 * Podrazumevani konstruktor
 	 */

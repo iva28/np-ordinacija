@@ -75,7 +75,7 @@ public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 			st.close();
 			return true;
 		} catch (Exception e) {
-			System.err.println("Ne može da obriše: " + param.imeTabele());
+			//System.err.println("Ne može da obriše: " + param.imeTabele());
 			throw e;
 		}
 	}
