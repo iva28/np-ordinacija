@@ -31,6 +31,8 @@ public class SOIzmeniPacijenta extends OpstaSO {
 	@Override
 	protected void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception {
 		uspeh = db.izmena(obj);
+		if (uspeh == false)
+			throw new Exception("Ne moze da se izmeni pacijent");
 	}
 
 	@Override

@@ -1,6 +1,5 @@
 package rs.ac.bg.fon.ai.nprog.OrdinacijaServer.so.jela;
 
-import java.util.List;
 
 import rs.ac.bg.fon.ai.nprog.OrdinacijaServer.so.OpstaSO;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Jelo;
@@ -52,6 +51,7 @@ public class SOKreirajJelo extends OpstaSO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	
 }

@@ -37,6 +37,7 @@ public abstract class OpstaSO {
 			KonekcijaSaBazom.getInstanca().potvrdiTransakciju();
 		} catch (Exception e) {
 			KonekcijaSaBazom.getInstanca().ponistiTransakciju();
+			throw e;
 		} finally {
 			KonekcijaSaBazom.getInstanca().zatvoriKonekciju();
 		}
