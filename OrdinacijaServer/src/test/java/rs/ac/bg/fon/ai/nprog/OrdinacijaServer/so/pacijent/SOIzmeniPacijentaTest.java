@@ -7,7 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Kuvar;
+import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.OpstaDomenskaKlasa;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Pacijent;
+import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.PlanIshrane;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Pol;
 
 class SOIzmeniPacijentaTest {
@@ -16,6 +18,7 @@ class SOIzmeniPacijentaTest {
 	SOKreirajPacijenta kreirajPacijenta;
 	SOUcitajPacijenta ucitajPacijenta;
 	SOObrisiPacijenta obrisiPacijenta;
+	SOUcitajListuPacijenata sviPacijenti;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -23,6 +26,7 @@ class SOIzmeniPacijentaTest {
 		kreirajPacijenta = new SOKreirajPacijenta();
 		ucitajPacijenta = new SOUcitajPacijenta();
 		obrisiPacijenta = new SOObrisiPacijenta();
+		sviPacijenti = new SOUcitajListuPacijenata();
 	}
 
 	@AfterEach
@@ -31,16 +35,23 @@ class SOIzmeniPacijentaTest {
 		kreirajPacijenta = null;
 		ucitajPacijenta = null;
 		obrisiPacijenta = null;
+		sviPacijenti = null;
 	}
 
 	@Test
 	void testizvrsiSpecificnuOperacijuIzmeniPacijenta() throws Exception {
+		sviPacijenti.izvrsiOperaciju(new Pacijent());
+		assertNotNull(sviPacijenti.getLista());
+		assertTrue(sviPacijenti.getLista().size() > 0);
 		Pacijent novi = new Pacijent();
 		novi.setIme("Mirna");
 		novi.setPrezime("Krkin");
 		novi.setEmail("mirko@gmail.com");
 		novi.setPol(Pol.ženski);
 		novi.setTelefon("99999999");
+		for (OpstaDomenskaKlasa p : sviPacijenti.getLista()){
+			assertFalse(novi.equals((Pacijent) p));
+		}
 		kreirajPacijenta.izvrsiOperaciju(novi);
 		assertTrue(kreirajPacijenta.isUspeh() == true);
 		ucitajPacijenta.izvrsiOperaciju(novi);
@@ -56,14 +67,23 @@ class SOIzmeniPacijentaTest {
 		assertEquals(true, obrisiPacijenta.isUspeh());
 	}
 	
+	@Test
+	void testizvrsiSpecificnuOperacijuIzmeniPacijentaNema() throws Exception {
+		sviPacijenti.izvrsiOperaciju(new Pacijent());
+		assertNotNull(sviPacijenti.getLista());
+		assertTrue(sviPacijenti.getLista().size() > 0);
+		int brojPacijenata = sviPacijenti.getLista().size();
+		Long poslednjiId = ((Pacijent)sviPacijenti.getLista().get(brojPacijenata-1)).getPacijentId();
+		assertThrows(Exception.class,() -> izmeniPacijenta.izvrsiOperaciju(new Pacijent(poslednjiId+1)));
+	}
 	
 	@Test
-	void testUcitajPacijentaNullObjekat() {
+	void testIzmeniPacijentaNullObjekat() {
 		assertThrows(Exception.class, () -> izmeniPacijenta.izvrsiOperaciju(null));
 	}
 
 	@Test
-	void testUcitajPacijentaLosaKlasa() {
+	void testIzmeniPacijentaLosaKlasa() {
 		assertThrows(Exception.class, () -> izmeniPacijenta.izvrsiOperaciju(new Kuvar()));
 	}
 }

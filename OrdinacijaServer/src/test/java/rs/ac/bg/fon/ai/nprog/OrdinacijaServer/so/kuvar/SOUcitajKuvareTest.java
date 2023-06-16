@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Jelo;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Kuvar;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.OpstaDomenskaKlasa;
 
@@ -35,5 +36,16 @@ class SOUcitajKuvareTest {
 			assertNotNull(((Kuvar) k).getAdresa());
 			assertNotNull(((Kuvar) k).getTelefon());
 		}
+	}
+	
+
+	@Test
+	void testUcitajKuvareNullObjekat() {
+		assertThrows(Exception.class, () -> ucitajKuvare.izvrsiOperaciju(null));
+	}
+
+	@Test
+	void testUcitajKuvareLosaKlasa() {
+		assertThrows(Exception.class, () -> ucitajKuvare.izvrsiOperaciju(new Jelo()));
 	}
 }

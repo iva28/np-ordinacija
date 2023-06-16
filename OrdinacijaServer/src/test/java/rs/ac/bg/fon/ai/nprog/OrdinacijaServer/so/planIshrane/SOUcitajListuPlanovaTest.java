@@ -2,16 +2,11 @@ package rs.ac.bg.fon.ai.nprog.OrdinacijaServer.so.planIshrane;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Kuvar;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.OpstaDomenskaKlasa;
-import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Pacijent;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.PlanIshrane;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.StavkaPlanaIshrane;
 

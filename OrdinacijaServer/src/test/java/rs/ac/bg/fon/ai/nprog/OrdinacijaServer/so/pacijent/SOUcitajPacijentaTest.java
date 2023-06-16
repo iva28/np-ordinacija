@@ -2,34 +2,35 @@ package rs.ac.bg.fon.ai.nprog.OrdinacijaServer.so.pacijent;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.math.BigDecimal;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Jelo;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Kuvar;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.Pacijent;
-import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.TipJela;
 
 class SOUcitajPacijentaTest {
 	SOUcitajPacijenta ucitajPacijenta;
+	SOUcitajListuPacijenata sviPacijenti;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		ucitajPacijenta = new SOUcitajPacijenta();
+		sviPacijenti = new SOUcitajListuPacijenata();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		ucitajPacijenta = null;
+		sviPacijenti = null;
 	}
 
 	@Test
 	void testizvrsiSpecificnuOperacijuUcitajPacijenta() throws Exception {
-		Pacijent pacijent = new Pacijent();
-		pacijent.setEmail("maja@gmail.com");
+		sviPacijenti.izvrsiOperaciju(new Pacijent());
+		assertNotNull(sviPacijenti.getLista());
+		assertTrue(sviPacijenti.getLista().size() > 0);
+		Pacijent pacijent = ((Pacijent)sviPacijenti.getLista().get(0));
 		ucitajPacijenta.izvrsiOperaciju(pacijent);
 		assertNotNull(ucitajPacijenta.getPacijent());
 		assertEquals(pacijent,ucitajPacijenta.getPacijent());

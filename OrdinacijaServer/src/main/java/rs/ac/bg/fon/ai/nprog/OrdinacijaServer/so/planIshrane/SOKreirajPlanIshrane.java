@@ -1,5 +1,7 @@
 package rs.ac.bg.fon.ai.nprog.OrdinacijaServer.so.planIshrane;
 
+import java.util.List;
+
 import rs.ac.bg.fon.ai.nprog.OrdinacijaServer.so.OpstaSO;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.OpstaDomenskaKlasa;
 import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.PlanIshrane;
@@ -31,6 +33,12 @@ public class SOKreirajPlanIshrane extends OpstaSO {
 
 	@Override
 	protected void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception {
+		List<OpstaDomenskaKlasa>  svi = db.svi(obj);
+		for (OpstaDomenskaKlasa plan : svi) {
+			PlanIshrane p = (PlanIshrane) plan;
+			if (((PlanIshrane)obj).getPlanIshraneId() == p.getPlanIshraneId())
+				throw new Exception("Vec postoji plan");
+		}
 		Long id = db.dodaj(obj);
 		if (id == -1) {
 			uspeh = false;

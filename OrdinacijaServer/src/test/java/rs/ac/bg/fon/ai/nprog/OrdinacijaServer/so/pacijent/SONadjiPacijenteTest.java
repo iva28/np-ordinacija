@@ -49,12 +49,12 @@ class SONadjiPacijenteTest {
 	}
 
 	@Test
-	void testUcitajJelaNullObjekat() {
+	void testNadjiPacijenteNullObjekat() {
 		assertThrows(Exception.class, () -> nadjiPacijente.izvrsiOperaciju(null));
 	}
 
 	@Test
-	void testUcitajJelaLosaKlasa() {
+	void testNadjiPacijenteLosaKlasa() {
 		assertThrows(Exception.class, () -> nadjiPacijente.izvrsiOperaciju(new Kuvar()));
 	}
 

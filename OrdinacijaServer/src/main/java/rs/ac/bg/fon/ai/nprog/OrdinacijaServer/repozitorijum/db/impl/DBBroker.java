@@ -54,7 +54,7 @@ public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 			st.close();
 			return result;
 		} catch (Exception e) {
-			System.err.println("Ne može da nađe " + param.imeTabele());
+			//System.err.println("Ne može da nađe " + param.imeTabele());
 			throw e;
 		}
 	}
@@ -70,10 +70,12 @@ public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 			} else {
 				sql = "DELETE FROM " + param.imeTabele() + " WHERE " + param.uslovZaBrisanjeVise();
 			}
+			boolean signal = true;
 			Statement st = conn.createStatement();
-			st.executeUpdate(sql);
+			int br = st.executeUpdate(sql);
+			if (br == 0) signal = false;
 			st.close();
-			return true;
+			return signal;
 		} catch (Exception e) {
 			//System.err.println("Ne može da obriše: " + param.imeTabele());
 			throw e;
@@ -92,10 +94,12 @@ public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 				sql = "UPDATE " + param.imeTabele() + " SET " + param.uslovZaIzmenu() + " WHERE "
 						+ param.vratiSlozenPrimarniKljuc();
 			}
+			boolean signal = true;
 			Statement st = conn.createStatement();
-			st.executeUpdate(sql);
+			int br = st.executeUpdate(sql);
+			if (br == 0) signal = false;
 			st.close();
-			return true;
+			return signal;
 		} catch (Exception e) {
 			System.err.println("Ne može da ažurira: " + param.imeTabele());
 			throw e;
@@ -131,7 +135,7 @@ public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 			st.close();
 			return list;
 		} catch (Exception e) {
-			System.err.println("Ne može da nađe: " + param.imeTabele());
+			//System.err.println("Ne može da nađe: " + param.imeTabele());
 			throw e;
 		}
 	}
