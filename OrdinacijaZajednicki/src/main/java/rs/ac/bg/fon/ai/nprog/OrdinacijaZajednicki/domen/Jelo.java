@@ -100,6 +100,7 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @return cena jela
 	 */
 	public BigDecimal getCena() {
+		System.out.println("proba");
 		return cena;
 	}
 
