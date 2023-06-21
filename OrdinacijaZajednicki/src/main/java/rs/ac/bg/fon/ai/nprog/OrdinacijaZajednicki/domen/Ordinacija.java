@@ -42,6 +42,9 @@ public class Ordinacija extends OpstaDomenskaKlasa {
 	 * @param adresa       adresa ordinacije
 	 */
 	public Ordinacija(Long ordinacijaId, String naziv, String adresa) {
+//		this.ordinacijaId = ordinacijaId;
+//		this.naziv = naziv;
+//		this.adresa = adresa;
 		setOrdinacijaId(ordinacijaId);
 		setNaziv(naziv);
 		setAdresa(adresa);
@@ -54,6 +57,7 @@ public class Ordinacija extends OpstaDomenskaKlasa {
 	 * @param ordinacijaId ID ordinacije
 	 */
 	public Ordinacija(Long ordinacijaId) {
+//		this.ordinacijaId = ordinacijaId;
 		setOrdinacijaId(ordinacijaId);
 	}
 
@@ -65,6 +69,8 @@ public class Ordinacija extends OpstaDomenskaKlasa {
 	 * @param naziv        naziv ordinacije
 	 */
 	public Ordinacija(Long ordinacijaId, String naziv) {
+//		this.ordinacijaId = ordinacijaId;
+//		this.naziv = naziv;
 		setOrdinacijaId(ordinacijaId);
 		setNaziv(naziv);
 	}

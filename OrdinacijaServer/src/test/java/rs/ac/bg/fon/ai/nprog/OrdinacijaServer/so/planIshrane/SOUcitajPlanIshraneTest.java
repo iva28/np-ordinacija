@@ -30,9 +30,8 @@ class SOUcitajPlanIshraneTest {
 
 	@Test
 	void testizvrsiSpecificnuOperacijuUcitajPlanIshrane() throws Exception {
-		sviPlanovi.izvrsiSpecificnuOperaciju(new PlanIshrane());
+		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
 		assertNotNull(sviPlanovi.vratiListu());
-		System.out.println("Lista u ucitaj plan ishrane test:"+sviPlanovi.vratiListu());
 		assertTrue(sviPlanovi.vratiListu().size() > 0);
 		PlanIshrane plan = (PlanIshrane) sviPlanovi.vratiListu().get(0);
 		assertNotNull(plan);

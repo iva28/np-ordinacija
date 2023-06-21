@@ -102,7 +102,6 @@ class SOIzmeniPlanIshraneTest {
 		assertTrue(kreirajNovi.isUspeh());
 		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
 		assertNotNull(sviPlanovi.vratiListu());
-		
 		assertTrue(sviPlanovi.vratiListu().size() > 0);
 		int poslednji = sviPlanovi.vratiListu().size() - 1;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");

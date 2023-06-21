@@ -52,6 +52,11 @@ public class Kuvar extends OpstaDomenskaKlasa {
 	 * @param telefon telefon kuvara
 	 */
 	public Kuvar(Long kuvarId, String ime, String prezime, String adresa, String telefon) {
+//		this.kuvarId = kuvarId;
+//		this.ime = ime;
+//		this.prezime = prezime;
+//		this.adresa = adresa;
+//		this.telefon = telefon;
 		setKuvarId(kuvarId);
 		setIme(ime);
 		setPrezime(prezime);
@@ -68,6 +73,9 @@ public class Kuvar extends OpstaDomenskaKlasa {
 	 * @param prezime prezime kuvara
 	 */
 	public Kuvar(Long kuvarId, String ime, String prezime) {
+//		this.kuvarId = kuvarId;
+//		this.ime = ime;
+//		this.prezime = prezime;
 		setKuvarId(kuvarId);
 		setIme(ime);
 		setPrezime(prezime);
@@ -171,8 +179,8 @@ public class Kuvar extends OpstaDomenskaKlasa {
 			throw new NullPointerException();
 		if (telefon.length() < 7)
 			throw new IllegalArgumentException();
-//		if (!telefon.matches("[0-9]+"))
-//			throw new IllegalArgumentException("Samo brojevi");
+		if (!telefon.matches("[0-9]+"))
+			throw new IllegalArgumentException("Samo brojevi");
 		this.telefon = telefon;
 	}
 

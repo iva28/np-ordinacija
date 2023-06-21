@@ -58,6 +58,12 @@ public class Nutricionista extends OpstaDomenskaKlasa {
 	 */
 	public Nutricionista(Long nutricionistaId, String ime, String prezime, String username, String password,
 			Ordinacija ordinacija) {
+//		this.nutricionistaId = nutricionistaId;
+//		this.ime = ime;
+//		this.prezime = prezime;
+//		this.username = username;
+//		this.password = password;
+//		this.ordinacija = ordinacija;
 		setNutricionistaId(nutricionistaId);
 		setIme(ime);
 		setPrezime(prezime);
@@ -71,6 +77,7 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param nutricionistaId ID nutricioniste
  */
 	public Nutricionista(Long nutricionistaId) {
+//		this.nutricionistaId = nutricionistaId;
 		setNutricionistaId(nutricionistaId);
 	}
 /**

@@ -60,10 +60,10 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param stavke lista stavki na planu ishrane
 	 */
 	public void setStavke(List<StavkaPlanaIshrane> stavke) {
-//		if (stavke == null)
-//			throw new NullPointerException();
-//		if (stavke.size() == 0)
-//			throw new IllegalArgumentException("Plan mora imati stavke");
+		if (stavke == null)
+			throw new NullPointerException();
+		if (stavke.size() == 0)
+			throw new IllegalArgumentException("Plan mora imati stavke");
 		this.stavke = stavke;
 	}
 
@@ -71,8 +71,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * Konstruise novu instancu klase i postavlja atribute na default vrednosti
 	 */
 	public PlanIshrane() {
-//		stavke = new ArrayList<>();
-		setStavke(new ArrayList<>());
+		stavke = new ArrayList<>();
 	}
 
 	/**
@@ -88,6 +87,13 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 */
 	public PlanIshrane(Long planIshraneId, Date datum, BigDecimal cena, int brojDana, Pacijent pacijent,
 			Nutricionista nutricionista, List<StavkaPlanaIshrane> stavke) {
+//		this.planIshraneId = planIshraneId;
+//		this.datum = datum;
+//		this.cena = cena;
+//		this.brojDana = brojDana;
+//		this.pacijent = pacijent;
+//		this.nutricionista = nutricionista;
+//		this.stavke = stavke;
 		setPlanIshraneId(planIshraneId);
 		setDatum(datum);
 		setCena(cena);
@@ -110,6 +116,12 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 */
 	public PlanIshrane(Long planIshraneId, Date datum, BigDecimal cena, int brojDana, Pacijent pacijent,
 			Nutricionista nutricionista) {
+//		this.planIshraneId = planIshraneId;
+//		this.datum = datum;
+//		this.cena = cena;
+//		this.brojDana = brojDana;
+//		this.pacijent = pacijent;
+//		this.nutricionista = nutricionista;
 		setPlanIshraneId(planIshraneId);
 		setDatum(datum);
 		setCena(cena);
@@ -125,6 +137,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param planIshraneId ID plana
 	 */
 	public PlanIshrane(Long planIshraneId) {
+//		this.planIshraneId = planIshraneId;
 		setPlanIshraneId(planIshraneId);
 	}
 
@@ -360,7 +373,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 				String imeP = rs.getString("p.ime");
 				String prezimeP = rs.getString("p.prezime");
 				String emailP = rs.getString("p.email");
-				String telefonP = rs.getString("p.telefon");
+
 				String imeN = rs.getString("n.ime");
 				String prezimeN = rs.getString("n.prezime");
 
@@ -369,26 +382,17 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 				p.setIme(imeP);
 				p.setPrezime(prezimeP);
 				p.setEmail(emailP);
-				p.setTelefon(telefonP);
-				
+
 				Nutricionista n = new Nutricionista();
 				n.setNutricionistaId(nutricionistaId);
 				n.setIme(imeN);
 				n.setPrezime(prezimeN);
 
-				PlanIshrane pi = new PlanIshrane();
-				pi.setPlanIshraneId(planIshraneIdBaza);
-				pi.setDatum(datumBaza);
-				pi.setCena(cenaBaza);
-				pi.setBrojDana(brojDanaBaza);
-				pi.setPacijent(p);
-				pi.setNutricionista(n);
-				System.out.println(pi);
+				PlanIshrane pi = new PlanIshrane(planIshraneIdBaza, datumBaza, cenaBaza, brojDanaBaza, p, n);
 				planovi.add(pi);
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
-			//System.err.println("Greška u konvertovanju ResultSet-a u Plan Ishrane klasi! " + ex.getMessage());
+			System.err.println("Greška u konvertovanju ResultSet-a u Plan Ishrane klasi! " + ex.getMessage());
 		}
 		return planovi;
 	}
