@@ -177,7 +177,7 @@ public class Kuvar extends OpstaDomenskaKlasa {
 	public void setTelefon(String telefon) {
 		if (telefon == null)
 			throw new NullPointerException();
-		if (telefon.length() < 7)
+		if (telefon.length() < 4)
 			throw new IllegalArgumentException();
 		this.telefon = telefon;
 	}

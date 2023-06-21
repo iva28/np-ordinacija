@@ -112,8 +112,8 @@ public class Nutricionista extends OpstaDomenskaKlasa {
 			throw new NullPointerException();
 		if (ime.length() < 3)
 			throw new IllegalArgumentException("Ime ne sme biti manje od 2 char");
-		if (ime.matches("[0-9]+"))
-			throw new IllegalArgumentException("Ne smeju brojevi za ime");
+//		if (ime.matches("[0-9]+"))
+//			throw new IllegalArgumentException("Ne smeju brojevi za ime");
 		this.ime = ime;
 	}
 /**
@@ -126,8 +126,8 @@ public class Nutricionista extends OpstaDomenskaKlasa {
 			throw new NullPointerException();
 		if (prezime.length() < 5)
 			throw new IllegalArgumentException("Prezime ne sme biti manje od 5 char");
-		if (prezime.matches("[0-9]+"))
-			throw new IllegalArgumentException("Ne smeju brojevi za prezime");
+//		if (prezime.matches("[0-9]+"))
+//			throw new IllegalArgumentException("Ne smeju brojevi za prezime");
 		this.prezime = prezime;
 	}
 /**

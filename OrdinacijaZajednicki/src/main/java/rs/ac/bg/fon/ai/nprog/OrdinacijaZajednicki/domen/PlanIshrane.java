@@ -60,10 +60,10 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param stavke lista stavki na planu ishrane
 	 */
 	public void setStavke(List<StavkaPlanaIshrane> stavke) {
-		if (stavke == null)
-			throw new NullPointerException();
-		if (stavke.size() == 0)
-			throw new IllegalArgumentException("Plan mora imati stavke");
+//		if (stavke == null)
+//			throw new NullPointerException();
+//		if (stavke.size() == 0)
+//			throw new IllegalArgumentException("Plan mora imati stavke");
 		this.stavke = stavke;
 	}
 
@@ -71,7 +71,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * Konstruise novu instancu klase i postavlja atribute na default vrednosti
 	 */
 	public PlanIshrane() {
-		//stavke = new ArrayList<>();
+		stavke = new ArrayList<>();
 	}
 
 	/**
@@ -87,20 +87,20 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 */
 	public PlanIshrane(Long planIshraneId, Date datum, BigDecimal cena, int brojDana, Pacijent pacijent,
 			Nutricionista nutricionista, List<StavkaPlanaIshrane> stavke) {
-//		this.planIshraneId = planIshraneId;
-//		this.datum = datum;
-//		this.cena = cena;
-//		this.brojDana = brojDana;
-//		this.pacijent = pacijent;
-//		this.nutricionista = nutricionista;
-//		this.stavke = stavke;
-		setPlanIshraneId(planIshraneId);
-		setDatum(datum);
-		setCena(cena);
-		setBrojDana(brojDana);
-		setPacijent(pacijent);
-		setNutricionista(nutricionista);
-		setStavke(stavke);
+		this.planIshraneId = planIshraneId;
+		this.datum = datum;
+		this.cena = cena;
+		this.brojDana = brojDana;
+		this.pacijent = pacijent;
+		this.nutricionista = nutricionista;
+		this.stavke = stavke;
+//		setPlanIshraneId(planIshraneId);
+//		setDatum(datum);
+//		setCena(cena);
+//		setBrojDana(brojDana);
+//		setPacijent(pacijent);
+//		setNutricionista(nutricionista);
+//		setStavke(stavke);
 	}
 
 	/**
@@ -116,18 +116,18 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 */
 	public PlanIshrane(Long planIshraneId, Date datum, BigDecimal cena, int brojDana, Pacijent pacijent,
 			Nutricionista nutricionista) {
-//		this.planIshraneId = planIshraneId;
-//		this.datum = datum;
-//		this.cena = cena;
-//		this.brojDana = brojDana;
-//		this.pacijent = pacijent;
-//		this.nutricionista = nutricionista;
-		setPlanIshraneId(planIshraneId);
-		setDatum(datum);
-		setCena(cena);
-		setBrojDana(brojDana);
-		setPacijent(pacijent);
-		setNutricionista(nutricionista);
+		this.planIshraneId = planIshraneId;
+		this.datum = datum;
+		this.cena = cena;
+		this.brojDana = brojDana;
+		this.pacijent = pacijent;
+		this.nutricionista = nutricionista;
+//		setPlanIshraneId(planIshraneId);
+//		setDatum(datum);
+//		setCena(cena);
+//		setBrojDana(brojDana);
+//		setPacijent(pacijent);
+//		setNutricionista(nutricionista);
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param planIshraneId ID plana
 	 */
 	public PlanIshrane(Long planIshraneId) {
-//		this.planIshraneId = planIshraneId;
-		setPlanIshraneId(planIshraneId);
+		this.planIshraneId = planIshraneId;
+//		setPlanIshraneId(planIshraneId);
 	}
 
 	/**

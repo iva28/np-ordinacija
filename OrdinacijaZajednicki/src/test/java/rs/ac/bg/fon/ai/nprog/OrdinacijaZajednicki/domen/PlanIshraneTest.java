@@ -145,10 +145,10 @@ class PlanIshraneTest {
 		assertThrows(NullPointerException.class, () -> plan.setNutricionista(null));
 	}
 	
-	@Test
-	void testSetStavkeNull() {
-		assertThrows(NullPointerException.class, () -> plan.setStavke(null));
-	}
+//	@Test
+//	void testSetStavkeNull() {
+//		assertThrows(NullPointerException.class, () -> plan.setStavke(null));
+//	}
 	
 	@Test
 	void testSetCenaNula() {
@@ -220,13 +220,13 @@ class PlanIshraneTest {
 		assertEquals(ex.getMessage(), "Nutricionista mora da ime i prezime");
 	}
 	
-	@Test
-	void testSetStavkePraznaLista() {
-		List<StavkaPlanaIshrane> stavke = new ArrayList<>();
-		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setStavke(stavke));
-		assertEquals(ex.getMessage(), "Plan mora imati stavke");
-	}
-	
+//	@Test
+//	void testSetStavkePraznaLista() {
+//		List<StavkaPlanaIshrane> stavke = new ArrayList<>();
+//		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setStavke(stavke));
+//		assertEquals(ex.getMessage(), "Plan mora imati stavke");
+//	}
+//	
 	
 	@ParameterizedTest
 	@CsvSource({

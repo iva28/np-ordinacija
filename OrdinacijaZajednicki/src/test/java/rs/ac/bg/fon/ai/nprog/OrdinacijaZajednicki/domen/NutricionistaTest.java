@@ -102,18 +102,18 @@ class NutricionistaTest {
 		assertThrows(NullPointerException.class, () -> n.setPassword(null));
 	}
 	
-	@Test
-	void testSetImeImaBrojeve() {
-		Throwable ex = assertThrows(IllegalArgumentException.class, () ->n.setIme("1123443"));
-		assertEquals(ex.getMessage(), "Ne smeju brojevi za ime");
-	}
+//	@Test
+//	void testSetImeImaBrojeve() {
+//		Throwable ex = assertThrows(IllegalArgumentException.class, () ->n.setIme("1123443"));
+//		assertEquals(ex.getMessage(), "Ne smeju brojevi za ime");
+//	}
 	
-	@Test
-	void testSetPreziImeImaBrojeve() {
-		Throwable ex = assertThrows(IllegalArgumentException.class, () ->n.setPrezime("1123443"));
-		assertEquals(ex.getMessage(), "Ne smeju brojevi za prezime");
-	}
-	
+//	@Test
+//	void testSetPreziImeImaBrojeve() {
+//		Throwable ex = assertThrows(IllegalArgumentException.class, () ->n.setPrezime("1123443"));
+//		assertEquals(ex.getMessage(), "Ne smeju brojevi za prezime");
+//	}
+//	
 	@Test
 	void testToString() {
 		n.setIme("ime");

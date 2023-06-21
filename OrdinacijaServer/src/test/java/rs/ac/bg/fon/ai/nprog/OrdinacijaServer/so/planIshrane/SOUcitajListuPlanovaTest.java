@@ -17,25 +17,19 @@ import rs.ac.bg.fon.ai.nprog.OrdinacijaZajednicki.domen.StavkaPlanaIshrane;
 class SOUcitajListuPlanovaTest {
 
 	SOUcitajListuPlanova ucitajPlanove;
-	DBBroker broker;
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		ucitajPlanove = new SOUcitajListuPlanova();
-		broker = new DBBroker();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		ucitajPlanove = null;
-		broker = null;
 	}
 	
 	@Test
 	void testizvrsiSpecificnuOperaciju() throws Exception {
-//		List<OpstaDomenskaKlasa> planovi = broker.svi(new PlanIshrane());
-//		assertNotNull(planovi);
-//		System.out.println(planovi);
 		ucitajPlanove.izvrsiOperaciju(new PlanIshrane());
 		assertNotNull(ucitajPlanove.vratiListu());
 		System.out.println("Ucitani planovi: "+ucitajPlanove.vratiListu());

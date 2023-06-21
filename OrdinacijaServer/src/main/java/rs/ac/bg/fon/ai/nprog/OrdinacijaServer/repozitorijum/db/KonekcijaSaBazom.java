@@ -50,7 +50,7 @@ public class KonekcijaSaBazom {
 	public Connection otvoriKonekciju() throws Exception {
 		try {
 			if (konekcija == null || konekcija.isClosed()) {
-				try (FileReader fileReader = new FileReader("src/main/resources/konfiguracija.json")) {
+				try (FileReader fileReader = new FileReader("./src/main/resources/konfiguracija.json")) {
 					Gson gson = new Gson();
 					JsonObject jsonObject = gson.fromJson(fileReader, JsonObject.class);
 					String url = jsonObject.get("url").getAsString();
@@ -58,7 +58,7 @@ public class KonekcijaSaBazom {
 					String password = jsonObject.get("password").getAsString();
 					konekcija = DriverManager.getConnection(url, username, password);
 					konekcija.setAutoCommit(false);
-					//System.out.println("Otvorena konekcija..");
+					System.out.println("Otvorena konekcija.."+url+"\t"+username+"\t"+password);
 				} catch (IOException e) {
 					System.err.println("Greška pri čitanju fajla: " + e.getMessage());
 				}
