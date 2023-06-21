@@ -55,10 +55,6 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param jelo     jelo na koje se stavka odnosi
 	 */
 	public StavkaPlanaIshrane(Long rb, BigDecimal cena, int kolicina, Jelo jelo) {
-//		this.rb = rb;
-//		this.cena = cena;
-//		this.kolicina = kolicina;
-//		this.jelo = jelo;
 	setRb(rb);
 	setCena(cena);
 	setKolicina(kolicina);
@@ -72,7 +68,6 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param planIshrane plan ishrane na kome se stavka nalazi
 	 */
 	public StavkaPlanaIshrane(PlanIshrane planIshrane) {
-//		this.planIshrane = planIshrane;
 		setPlanIshrane(planIshrane);
 	}
 

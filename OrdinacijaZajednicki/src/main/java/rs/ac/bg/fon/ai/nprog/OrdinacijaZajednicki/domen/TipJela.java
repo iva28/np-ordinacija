@@ -31,8 +31,6 @@ public class TipJela extends OpstaDomenskaKlasa {
 	 * @param vrsta vrsta tipa jela
 	 */
 	public TipJela(Long tipId, String vrsta) {
-//		this.tipId = tipId;
-//		this.vrsta = vrsta;
 		setTipId(tipId);
 		setVrsta(vrsta);
 	}
@@ -94,23 +92,25 @@ public class TipJela extends OpstaDomenskaKlasa {
 	public String toString() {
 		return vrsta;
 	}
-/**
- * Racuna hash code na osnovu tipId
- * 
- * @return hash code na osnovu tipId
- */
+
+	/**
+	 * Racuna hash code na osnovu tipId
+	 * 
+	 * @return hash code na osnovu tipId
+	 */
 	@Override
 	public int hashCode() {
 		int hash = 5;
 		hash = 97 * hash + Objects.hashCode(this.tipId);
 		return hash;
 	}
-/**
- * Poredi dva tipa jela
- * 
- * @param obj drugi tip jela - sa kojim se poredi
- * @return true ako imaju isti tipId, false u suprotnom
- */
+
+	/**
+	 * Poredi dva tipa jela
+	 * 
+	 * @param obj drugi tip jela - sa kojim se poredi
+	 * @return true ako imaju isti tipId, false u suprotnom
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

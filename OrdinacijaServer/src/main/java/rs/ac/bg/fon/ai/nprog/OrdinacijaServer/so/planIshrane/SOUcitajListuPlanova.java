@@ -35,6 +35,7 @@ public class SOUcitajListuPlanova extends OpstaSO {
 	@Override
 	protected void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception {
 		lista = db.svi(obj);
+		System.out.println("Lista u metodi izvrsispecificnu"+lista);
 		for (OpstaDomenskaKlasa o : lista) {
 			PlanIshrane plan = (PlanIshrane) o;
 			List<OpstaDomenskaKlasa> stavkeG = db.nadji(new StavkaPlanaIshrane(plan));

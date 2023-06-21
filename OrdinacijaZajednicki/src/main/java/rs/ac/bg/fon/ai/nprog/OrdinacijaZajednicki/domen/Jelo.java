@@ -59,12 +59,6 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param kuvar    kuvar jela
 	 */
 	public Jelo(Long jeloId, TipJela tip, String naziv, BigDecimal cena, int kolicina, Kuvar kuvar) {
-//		this.jeloId = jeloId;
-//		this.tip = tip;
-//		this.naziv = naziv;
-//		this.cena = cena;
-//		this.kolicina = kolicina;
-//		this.kuvar = kuvar;
 		setJeloId(jeloId);
 		setTip(tip);
 		setNaziv(naziv);
