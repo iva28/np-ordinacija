@@ -85,8 +85,10 @@ public class KontrolerPlanIshranePrikaz {
 						return;
 					}
 					PlanIshrane planIshrane = new PlanIshrane();
-					planIshrane.setNutricionista(nutricionista);
-					planIshrane.setPacijent(pacijent);
+					if (nutricionista != null)
+						planIshrane.setNutricionista(nutricionista);
+					if (pacijent != null)
+						planIshrane.setPacijent(pacijent);
 					List<PlanIshrane> planovi = Komunikacija.vratiInstancu().nadjiPlanove(planIshrane);
 					if (planovi == null || planovi.isEmpty()) {
 						JOptionPane.showMessageDialog(frmPlanIshranePrikaz,

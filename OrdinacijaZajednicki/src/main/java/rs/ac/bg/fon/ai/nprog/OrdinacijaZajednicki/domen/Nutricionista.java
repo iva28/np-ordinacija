@@ -58,12 +58,18 @@ public class Nutricionista extends OpstaDomenskaKlasa {
 	 */
 	public Nutricionista(Long nutricionistaId, String ime, String prezime, String username, String password,
 			Ordinacija ordinacija) {
-		this.nutricionistaId = nutricionistaId;
-		this.ime = ime;
-		this.prezime = prezime;
-		this.username = username;
-		this.password = password;
-		this.ordinacija = ordinacija;
+//		this.nutricionistaId = nutricionistaId;
+//		this.ime = ime;
+//		this.prezime = prezime;
+//		this.username = username;
+//		this.password = password;
+//		this.ordinacija = ordinacija;
+		setNutricionistaId(nutricionistaId);
+		setIme(ime);
+		setPrezime(prezime);
+		setUsername(username);
+		setPassword(password);
+		setOrdinacija(ordinacija);
 	}
 /**
  * Konstruise novu instancu klase i postavlja atribut nutricionistaId na prosledjenu vrednost
@@ -71,7 +77,8 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param nutricionistaId ID nutricioniste
  */
 	public Nutricionista(Long nutricionistaId) {
-		this.nutricionistaId = nutricionistaId;
+//		this.nutricionistaId = nutricionistaId;
+		setNutricionistaId(nutricionistaId);
 	}
 /**
  * Postavlja ordinaciju kojoj nutricionista pripada
@@ -79,6 +86,8 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param ordinacija ordinacija u kojoj radi nutricionista
  */
 	public void setOrdinacija(Ordinacija ordinacija) {
+		if (ordinacija == null)
+			throw new NullPointerException();
 		this.ordinacija = ordinacija;
 	}
 /**
@@ -99,6 +108,12 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param ime nutricioniste
  */
 	public void setIme(String ime) {
+		if (ime == null)
+			throw new NullPointerException();
+		if (ime.length() < 3)
+			throw new IllegalArgumentException("Ime ne sme biti manje od 2 char");
+		if (ime.matches("[0-9]+"))
+			throw new IllegalArgumentException("Ne smeju brojevi za ime");
 		this.ime = ime;
 	}
 /**
@@ -107,6 +122,12 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param prezime nutricioniste
  */
 	public void setPrezime(String prezime) {
+		if (prezime == null)
+			throw new NullPointerException();
+		if (prezime.length() < 5)
+			throw new IllegalArgumentException("Prezime ne sme biti manje od 5 char");
+		if (prezime.matches("[0-9]+"))
+			throw new IllegalArgumentException("Ne smeju brojevi za prezime");
 		this.prezime = prezime;
 	}
 /**
@@ -115,6 +136,8 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param username nutricioniste
  */
 	public void setUsername(String username) {
+		if (username == null)
+			throw new NullPointerException();
 		this.username = username;
 	}
 /**
@@ -123,6 +146,8 @@ public class Nutricionista extends OpstaDomenskaKlasa {
  * @param password nutricioniste
  */
 	public void setPassword(String password) {
+		if (password == null)
+			throw new NullPointerException();
 		this.password = password;
 	}
 /**
@@ -212,9 +237,11 @@ public class Nutricionista extends OpstaDomenskaKlasa {
 				String passwordBaza = rs.getString("n.password");
 				Long ordinacijaId = rs.getLong("n.ordinacijaId");
 				String imeOrdinacije = rs.getString("o.naziv");
-				Nutricionista n = new Nutricionista(idBaza, imeBaza, prezimeBaza, usernameBaza, passwordBaza,
-						new Ordinacija(ordinacijaId, imeOrdinacije));
-
+				Ordinacija o = new Ordinacija();
+				o.setOrdinacijaId(ordinacijaId);
+				o.setNaziv(imeOrdinacije);
+				Nutricionista n = new Nutricionista(idBaza, imeBaza, prezimeBaza, usernameBaza, passwordBaza, o);
+				System.out.println(n);
 				nutricionisti.add(n);
 			}
 		} catch (Exception ex) {

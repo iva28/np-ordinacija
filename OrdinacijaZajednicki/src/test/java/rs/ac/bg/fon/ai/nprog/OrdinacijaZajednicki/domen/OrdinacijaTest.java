@@ -51,6 +51,21 @@ class OrdinacijaTest {
 	}
 
 	@Test
+	void testSetAdresaNull() {
+		assertThrows(NullPointerException.class, () -> o.setAdresa(null));
+	}
+	
+	@Test
+	void testSetNazivNull() {
+		assertThrows(NullPointerException.class, () -> o.setNaziv(null));
+	}
+	@Test
+	void testSetNazivKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> o.setNaziv("ddd"));
+		assertEquals(ex.getMessage(), "Naziv ne sme biti manji od 5 char");
+	}
+
+	@Test
 	void testToString() {
 		o.setAdresa("adresa");
 		o.setNaziv("naziv");

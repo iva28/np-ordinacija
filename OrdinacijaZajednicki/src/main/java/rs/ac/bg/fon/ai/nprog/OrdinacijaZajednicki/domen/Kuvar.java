@@ -52,11 +52,16 @@ public class Kuvar extends OpstaDomenskaKlasa {
 	 * @param telefon telefon kuvara
 	 */
 	public Kuvar(Long kuvarId, String ime, String prezime, String adresa, String telefon) {
-		this.kuvarId = kuvarId;
-		this.ime = ime;
-		this.prezime = prezime;
-		this.adresa = adresa;
-		this.telefon = telefon;
+//		this.kuvarId = kuvarId;
+//		this.ime = ime;
+//		this.prezime = prezime;
+//		this.adresa = adresa;
+//		this.telefon = telefon;
+		setKuvarId(kuvarId);
+		setIme(ime);
+		setPrezime(prezime);
+		setAdresa(adresa);
+		setTelefon(telefon);
 	}
 
 	/**
@@ -68,9 +73,12 @@ public class Kuvar extends OpstaDomenskaKlasa {
 	 * @param prezime prezime kuvara
 	 */
 	public Kuvar(Long kuvarId, String ime, String prezime) {
-		this.kuvarId = kuvarId;
-		this.ime = ime;
-		this.prezime = prezime;
+//		this.kuvarId = kuvarId;
+//		this.ime = ime;
+//		this.prezime = prezime;
+		setKuvarId(kuvarId);
+		setIme(ime);
+		setPrezime(prezime);
 	}
 
 	/**
@@ -121,6 +129,10 @@ public class Kuvar extends OpstaDomenskaKlasa {
  * @param kuvarId ID kuvara
  */
 	public void setKuvarId(Long kuvarId) {
+		if (kuvarId == null)
+			throw new NullPointerException();
+		if (kuvarId <= 0)
+			throw new IllegalArgumentException();
 		this.kuvarId = kuvarId;
 	}
 /**
@@ -129,6 +141,10 @@ public class Kuvar extends OpstaDomenskaKlasa {
  * @param ime kuvara
  */
 	public void setIme(String ime) {
+		if (ime == null)
+			throw new NullPointerException();
+		if (ime.length() < 2)
+			throw new IllegalArgumentException("Ime ne sme biti manje od 2 char");
 		this.ime = ime;
 	}
 /**
@@ -137,6 +153,10 @@ public class Kuvar extends OpstaDomenskaKlasa {
  * @param prezime kuvara
  */
 	public void setPrezime(String prezime) {
+		if (prezime == null)
+			throw new NullPointerException();
+		if (prezime.length() < 5)
+			throw new IllegalArgumentException("Prezime ne sme biti manje od 5 char");
 		this.prezime = prezime;
 	}
 /**
@@ -145,6 +165,8 @@ public class Kuvar extends OpstaDomenskaKlasa {
  * @param adresa kuvara
  */
 	public void setAdresa(String adresa) {
+		if (adresa == null)
+			throw new NullPointerException();
 		this.adresa = adresa;
 	}
 /**
@@ -153,6 +175,12 @@ public class Kuvar extends OpstaDomenskaKlasa {
  * @param telefon kuvara
  */
 	public void setTelefon(String telefon) {
+		if (telefon == null)
+			throw new NullPointerException();
+		if (telefon.length() < 7)
+			throw new IllegalArgumentException();
+		if (!telefon.matches("[0-9]+"))
+			throw new IllegalArgumentException("Samo brojevi");
 		this.telefon = telefon;
 	}
 

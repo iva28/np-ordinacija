@@ -57,11 +57,16 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pol     pol pacijenta
 	 */
 	public Pacijent(String ime, String prezime, String email, String telefon, Pol pol) {
-		this.ime = ime;
-		this.prezime = prezime;
-		this.email = email;
-		this.telefon = telefon;
-		this.pol = pol;
+//		this.ime = ime;
+//		this.prezime = prezime;
+//		this.email = email;
+//		this.telefon = telefon;
+//		this.pol = pol;
+		setIme(ime);
+		setPrezime(prezime);
+		setEmail(email);
+		setTelefon(telefon);
+		setPol(pol);
 	}
 
 	/**
@@ -75,12 +80,18 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pol        pol pacijenta
 	 */
 	public Pacijent(Long pacijentId, String ime, String prezime, String email, String telefon, Pol pol) {
-		this.pacijentId = pacijentId;
-		this.ime = ime;
-		this.prezime = prezime;
-		this.email = email;
-		this.telefon = telefon;
-		this.pol = pol;
+//		this.pacijentId = pacijentId;
+//		this.ime = ime;
+//		this.prezime = prezime;
+//		this.email = email;
+//		this.telefon = telefon;
+//		this.pol = pol;
+		setPacijentId(pacijentId);
+		setIme(ime);
+		setPrezime(prezime);
+		setEmail(email);
+		setTelefon(telefon);
+		setPol(pol);
 	}
 
 	/**
@@ -90,7 +101,8 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pacijentId ID pacijenta
 	 */
 	public Pacijent(Long pacijentId) {
-		this.pacijentId = pacijentId;
+//		this.pacijentId = pacijentId;
+		setPacijentId(pacijentId);
 	}
 
 	/**
@@ -166,6 +178,10 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param ime pacijenta
 	 */
 	public void setIme(String ime) {
+		if (ime == null)
+			throw new NullPointerException();
+		if (ime.length() < 3)
+			throw new IllegalArgumentException("Prekratko ime");
 		this.ime = ime;
 	}
 
@@ -175,6 +191,10 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param prezime pacijenta
 	 */
 	public void setPrezime(String prezime) {
+		if (prezime == null)
+			throw new NullPointerException();
+		if (prezime.length() < 3)
+			throw new IllegalArgumentException("Prekratko prezime");
 		this.prezime = prezime;
 	}
 
@@ -184,6 +204,10 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param email pacijenta
 	 */
 	public void setEmail(String email) {
+		if (email == null)
+			throw new NullPointerException();
+		if (email.length() <= 5)
+			throw new IllegalArgumentException("Prekratak email");
 		this.email = email;
 	}
 
@@ -193,6 +217,10 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param telefon pacijenta
 	 */
 	public void setTelefon(String telefon) {
+		if (telefon == null)
+			throw new NullPointerException();
+		if (!telefon.matches("[0-9]+"))
+			throw new IllegalArgumentException("Samo brojevi");
 		this.telefon = telefon;
 	}
 
@@ -202,6 +230,8 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pol pacijenta
 	 */
 	public void setPol(Pol pol) {
+		if (pol == null)
+			throw new NullPointerException();
 		this.pol = pol;
 	}
 
@@ -298,6 +328,7 @@ public class Pacijent extends OpstaDomenskaKlasa {
 		} catch (Exception ex) {
 			System.err.println("Greška u ResultSet-u u Pacijent klasi! " + ex.getMessage());
 		}
+		System.out.println(pacijenti);
 		return pacijenti;
 	}
 

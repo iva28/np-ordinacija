@@ -51,14 +51,14 @@ class PacijentTest {
 	
 	@Test 
 	void testPacijentEmail() {
-		p.setEmail("email");
-		assertEquals("email", p.getEmail());
+		p.setEmail("email@mejl.com");
+		assertEquals("email@mejl.com", p.getEmail());
 	}
 	
 	@Test
 	void testSetPacijentTelefon() {
-		p.setTelefon("telefon");
-		assertEquals("telefon", p.getTelefon());
+		p.setTelefon("12234455");
+		assertEquals("12234455", p.getTelefon());
 	}
 	
 	@Test
@@ -66,6 +66,71 @@ class PacijentTest {
 		Pol pol = Pol.muški;
 		p.setPol(pol);
 		assertEquals(Pol.muški, p.getPol());
+	}
+	
+	
+	@Test
+	void testSetImeNull() {
+		assertThrows(NullPointerException.class, () -> p.setIme(null));
+	}
+	
+
+	@Test
+	void testSetPrezimeNull() {
+		assertThrows(NullPointerException.class, () -> p.setPrezime(null));
+	}
+	
+	@Test
+	void testSetImeKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setIme("a"));
+		assertEquals(ex.getMessage(), "Prekratko ime");
+	}
+	
+	@Test
+	void testSetPrezimeKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setPrezime("a"));
+		assertEquals(ex.getMessage(), "Prekratko prezime");
+	}
+	
+
+	@Test
+	void testSetTelefonNull() {
+		assertThrows(NullPointerException.class, () -> p.setTelefon(null));
+	}
+	
+	
+	@Test
+	void testSetTelefonImaSlova() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setTelefon("accdffff"));
+		assertEquals(ex.getMessage(), "Samo brojevi");
+	}
+	
+	@Test
+	void testSetTelefonImaSlovaIBrojeve() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setTelefon("accd334ff4ffff"));
+		assertEquals(ex.getMessage(), "Samo brojevi");
+	}
+	
+	@Test
+	void testSetEmailNull() {
+		assertThrows(NullPointerException.class, () -> p.setEmail(null));
+	}
+	
+	@Test
+	void testSetEmailKratak() {
+		assertThrows(IllegalArgumentException.class, () -> p.setEmail("11"));
+	}
+	
+	@ParameterizedTest
+	@CsvSource({
+		"email@mejl.com,email@mejl.com,true",
+		"email@mejl.com,email2@mejl.com,false",
+	})
+	void testEquals(String email1, String email2, boolean isti) {
+		p.setEmail(email1);
+		Pacijent drugi = new Pacijent();
+		drugi.setEmail(email2);
+		assertEquals(isti, p.equals(drugi));
 	}
 	
 	@Test
@@ -76,17 +141,4 @@ class PacijentTest {
 		assertTrue(s.contains("ime"));
 		assertTrue(s.contains("prezime"));
 	}
-	
-	@ParameterizedTest
-	@CsvSource({
-		"email,email,true",
-		"email,email2,false",
-	})
-	void testEquals(String email1, String email2, boolean isti) {
-		p.setEmail(email1);
-		Pacijent drugi = new Pacijent();
-		drugi.setEmail(email2);
-		assertEquals(isti, p.equals(drugi));
-	}
-	
 }

@@ -31,8 +31,10 @@ public class TipJela extends OpstaDomenskaKlasa {
 	 * @param vrsta vrsta tipa jela
 	 */
 	public TipJela(Long tipId, String vrsta) {
-		this.tipId = tipId;
-		this.vrsta = vrsta;
+//		this.tipId = tipId;
+//		this.vrsta = vrsta;
+		setTipId(tipId);
+		setVrsta(vrsta);
 	}
 
 	/**
@@ -78,6 +80,8 @@ public class TipJela extends OpstaDomenskaKlasa {
 	 * @param vrsta jela
 	 */
 	public void setVrsta(String vrsta) {
+		if (vrsta == null)
+			throw new NullPointerException();
 		this.vrsta = vrsta;
 	}
 

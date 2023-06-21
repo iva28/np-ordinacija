@@ -55,10 +55,14 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param jelo     jelo na koje se stavka odnosi
 	 */
 	public StavkaPlanaIshrane(Long rb, BigDecimal cena, int kolicina, Jelo jelo) {
-		this.rb = rb;
-		this.cena = cena;
-		this.kolicina = kolicina;
-		this.jelo = jelo;
+//		this.rb = rb;
+//		this.cena = cena;
+//		this.kolicina = kolicina;
+//		this.jelo = jelo;
+	setRb(rb);
+	setCena(cena);
+	setKolicina(kolicina);
+	setJelo(jelo);
 	}
 
 	/**
@@ -68,7 +72,8 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param planIshrane plan ishrane na kome se stavka nalazi
 	 */
 	public StavkaPlanaIshrane(PlanIshrane planIshrane) {
-		this.planIshrane = planIshrane;
+//		this.planIshrane = planIshrane;
+		setPlanIshrane(planIshrane);
 	}
 
 	/**
@@ -135,6 +140,10 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param cena stavke u dinarima
 	 */
 	public void setCena(BigDecimal cena) {
+		if (cena == null)
+			throw new NullPointerException();
+		if (cena.compareTo(BigDecimal.ZERO) <= 0)
+			throw new IllegalArgumentException("Cena ne sme bit manja ili jednaka 0");
 		this.cena = cena;
 	}
 
@@ -144,6 +153,8 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param kolicina stavke
 	 */
 	public void setKolicina(int kolicina) {
+		if (kolicina <= 0)
+			throw new IllegalArgumentException("Kolicina ne sme biti null");
 		this.kolicina = kolicina;
 	}
 
@@ -153,6 +164,8 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param jelo stavke
 	 */
 	public void setJelo(Jelo jelo) {
+		if (jelo == null)
+			throw new NullPointerException();
 		this.jelo = jelo;
 	}
 
@@ -162,6 +175,8 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 	 * @param planIshrane plan ishrane stavke
 	 */
 	public void setPlanIshrane(PlanIshrane planIshrane) {
+		if (planIshrane == null)
+			throw new NullPointerException();
 		this.planIshrane = planIshrane;
 	}
 
