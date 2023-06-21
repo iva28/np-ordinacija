@@ -57,16 +57,16 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pol     pol pacijenta
 	 */
 	public Pacijent(String ime, String prezime, String email, String telefon, Pol pol) {
-//		this.ime = ime;
-//		this.prezime = prezime;
-//		this.email = email;
-//		this.telefon = telefon;
-//		this.pol = pol;
-		setIme(ime);
-		setPrezime(prezime);
-		setEmail(email);
-		setTelefon(telefon);
-		setPol(pol);
+		this.ime = ime;
+		this.prezime = prezime;
+		this.email = email;
+		this.telefon = telefon;
+		this.pol = pol;
+//		setIme(ime);
+//		setPrezime(prezime);
+//		setEmail(email);
+//		setTelefon(telefon);
+//		setPol(pol);
 	}
 
 	/**
@@ -80,18 +80,18 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pol        pol pacijenta
 	 */
 	public Pacijent(Long pacijentId, String ime, String prezime, String email, String telefon, Pol pol) {
-//		this.pacijentId = pacijentId;
-//		this.ime = ime;
-//		this.prezime = prezime;
-//		this.email = email;
-//		this.telefon = telefon;
-//		this.pol = pol;
-		setPacijentId(pacijentId);
-		setIme(ime);
-		setPrezime(prezime);
-		setEmail(email);
-		setTelefon(telefon);
-		setPol(pol);
+		this.pacijentId = pacijentId;
+		this.ime = ime;
+		this.prezime = prezime;
+		this.email = email;
+		this.telefon = telefon;
+		this.pol = pol;
+//		setPacijentId(pacijentId);
+//		setIme(ime);
+//		setPrezime(prezime);
+//		setEmail(email);
+//		setTelefon(telefon);
+//		setPol(pol);
 	}
 
 	/**
@@ -101,8 +101,8 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	 * @param pacijentId ID pacijenta
 	 */
 	public Pacijent(Long pacijentId) {
-//		this.pacijentId = pacijentId;
-		setPacijentId(pacijentId);
+		this.pacijentId = pacijentId;
+//		setPacijentId(pacijentId);
 	}
 
 	/**
@@ -219,8 +219,6 @@ public class Pacijent extends OpstaDomenskaKlasa {
 	public void setTelefon(String telefon) {
 		if (telefon == null)
 			throw new NullPointerException();
-		if (!telefon.matches("[0-9]+"))
-			throw new IllegalArgumentException("Samo brojevi");
 		this.telefon = telefon;
 	}
 

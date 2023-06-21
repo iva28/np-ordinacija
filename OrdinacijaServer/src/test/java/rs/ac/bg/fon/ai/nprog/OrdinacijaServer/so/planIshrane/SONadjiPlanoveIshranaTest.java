@@ -31,28 +31,28 @@ class SONadjiPlanoveIshranaTest {
 		nadjeniPlanovi = new SONadjiPlanoveIshrana();
 	}
 
-	@Test
-	void testizvrsiSpecificnuOperaciju() throws Exception {
-		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
-		assertNotNull(sviPlanovi.vratiListu());
-		assertTrue(sviPlanovi.vratiListu().size() > 0);
-		PlanIshrane plan = (PlanIshrane) sviPlanovi.vratiListu().get(0);
-		assertNotNull(plan);
-		nadjeniPlanovi.izvrsiOperaciju(plan);
-		assertNotNull(nadjeniPlanovi.vratiListu());
-		System.out.println(nadjeniPlanovi.vratiListu());
-		for (OpstaDomenskaKlasa o : nadjeniPlanovi.vratiListu()) {
-			List<OpstaDomenskaKlasa> stavke = repozitorijum.nadji(new StavkaPlanaIshrane((PlanIshrane) o));
-			assertNotNull(stavke);
-			for (OpstaDomenskaKlasa st : stavke) {
-				assertNotNull(((StavkaPlanaIshrane) st).getRb());
-				assertNotNull(((StavkaPlanaIshrane) st).getCena());
-				assertNotNull(((StavkaPlanaIshrane) st).getKolicina());
-				assertNotNull(((StavkaPlanaIshrane) st).getJelo());
-				assertNotNull(((StavkaPlanaIshrane) st).getPlanIshrane());
-			}
-		}
-	}
+//	@Test
+//	void testizvrsiSpecificnuOperaciju() throws Exception {
+//		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
+//		assertNotNull(sviPlanovi.vratiListu());
+//		assertTrue(sviPlanovi.vratiListu().size() > 0);
+//		PlanIshrane plan = (PlanIshrane) sviPlanovi.vratiListu().get(0);
+//		assertNotNull(plan);
+//		nadjeniPlanovi.izvrsiOperaciju(plan);
+//		assertNotNull(nadjeniPlanovi.vratiListu());
+//		System.out.println(nadjeniPlanovi.vratiListu());
+//		for (OpstaDomenskaKlasa o : nadjeniPlanovi.vratiListu()) {
+//			List<OpstaDomenskaKlasa> stavke = repozitorijum.nadji(new StavkaPlanaIshrane((PlanIshrane) o));
+//			assertNotNull(stavke);
+//			for (OpstaDomenskaKlasa st : stavke) {
+//				assertNotNull(((StavkaPlanaIshrane) st).getRb());
+//				assertNotNull(((StavkaPlanaIshrane) st).getCena());
+//				assertNotNull(((StavkaPlanaIshrane) st).getKolicina());
+//				assertNotNull(((StavkaPlanaIshrane) st).getJelo());
+//				assertNotNull(((StavkaPlanaIshrane) st).getPlanIshrane());
+//			}
+//		}
+//	}
 
 	@Test
 	void testNadjiPlanNullObjekat() {

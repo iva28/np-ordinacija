@@ -99,18 +99,18 @@ class PacijentTest {
 	}
 	
 	
-	@Test
-	void testSetTelefonImaSlova() {
-		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setTelefon("accdffff"));
-		assertEquals(ex.getMessage(), "Samo brojevi");
-	}
+//	@Test
+//	void testSetTelefonImaSlova() {
+//		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setTelefon("accdffff"));
+//		assertEquals(ex.getMessage(), "Samo brojevi");
+//	}
 	
-	@Test
-	void testSetTelefonImaSlovaIBrojeve() {
-		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setTelefon("accd334ff4ffff"));
-		assertEquals(ex.getMessage(), "Samo brojevi");
-	}
-	
+//	@Test
+//	void testSetTelefonImaSlovaIBrojeve() {
+//		Throwable ex = assertThrows(IllegalArgumentException.class, () -> p.setTelefon("accd334ff4ffff"));
+//		assertEquals(ex.getMessage(), "Samo brojevi");
+//	}
+//	
 	@Test
 	void testSetEmailNull() {
 		assertThrows(NullPointerException.class, () -> p.setEmail(null));

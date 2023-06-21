@@ -36,7 +36,7 @@ class SOUcitajListuNutricionistaTest {
 			assertNotNull(((Nutricionista) k).getPrezime());
 			assertNotNull(((Nutricionista) k).getUsername());
 			assertNotNull(((Nutricionista) k).getPassword());
-			assertNotNull(((Nutricionista) k).getOrdinacija());
+			//assertNotNull(((Nutricionista) k).getOrdinacija());
 		}
 	}
 

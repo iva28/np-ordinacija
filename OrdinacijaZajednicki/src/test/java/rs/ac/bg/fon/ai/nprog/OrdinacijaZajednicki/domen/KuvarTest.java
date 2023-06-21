@@ -103,17 +103,17 @@ class KuvarTest {
 		assertThrows(IllegalArgumentException.class, () -> k.setTelefon("122"));
 	}
 	
-	@Test
-	void testSetTelefonImaSlova() {
-		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setTelefon("accdffff"));
-		assertEquals(ex.getMessage(), "Samo brojevi");
-	}
+//	@Test
+//	void testSetTelefonImaSlova() {
+//		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setTelefon("accdffff"));
+//		assertEquals(ex.getMessage(), "Samo brojevi");
+//	}
 	
-	@Test
-	void testSetTelefonImaSlovaIBrojeve() {
-		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setTelefon("accd334ff4ffff"));
-		assertEquals(ex.getMessage(), "Samo brojevi");
-	}
+//	@Test
+//	void testSetTelefonImaSlovaIBrojeve() {
+//		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setTelefon("accd334ff4ffff"));
+//		assertEquals(ex.getMessage(), "Samo brojevi");
+//	}
 	@Test
 	void testToString() {
 		

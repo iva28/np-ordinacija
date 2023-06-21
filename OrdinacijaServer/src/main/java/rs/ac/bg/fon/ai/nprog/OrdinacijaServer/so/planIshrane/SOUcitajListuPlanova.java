@@ -29,22 +29,23 @@ public class SOUcitajListuPlanova extends OpstaSO {
 	 * @return lista planova ishrana
 	 */
 	public List<OpstaDomenskaKlasa> vratiListu() {
+		
 		return lista;
 	}
 
 	@Override
 	protected void izvrsiSpecificnuOperaciju(OpstaDomenskaKlasa obj) throws Exception {
-		lista = db.svi(obj);
-		for (OpstaDomenskaKlasa o : lista) {
-			PlanIshrane plan = (PlanIshrane) o;
-			List<OpstaDomenskaKlasa> stavkeG = db.nadji(new StavkaPlanaIshrane(plan));
-			List<StavkaPlanaIshrane> stavke = new ArrayList<>();
-			for (OpstaDomenskaKlasa s : stavkeG) {
-				StavkaPlanaIshrane stavka = (StavkaPlanaIshrane) s;
-				stavke.add(stavka);
-			}
-			plan.setStavke(stavke);
-		}
+		lista = db.svi(new PlanIshrane());
+//		for (OpstaDomenskaKlasa o : lista) {
+//			PlanIshrane plan = (PlanIshrane) o;
+//			List<OpstaDomenskaKlasa> stavkeG = db.nadji(new StavkaPlanaIshrane(plan));
+//			List<StavkaPlanaIshrane> stavke = new ArrayList<>();
+//			for (OpstaDomenskaKlasa s : stavkeG) {
+//				StavkaPlanaIshrane stavka = (StavkaPlanaIshrane) s;
+//				stavke.add(stavka);
+//			}
+//			plan.setStavke(stavke);
+//		}
 	}
 
 	@Override

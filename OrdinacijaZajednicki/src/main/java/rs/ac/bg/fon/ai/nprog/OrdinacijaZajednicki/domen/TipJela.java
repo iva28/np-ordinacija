@@ -31,10 +31,10 @@ public class TipJela extends OpstaDomenskaKlasa {
 	 * @param vrsta vrsta tipa jela
 	 */
 	public TipJela(Long tipId, String vrsta) {
-//		this.tipId = tipId;
-//		this.vrsta = vrsta;
-		setTipId(tipId);
-		setVrsta(vrsta);
+		this.tipId = tipId;
+		this.vrsta = vrsta;
+//		setTipId(tipId);
+//		setVrsta(vrsta);
 	}
 
 	/**

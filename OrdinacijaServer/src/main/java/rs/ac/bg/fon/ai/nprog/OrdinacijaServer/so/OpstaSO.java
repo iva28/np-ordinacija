@@ -32,6 +32,7 @@ public abstract class OpstaSO {
 	public final void izvrsiOperaciju(OpstaDomenskaKlasa obj) throws Exception {
 		try {
 			validiraj(obj);
+			System.out.println("otvorena konekcija");
 			KonekcijaSaBazom.getInstanca().otvoriKonekciju();
 			izvrsiSpecificnuOperaciju(obj);
 			KonekcijaSaBazom.getInstanca().potvrdiTransakciju();

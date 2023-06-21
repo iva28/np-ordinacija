@@ -71,7 +71,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * Konstruise novu instancu klase i postavlja atribute na default vrednosti
 	 */
 	public PlanIshrane() {
-		stavke = new ArrayList<>();
+		//stavke = new ArrayList<>();
 	}
 
 	/**
@@ -275,6 +275,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param stavka nova stavka koja se dodaje na plan ishrane
 	 */
 	public void dodajStavku(StavkaPlanaIshrane stavka) {
+		if (stavke == null) stavke = new ArrayList<>();
 		stavke.add(stavka);
 	}
 

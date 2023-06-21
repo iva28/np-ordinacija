@@ -45,7 +45,9 @@ class SOKreirajJeloTest {
 		Jelo jelo = new Jelo();
 		jelo.setNaziv("kelerabilic");
 		jelo.setKolicina(120);
-		jelo.setKuvar(new Kuvar(1L, null, null));
+		Kuvar k = new Kuvar();
+		k.setKuvarId(1L);
+		jelo.setKuvar(k);
 		jelo.setTip(new TipJela(2L, ""));
 		jelo.setCena(new BigDecimal(340));
 		for (OpstaDomenskaKlasa p : svaJela.vratiListu()) {
