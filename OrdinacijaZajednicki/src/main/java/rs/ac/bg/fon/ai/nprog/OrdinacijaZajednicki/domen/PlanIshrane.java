@@ -60,6 +60,10 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param stavke lista stavki na planu ishrane
 	 */
 	public void setStavke(List<StavkaPlanaIshrane> stavke) {
+		if (stavke == null)
+			throw new NullPointerException();
+		if (stavke.size() == 0)
+			throw new IllegalArgumentException("Plan mora imati stavke");
 		this.stavke = stavke;
 	}
 
@@ -83,13 +87,20 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 */
 	public PlanIshrane(Long planIshraneId, Date datum, BigDecimal cena, int brojDana, Pacijent pacijent,
 			Nutricionista nutricionista, List<StavkaPlanaIshrane> stavke) {
-		this.planIshraneId = planIshraneId;
-		this.datum = datum;
-		this.cena = cena;
-		this.brojDana = brojDana;
-		this.pacijent = pacijent;
-		this.nutricionista = nutricionista;
-		this.stavke = stavke;
+//		this.planIshraneId = planIshraneId;
+//		this.datum = datum;
+//		this.cena = cena;
+//		this.brojDana = brojDana;
+//		this.pacijent = pacijent;
+//		this.nutricionista = nutricionista;
+//		this.stavke = stavke;
+		setPlanIshraneId(planIshraneId);
+		setDatum(datum);
+		setCena(cena);
+		setBrojDana(brojDana);
+		setPacijent(pacijent);
+		setNutricionista(nutricionista);
+		setStavke(stavke);
 	}
 
 	/**
@@ -105,12 +116,18 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 */
 	public PlanIshrane(Long planIshraneId, Date datum, BigDecimal cena, int brojDana, Pacijent pacijent,
 			Nutricionista nutricionista) {
-		this.planIshraneId = planIshraneId;
-		this.datum = datum;
-		this.cena = cena;
-		this.brojDana = brojDana;
-		this.pacijent = pacijent;
-		this.nutricionista = nutricionista;
+//		this.planIshraneId = planIshraneId;
+//		this.datum = datum;
+//		this.cena = cena;
+//		this.brojDana = brojDana;
+//		this.pacijent = pacijent;
+//		this.nutricionista = nutricionista;
+		setPlanIshraneId(planIshraneId);
+		setDatum(datum);
+		setCena(cena);
+		setBrojDana(brojDana);
+		setPacijent(pacijent);
+		setNutricionista(nutricionista);
 	}
 
 	/**
@@ -120,7 +137,8 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param planIshraneId ID plana
 	 */
 	public PlanIshrane(Long planIshraneId) {
-		this.planIshraneId = planIshraneId;
+//		this.planIshraneId = planIshraneId;
+		setPlanIshraneId(planIshraneId);
 	}
 
 	/**
@@ -187,7 +205,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 			throw new NullPointerException("Id ne sme biti null");
 		if (planIshraneId < 0)
 			throw new IllegalArgumentException("Id ne sme biti manji od nula");
-			this.planIshraneId = planIshraneId;
+		this.planIshraneId = planIshraneId;
 	}
 
 	/**
@@ -196,6 +214,8 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param datum plana
 	 */
 	public void setDatum(Date datum) {
+		if (datum == null)
+			throw new NullPointerException();
 		this.datum = datum;
 	}
 
@@ -205,6 +225,10 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param cena plana
 	 */
 	public void setCena(BigDecimal cena) {
+		if (cena == null)
+			throw new NullPointerException();
+		if (cena.compareTo(BigDecimal.ZERO) <= 0)
+			throw new IllegalArgumentException("Cena ne sme biti 0 ili manja od 0");
 		this.cena = cena;
 	}
 
@@ -214,6 +238,8 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param brojDana trajanja plana
 	 */
 	public void setBrojDana(int brojDana) {
+		if (brojDana <= 0)
+			throw new IllegalArgumentException("Broj dana ne sme biti 0 ili manje 0");
 		this.brojDana = brojDana;
 	}
 
@@ -223,6 +249,10 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param pacijent plana ishrane
 	 */
 	public void setPacijent(Pacijent pacijent) {
+		if (pacijent == null)
+			throw new NullPointerException();
+		if (pacijent.getIme() == null || pacijent.getPrezime() == null)
+			throw new IllegalArgumentException("Pacijent mora da ime i prezime");
 		this.pacijent = pacijent;
 	}
 
@@ -232,6 +262,10 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param nutricionista plana
 	 */
 	public void setNutricionista(Nutricionista nutricionista) {
+		if (nutricionista == null)
+			throw new NullPointerException();
+		if (nutricionista.getIme() == null || nutricionista.getPrezime() == null)
+			throw new IllegalArgumentException("Nutricionista mora da ime i prezime");
 		this.nutricionista = nutricionista;
 	}
 
@@ -343,9 +377,18 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 				String imeN = rs.getString("n.ime");
 				String prezimeN = rs.getString("n.prezime");
 
-				PlanIshrane pi = new PlanIshrane(planIshraneIdBaza, datumBaza, cenaBaza, brojDanaBaza,
-						new Pacijent(pacijentId, imeP, prezimeP, emailP, "", null),
-						new Nutricionista(nutricionistaId, imeN, prezimeN, "", "", null));
+				Pacijent p = new Pacijent();
+				p.setPacijentId(pacijentId);
+				p.setIme(imeP);
+				p.setPrezime(prezimeP);
+				p.setEmail(emailP);
+
+				Nutricionista n = new Nutricionista();
+				n.setNutricionistaId(nutricionistaId);
+				n.setIme(imeN);
+				n.setPrezime(prezimeN);
+
+				PlanIshrane pi = new PlanIshrane(planIshraneIdBaza, datumBaza, cenaBaza, brojDanaBaza, p, n);
 				planovi.add(pi);
 			}
 		} catch (Exception ex) {

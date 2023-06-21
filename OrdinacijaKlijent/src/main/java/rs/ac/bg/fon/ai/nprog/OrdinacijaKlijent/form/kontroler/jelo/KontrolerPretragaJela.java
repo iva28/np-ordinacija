@@ -104,7 +104,12 @@ public class KontrolerPretragaJela {
 						JOptionPane.showMessageDialog(frmPretragaJela, "Mora se popuniti bar jedna opcija");
 						return;
 					}
-					Jelo jelo = new Jelo(null, tip, "", null, 0, kuvar);
+					Jelo jelo = new Jelo();
+					if (tip != null)
+					 jelo.setTip(tip);
+					if (kuvar != null)
+					 jelo.setKuvar(kuvar);
+					System.out.println(jelo);
 					List<Jelo> listа = Komunikacija.vratiInstancu().nadjiJela(jelo);
 					if (listа == null)
 						JOptionPane.showMessageDialog(frmPretragaJela, "Nema jela po datom filteru!");

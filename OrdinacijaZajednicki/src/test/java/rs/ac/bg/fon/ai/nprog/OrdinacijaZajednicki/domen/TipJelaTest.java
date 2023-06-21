@@ -45,6 +45,11 @@ class TipJelaTest {
 	}
 	
 	@Test
+	void testSetVrstaNull() {
+		assertThrows(NullPointerException.class, () -> tj.setVrsta(null));
+	}
+	
+	@Test
 	void testToString() {
 		tj.setVrsta("vrsta");
 		String s = tj.toString();

@@ -48,10 +48,72 @@ class KuvarTest {
 	
 	@Test
 	void testSetKuvarTelefon() {
-		k.setTelefon("telefon");
-		assertEquals("telefon", k.getTelefon());
+		k.setTelefon("123445777");
+		assertEquals("123445777", k.getTelefon());
+	}
+	@Test
+	void testSetKuvarIdNull() {
+		assertThrows(NullPointerException.class, () -> k.setKuvarId(null));
 	}
 	
+	@Test
+	void testSetKuvarIdNula() {
+		assertThrows(IllegalArgumentException.class, () -> k.setKuvarId(0L));
+	}
+	
+	@Test
+	void testSetKuvarIdManjeNula() {
+		assertThrows(IllegalArgumentException.class, () -> k.setKuvarId(-1L));
+	}
+	
+	@Test
+	void testSetKuvarImeNull() {
+		assertThrows(NullPointerException.class, () -> k.setIme(null));
+	}
+	
+	@Test
+	void testSetKuvarPrezimeNull() {
+		assertThrows(NullPointerException.class, () -> k.setPrezime(null));
+	}
+	
+	@Test
+	void testSetKuvarImeKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setIme("a"));
+		assertEquals(ex.getMessage(), "Ime ne sme biti manje od 2 char");
+	}
+	
+	@Test
+	void testSetKuvarPrezimeKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setPrezime("acc"));
+		assertEquals(ex.getMessage(), "Prezime ne sme biti manje od 5 char");
+	}
+	
+	@Test
+	void testSetKuvarAdresaNull() {
+		assertThrows(NullPointerException.class, () -> k.setAdresa(null));
+	}
+	
+	@Test
+	void testSetKuvarTelefonNull() {
+		assertThrows(NullPointerException.class, () -> k.setTelefon(null));
+	}
+	
+	@Test
+	void testSetKuvarTelefonKratko() {
+		assertThrows(IllegalArgumentException.class, () -> k.setTelefon("122"));
+	}
+	
+	@Test
+	void testSetTelefonImaSlova() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setTelefon("accdffff"));
+		assertEquals(ex.getMessage(), "Samo brojevi");
+	}
+	
+	@Test
+	void testSetTelefonImaSlovaIBrojeve() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> k.setTelefon("accd334ff4ffff"));
+		assertEquals(ex.getMessage(), "Samo brojevi");
+	}
 	@Test
 	void testToString() {
 		

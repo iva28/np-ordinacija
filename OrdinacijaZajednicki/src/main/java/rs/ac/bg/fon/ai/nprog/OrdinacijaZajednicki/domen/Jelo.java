@@ -59,12 +59,25 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param kuvar    kuvar jela
 	 */
 	public Jelo(Long jeloId, TipJela tip, String naziv, BigDecimal cena, int kolicina, Kuvar kuvar) {
-		this.jeloId = jeloId;
-		this.tip = tip;
-		this.naziv = naziv;
-		this.cena = cena;
-		this.kolicina = kolicina;
-		this.kuvar = kuvar;
+//		this.jeloId = jeloId;
+//		this.tip = tip;
+//		this.naziv = naziv;
+//		this.cena = cena;
+//		this.kolicina = kolicina;
+//		this.kuvar = kuvar;
+		setJeloId(jeloId);
+		setTip(tip);
+		setNaziv(naziv);
+		setCena(cena);
+		setKolicina(kolicina);
+		setKuvar(kuvar);
+	}
+	
+	
+
+	public Jelo(Long jeloId, String naziv) {
+		setJeloId(jeloId);
+		setNaziv(naziv);
 	}
 
 	/**
@@ -140,6 +153,8 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param tip jela
 	 */
 	public void setTip(TipJela tip) {
+		if (tip == null)
+			throw new NullPointerException();
 		this.tip = tip;
 	}
 
@@ -149,6 +164,10 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param naziv jela
 	 */
 	public void setNaziv(String naziv) {
+		if (naziv == null)
+			throw new NullPointerException();
+		if (naziv.length() < 2)
+			throw new IllegalArgumentException("Naziv jela ne sme biti manji od 2 char");
 		this.naziv = naziv;
 	}
 
@@ -158,6 +177,10 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param cena jela
 	 */
 	public void setCena(BigDecimal cena) {
+		if (cena == null)
+			throw new NullPointerException("Cena ne sme biti null");
+		if (cena.compareTo(BigDecimal.ZERO) <= 0)
+			throw new IllegalArgumentException("Cena ne sme biti manja ili jednaka  0");
 		this.cena = cena;
 	}
 
@@ -167,6 +190,8 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param kolicina jela
 	 */
 	public void setKolicina(int kolicina) {
+		if (kolicina <= 0)
+			throw new IllegalArgumentException("Kolicina ne sme biti manja ili jednaka 0");
 		this.kolicina = kolicina;
 	}
 
@@ -176,6 +201,8 @@ public class Jelo extends OpstaDomenskaKlasa {
 	 * @param kuvar jela
 	 */
 	public void setKuvar(Kuvar kuvar) {
+		if (kuvar == null)
+			throw new NullPointerException();
 		this.kuvar = kuvar;
 	}
 
@@ -204,7 +231,8 @@ public class Jelo extends OpstaDomenskaKlasa {
 	/**
 	 * Poredi dva jela prema nazivu
 	 * 
-	 * @return true ako je unet isti objekat ili ako su nazivi jela isti, false u ostalim slucajevima
+	 * @return true ako je unet isti objekat ili ako su nazivi jela isti, false u
+	 *         ostalim slucajevima
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -267,9 +295,12 @@ public class Jelo extends OpstaDomenskaKlasa {
 				String vrsta = rs.getString("tj.vrsta");
 				String ime = rs.getString("k.ime");
 				String prezime = rs.getString("k.prezime");
-
-				lista.add(new Jelo(jeloIdBaza, new TipJela(tipId, vrsta), nazivBaza, cenaBaza, kolicinaBaza,
-						new Kuvar(kuvarId, ime, prezime, "", "")));
+				Kuvar k = new Kuvar();
+				k.setKuvarId(kuvarId);
+				k.setIme(ime);
+				k.setPrezime(prezime);
+				
+				lista.add(new Jelo(jeloIdBaza, new TipJela(tipId, vrsta), nazivBaza, cenaBaza, kolicinaBaza, k));
 			}
 		} catch (Exception e) {
 			System.err.println("Greska u konvertovanju ReseultSet-a u Jelo klasi " + e.getMessage());

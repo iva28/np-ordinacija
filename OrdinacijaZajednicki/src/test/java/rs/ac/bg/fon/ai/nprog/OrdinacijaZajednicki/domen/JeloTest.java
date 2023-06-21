@@ -61,15 +61,69 @@ class JeloTest {
 
 	@Test
 	void testSetKuvarJela() {
-		Kuvar k = new Kuvar(1L, "", "");
+		Kuvar k = new Kuvar();
+		k.setKuvarId(1L);
 		j.setKuvar(k);
 		assertEquals(k, j.getKuvar());
 	}
+	
+	@Test
+	void testSetTipJelaNull() {
+		assertThrows(NullPointerException.class, () -> j.setTip(null));
+	}
+	
+	@Test
+	void testSetNazivJelaNull() {
+		assertThrows(NullPointerException.class, () -> j.setNaziv(null));
+	}
+	
+	@Test
+	void testSetCenaJelaNull() {
+		Throwable ex = assertThrows(NullPointerException.class, () -> j.setCena(null));
+		assertEquals(ex.getMessage(), "Cena ne sme biti null");
+	}
+	
+
+	@Test
+	void testSetKuvarJelaNull() {
+		assertThrows(NullPointerException.class, () -> j.setKuvar(null));
+	}
+	
+	@Test
+	void testSetNazivJelaKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> j.setNaziv("d"));
+		assertEquals(ex.getMessage(), "Naziv jela ne sme biti manji od 2 char");
+	}
+	
+	@Test
+	void testSetKolicinaJelaManjaNule() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> j.setKolicina(-1));
+		assertEquals(ex.getMessage(), "Kolicina ne sme biti manja ili jednaka 0");
+	}
+	
+	@Test
+	void testSetKolicinaJelaNula() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> j.setKolicina(0));
+		assertEquals(ex.getMessage(), "Kolicina ne sme biti manja ili jednaka 0");
+	}
+	
+	@Test
+	void testSetCenaJelaNula() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> j.setCena(new BigDecimal(0)));
+		assertEquals(ex.getMessage(), "Cena ne sme biti manja ili jednaka  0");
+	}
+	
+	@Test
+	void testSetCenaJelaManjeNula() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> j.setCena(new BigDecimal(-1)));
+		assertEquals(ex.getMessage(), "Cena ne sme biti manja ili jednaka  0");
+	}
+	
 	@Test
 	void testToString() {
 		TipJela tj = new TipJela(1L, "");
-		Kuvar k = new Kuvar(1L, "", "");
-		
+		Kuvar k = new Kuvar();
+		k.setKuvarId(1L);
 		j.setJeloId(1L);
 		j.setTip(tj);
 		j.setNaziv("naziv");

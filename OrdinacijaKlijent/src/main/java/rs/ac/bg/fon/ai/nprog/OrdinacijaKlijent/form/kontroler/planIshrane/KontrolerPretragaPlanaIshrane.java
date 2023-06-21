@@ -79,8 +79,10 @@ public class KontrolerPretragaPlanaIshrane {
 						return;
 					}
 					PlanIshrane plan = new PlanIshrane();
-					plan.setPacijent(pacijent);
-					plan.setNutricionista(nutricionista);
+					if (pacijent != null)
+						plan.setPacijent(pacijent);
+					if (nutricionista != null)
+						plan.setNutricionista(nutricionista);
 					List<PlanIshrane> listа = Komunikacija.vratiInstancu().nadjiPlanove(plan);
 					if (listа == null || listа.isEmpty()) {
 						JOptionPane.showMessageDialog(frmPretragaPlanaIsh,
@@ -253,7 +255,7 @@ public class KontrolerPretragaPlanaIshrane {
 	}
 
 	/**
-	 * Koristi se za otvaranje forme 
+	 * Koristi se za otvaranje forme
 	 * 
 	 * Prethodno se poziva metoda pripremaForme() koja vrsi odredjene pripreme
 	 * forme, a zatim se postavlja vidljivost forme na true, cime se forma prikazuje

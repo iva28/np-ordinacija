@@ -69,6 +69,8 @@ class PlanIshraneTest {
 	@Test
 	void testSetPlanPacijent() {
 		Pacijent p = new Pacijent();
+		p.setIme("ime");
+		p.setPrezime("prezime");
 		plan.setPacijent(p);
 		assertFalse(plan.getPacijent() == null);
 		assertEquals(p, plan.getPacijent());
@@ -77,6 +79,8 @@ class PlanIshraneTest {
 	@Test
 	void testSetPlanNutricionista() {
 		Nutricionista n = new Nutricionista();
+		n.setIme("ime");
+		n.setPrezime("prezime");
 		plan.setNutricionista(n);
 		assertFalse(plan.getNutricionista() == null);
 		assertEquals(n, plan.getNutricionista());
@@ -121,30 +125,146 @@ class PlanIshraneTest {
 		assertTrue(s.contains("nutricionista2"));
 	}
 	
+	@Test
+	void testSeDatumNull() {
+		assertThrows(NullPointerException.class, () -> plan.setDatum(null));
+	}
+	
+	@Test
+	void testSetCenaNull() {
+		assertThrows(NullPointerException.class, () -> plan.setCena(null));
+	}
+	
+	@Test
+	void testSetPacijentNull() {
+		assertThrows(NullPointerException.class, () -> plan.setPacijent(null));
+	}
+	
+	@Test
+	void testSetNutricionistaNull() {
+		assertThrows(NullPointerException.class, () -> plan.setNutricionista(null));
+	}
+	
+	@Test
+	void testSetStavkeNull() {
+		assertThrows(NullPointerException.class, () -> plan.setStavke(null));
+	}
+	
+	@Test
+	void testSetCenaNula() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setCena(new BigDecimal(0L)));
+		assertEquals(ex.getMessage(), "Cena ne sme biti 0 ili manja od 0");
+	}
+	
+	@Test
+	void testSetCenaManjeNula() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setCena(new BigDecimal(-1L)));
+		assertEquals(ex.getMessage(), "Cena ne sme biti 0 ili manja od 0");
+	}
+	
+	@Test
+	void testSetBrojDanaNula() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setBrojDana(0));
+		assertEquals(ex.getMessage(), "Broj dana ne sme biti 0 ili manje 0");
+	}
+	
+	@Test
+	void testSetBrojDanaManjeNula() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setBrojDana(-1));
+		assertEquals(ex.getMessage(), "Broj dana ne sme biti 0 ili manje 0");
+	}
+	
+	@Test
+	void testSetPacijentNemaImeImaPrezime() {
+		Pacijent pacijent = new Pacijent();
+		pacijent.setPrezime("prezime");
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setPacijent(pacijent));
+		assertEquals(ex.getMessage(), "Pacijent mora da ime i prezime");
+	}
+	
+	@Test
+	void testSetPacijentImaImeNemaPrezime() {
+		Pacijent pacijent = new Pacijent();
+		pacijent.setIme("ime");
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setPacijent(pacijent));
+		assertEquals(ex.getMessage(), "Pacijent mora da ime i prezime");
+	}
+	
+	@Test
+	void testSetPacijentNemaImeNemaPrezime() {
+		Pacijent pacijent = new Pacijent();
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setPacijent(pacijent));
+		assertEquals(ex.getMessage(), "Pacijent mora da ime i prezime");
+	}
+	
+	@Test
+	void testSetNutricionistaNemaImeImaPrezime() {
+		Nutricionista n = new Nutricionista();
+		n.setPrezime("prezime");
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setNutricionista(n));
+		assertEquals(ex.getMessage(), "Nutricionista mora da ime i prezime");
+	}
+	
+	@Test
+	void testSetNutricionistaImaImeNemaPrezime() {
+		Nutricionista n = new Nutricionista();
+		n.setIme("ime");
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setNutricionista(n));
+		assertEquals(ex.getMessage(), "Nutricionista mora da ime i prezime");
+	}
+	
+	@Test
+	void testSetNutricionistaNemaImeNemaPrezime() {
+		Nutricionista n = new Nutricionista();
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setNutricionista(n));
+		assertEquals(ex.getMessage(), "Nutricionista mora da ime i prezime");
+	}
+	
+	@Test
+	void testSetStavkePraznaLista() {
+		List<StavkaPlanaIshrane> stavke = new ArrayList<>();
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> plan.setStavke(stavke));
+		assertEquals(ex.getMessage(), "Plan mora imati stavke");
+	}
+	
+	
 	@ParameterizedTest
 	@CsvSource({
-		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime,true",
-		"1,21,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime,false",
-		"1,1,11.08.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime,false",
-		"1,11,11.11.2022,11.11.2022,mejl2@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime,false",
-		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime2,prezime,prezime,false",
-		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime2,false",
+		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime, maja, maja, majic, majic,true",
+		"1,21,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime,maja, maja, majic, majic,false",
+		"1,1,11.08.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime,maja, maja, majic, majic,false",
+		"1,11,11.11.2022,11.11.2022,mejl2@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime,maja, maja, majic, majic,false",
+		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime2,prezime,prezime,maja, maja, majic, majic,false",
+		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime2,maja, maja, majic, majic,false",
+		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime2,maja, nikola, majic, majic,false",
+		"1,1,11.11.2022,11.11.2022,mejl@gmail.com,mejl@gmail.com,ime,ime,prezime,prezime2,maja, maja, majic, nikolic,false",
 		})
 	void testEquals(int brojDana1, int brojDana2, String datum1, String datum2, String email1,String email2,
-			String ime1, String ime2, String prez1,String prez2, boolean isti) {
+			String ime1, String ime2, String prez1,String prez2, String imePac1, String imePac2, String prezPac1, String prezPac2,
+			boolean isti) {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 		PlanIshrane drugi = new PlanIshrane();
 		try {
 			Date 	datumPlan1 = sdf.parse(datum1);
-			Nutricionista n1 = new Nutricionista(null, ime1, prez1, null, null, null);
-			Pacijent p1 = new Pacijent(null, null, email1, null, null);
+			Nutricionista n1 = new Nutricionista();
+			n1.setIme(ime1);
+			n1.setPrezime(prez1);
+			Pacijent p1 = new Pacijent();
+			p1.setIme(imePac1);
+			p1.setPrezime(prez1);
+			p1.setEmail(email1);
 			plan.setNutricionista(n1);
 			plan.setPacijent(p1);
 			plan.setBrojDana(brojDana1);
 			plan.setDatum(datumPlan1);
 			Date datumPlan2 = sdf.parse(datum2);
-			Nutricionista n2 = new Nutricionista(null, ime2, prez2, null, null, null);
-			Pacijent p2 = new Pacijent(null, null, email2, null, null);
+			Nutricionista n2 = new Nutricionista();
+			n2.setIme(ime2);
+			n2.setPrezime(prez2);
+			Pacijent p2 = new Pacijent();
+			p2.setIme(imePac2);
+			p2.setPrezime(prezPac2);
+			p2.setEmail(email2);
 			drugi.setNutricionista(n2);
 			drugi.setPacijent(p2);
 			drugi.setBrojDana(brojDana2);

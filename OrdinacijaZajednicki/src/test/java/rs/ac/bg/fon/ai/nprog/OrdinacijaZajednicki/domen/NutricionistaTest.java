@@ -68,6 +68,51 @@ class NutricionistaTest {
 		assertFalse(n.getOrdinacija() == null);
 		assertEquals(o, n.getOrdinacija());
 	}
+	@Test
+	void testSetImeNull() {
+		assertThrows(NullPointerException.class, () -> n.setIme(null));
+	}
+	
+	@Test
+	void testSetPrezimeNull() {
+		assertThrows(NullPointerException.class, () -> n.setPrezime(null));
+	}
+	@Test
+	void testSetOrdinacijaNull() {
+		assertThrows(NullPointerException.class, () -> n.setOrdinacija(null));
+	}
+	@Test
+	void testSetImeKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> n.setIme("a"));
+		assertEquals(ex.getMessage(), "Ime ne sme biti manje od 2 char");
+	}
+	
+	@Test
+	void testSetPrezimeKratko() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> n.setPrezime("a"));
+		assertEquals(ex.getMessage(), "Prezime ne sme biti manje od 5 char");
+	}
+	
+	@Test
+	void testSetUsernameNull() {
+		assertThrows(NullPointerException.class, () -> n.setUsername(null));
+	}
+	@Test
+	void testSetPasswordNull() {
+		assertThrows(NullPointerException.class, () -> n.setPassword(null));
+	}
+	
+	@Test
+	void testSetImeImaBrojeve() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () ->n.setIme("1123443"));
+		assertEquals(ex.getMessage(), "Ne smeju brojevi za ime");
+	}
+	
+	@Test
+	void testSetPreziImeImaBrojeve() {
+		Throwable ex = assertThrows(IllegalArgumentException.class, () ->n.setPrezime("1123443"));
+		assertEquals(ex.getMessage(), "Ne smeju brojevi za prezime");
+	}
 	
 	@Test
 	void testToString() {
