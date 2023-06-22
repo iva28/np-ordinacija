@@ -59,76 +59,76 @@ class SOIzmeniPlanIshraneTest {
 		ucitajJela = null;
 	}
 
-//	@Test
-//	void testizvrsiSpecificnuOperacijuIzmeniPlanIshrane() throws Exception {
-//		ucitajPacijente.izvrsiOperaciju(new Pacijent());
-//		assertNotNull(ucitajPacijente.getLista());
-//		assertTrue(ucitajPacijente.getLista().size() > 0);
-//		ucitajNutricioniste.izvrsiOperaciju(new Nutricionista());
-//		assertNotNull(ucitajNutricioniste.getLista());
-//		assertTrue(ucitajNutricioniste.getLista().size() > 0);
-//		ucitajJela.izvrsiOperaciju(new Jelo());
-//		assertNotNull(ucitajJela.vratiListu());
-//		assertTrue(ucitajJela.vratiListu().size() > 1);
-//		PlanIshrane plan = new PlanIshrane();
-//		plan.setBrojDana(10);
-//		plan.setDatum(Calendar.getInstance().getTime());
-//		plan.setNutricionista((Nutricionista) ucitajNutricioniste.getLista().get(0));
-//		plan.setPacijent((Pacijent) ucitajPacijente.getLista().get(0));
-//		StavkaPlanaIshrane st1 = new StavkaPlanaIshrane();
-//		st1.setJelo((Jelo) ucitajJela.vratiListu().get(0));
-//		st1.setKolicina(33);
-//		st1.setPlanIshrane(plan);
-//		st1.setCena(new BigDecimal(200));
-//
-//		StavkaPlanaIshrane st2 = new StavkaPlanaIshrane();
-//		st2.setJelo((Jelo) ucitajJela.vratiListu().get(1));
-//		st2.setKolicina(12);
-//		st2.setPlanIshrane(plan);
-//		st2.setCena(new BigDecimal(400));
-//		List<StavkaPlanaIshrane> stavke = new ArrayList<>();
-//		stavke.add(st1);
-//		stavke.add(st2);
-//		plan.setStavke(stavke);
-//		plan.setCena(new BigDecimal(1000));
-//		
-//		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
-//		assertNotNull(sviPlanovi.vratiListu());
-//		for (OpstaDomenskaKlasa p : sviPlanovi.vratiListu()) {
-//			assertFalse(plan.equals((PlanIshrane) p));
-//		}
-//		
-//		kreirajNovi.izvrsiOperaciju(plan);
-//		assertTrue(kreirajNovi.isUspeh());
-//		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
-//		assertNotNull(sviPlanovi.vratiListu());
-//		assertTrue(sviPlanovi.vratiListu().size() > 0);
-//		int poslednji = sviPlanovi.vratiListu().size() - 1;
-//		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-//		assertEquals(sdf.format(plan.getDatum()),
-//				sdf.format(((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getDatum()));
-//		assertEquals(plan.getNutricionista(),
-//				((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getNutricionista());
-//		assertEquals(plan.getPacijent(), ((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getPacijent());
-//		assertEquals(plan.getCena(), ((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getCena());
-//		plan = (PlanIshrane)sviPlanovi.vratiListu().get(poslednji);
-//		plan.setBrojDana(Integer.MAX_VALUE);
-//		izmeniPlan.izvrsiOperaciju(plan);
-//		assertTrue(izmeniPlan.isUspeh());
-//		obrisiPlan.izvrsiOperaciju(plan);
-//		assertTrue(obrisiPlan.isUspeh());
-//	}
-//
-//	@Test 
-//	@DisplayName("Menjanje plana ishrane koji ne postoji")
-//	void testizvrsiSpecificnuOperacijuIzmeniPlanIshraneNema() throws Exception {
-//		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
-//		assertNotNull(sviPlanovi.vratiListu());
-//		assertTrue(sviPlanovi.vratiListu().size() > 0);
-//		int brojPlanova = sviPlanovi.vratiListu().size();
-//		Long poslednjiId = ((PlanIshrane)sviPlanovi.vratiListu().get(brojPlanova-1)).getPlanIshraneId();
-//		assertThrows(Exception.class, ()->izmeniPlan.izvrsiOperaciju(new PlanIshrane(poslednjiId+1)));
-//	}
+	@Test
+	void testizvrsiSpecificnuOperacijuIzmeniPlanIshrane() throws Exception {
+		ucitajPacijente.izvrsiOperaciju(new Pacijent());
+		assertNotNull(ucitajPacijente.getLista());
+		assertTrue(ucitajPacijente.getLista().size() > 0);
+		ucitajNutricioniste.izvrsiOperaciju(new Nutricionista());
+		assertNotNull(ucitajNutricioniste.getLista());
+		assertTrue(ucitajNutricioniste.getLista().size() > 0);
+		ucitajJela.izvrsiOperaciju(new Jelo());
+		assertNotNull(ucitajJela.vratiListu());
+		assertTrue(ucitajJela.vratiListu().size() > 1);
+		PlanIshrane plan = new PlanIshrane();
+		plan.setBrojDana(10);
+		plan.setDatum(Calendar.getInstance().getTime());
+		plan.setNutricionista((Nutricionista) ucitajNutricioniste.getLista().get(0));
+		plan.setPacijent((Pacijent) ucitajPacijente.getLista().get(0));
+		StavkaPlanaIshrane st1 = new StavkaPlanaIshrane();
+		st1.setJelo((Jelo) ucitajJela.vratiListu().get(0));
+		st1.setKolicina(33);
+		st1.setPlanIshrane(plan);
+		st1.setCena(new BigDecimal(200));
+
+		StavkaPlanaIshrane st2 = new StavkaPlanaIshrane();
+		st2.setJelo((Jelo) ucitajJela.vratiListu().get(1));
+		st2.setKolicina(12);
+		st2.setPlanIshrane(plan);
+		st2.setCena(new BigDecimal(400));
+		List<StavkaPlanaIshrane> stavke = new ArrayList<>();
+		stavke.add(st1);
+		stavke.add(st2);
+		plan.setStavke(stavke);
+		plan.setCena(new BigDecimal(1000));
+
+		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
+		assertNotNull(sviPlanovi.vratiListu());
+		for (OpstaDomenskaKlasa p : sviPlanovi.vratiListu()) {
+			assertFalse(plan.equals((PlanIshrane) p));
+		}
+
+		kreirajNovi.izvrsiOperaciju(plan);
+		assertTrue(kreirajNovi.isUspeh());
+		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
+		assertNotNull(sviPlanovi.vratiListu());
+		assertTrue(sviPlanovi.vratiListu().size() > 0);
+		int poslednji = sviPlanovi.vratiListu().size() - 1;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+		assertEquals(sdf.format(plan.getDatum()),
+				sdf.format(((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getDatum()));
+		assertEquals(plan.getNutricionista(),
+				((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getNutricionista());
+		assertEquals(plan.getPacijent(), ((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getPacijent());
+		assertEquals(plan.getCena(), ((PlanIshrane) sviPlanovi.vratiListu().get(poslednji)).getCena());
+		plan = (PlanIshrane)sviPlanovi.vratiListu().get(poslednji);
+		plan.setBrojDana(Integer.MAX_VALUE);
+		izmeniPlan.izvrsiOperaciju(plan);
+		assertTrue(izmeniPlan.isUspeh());
+		obrisiPlan.izvrsiOperaciju(plan);
+		assertTrue(obrisiPlan.isUspeh());
+	}
+
+	@Test
+	@DisplayName("Menjanje plana ishrane koji ne postoji")
+	void testizvrsiSpecificnuOperacijuIzmeniPlanIshraneNema() throws Exception {
+		sviPlanovi.izvrsiOperaciju(new PlanIshrane());
+		assertNotNull(sviPlanovi.vratiListu());
+		assertTrue(sviPlanovi.vratiListu().size() > 0);
+		int brojPlanova = sviPlanovi.vratiListu().size();
+		Long poslednjiId = ((PlanIshrane)sviPlanovi.vratiListu().get(brojPlanova-1)).getPlanIshraneId();
+		assertThrows(Exception.class, ()->izmeniPlan.izvrsiOperaciju(new PlanIshrane(poslednjiId+1)));
+	}
 	
 	@Test
 	void testIzmeniPlanIshraneNullObjekat() {
