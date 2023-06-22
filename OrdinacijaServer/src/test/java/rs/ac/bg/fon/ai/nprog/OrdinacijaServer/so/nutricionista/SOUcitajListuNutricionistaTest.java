@@ -29,6 +29,7 @@ class SOUcitajListuNutricionistaTest {
 		sviNutricionisti.izvrsiSpecificnuOperaciju(new Nutricionista());
 		assertNotNull(sviNutricionisti.getLista());
 		assertTrue(sviNutricionisti.getLista().size() > 0);
+		System.out.println("Nutricionisti: "+sviNutricionisti.getLista());
 		for (OpstaDomenskaKlasa k : sviNutricionisti.getLista()) {
 			assertNotNull(((Nutricionista) k).getNutricionistaId());
 			assertNotNull(((Nutricionista) k).getIme());

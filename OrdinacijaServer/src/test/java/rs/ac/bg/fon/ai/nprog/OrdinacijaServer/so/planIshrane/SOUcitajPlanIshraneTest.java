@@ -27,7 +27,7 @@ class SOUcitajPlanIshraneTest {
 		ucitajPlan = null;
 		sviPlanovi = null;
 	}
-//
+
 //	@Test
 //	void testizvrsiSpecificnuOperacijuUcitajPlanIshrane() throws Exception {
 //		sviPlanovi.izvrsiOperaciju(new PlanIshrane());

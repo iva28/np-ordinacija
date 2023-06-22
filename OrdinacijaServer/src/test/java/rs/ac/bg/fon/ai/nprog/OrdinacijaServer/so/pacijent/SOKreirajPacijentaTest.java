@@ -63,6 +63,7 @@ class SOKreirajPacijentaTest {
 		sviPacijenti.izvrsiOperaciju(new Pacijent());
 		assertNotNull(sviPacijenti.getLista());
 		assertTrue(sviPacijenti.getLista().size() > 0);
+		System.out.println("Pacijenti u testu: "+sviPacijenti.getLista());
 		Pacijent novi = (Pacijent) sviPacijenti.getLista().get(0);
 		assertThrows(Exception.class, () -> kreirajPacijenta.izvrsiOperaciju(novi));
 	}

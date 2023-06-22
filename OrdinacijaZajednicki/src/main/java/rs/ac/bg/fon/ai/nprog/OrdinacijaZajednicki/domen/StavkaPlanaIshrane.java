@@ -279,8 +279,27 @@ public class StavkaPlanaIshrane extends OpstaDomenskaKlasa {
 
 				nova.setPlanIshrane(new PlanIshrane(planIshraneId));
 				nova.setPlanIshrane(planIshrane);
-				nova.setJelo(new Jelo(jeloId, new TipJela(tipId, vrstaJela), nazivJela, cenaJelaBaza, gramaza,
-						new Kuvar(kuvarId, imeKuvara, prezimeKuvara)));
+				
+				TipJela tip = new TipJela();
+				tip.setTipId(tipId);
+				tip.setVrsta(vrstaJela);
+				
+				Kuvar kuvar = new Kuvar();
+				kuvar.setKuvarId(kuvarId);
+				kuvar.setIme(imeKuvara);
+				kuvar.setPrezime(prezimeKuvara);
+				
+				Jelo jelo = new Jelo();
+				jelo.setJeloId(jeloId);
+				jelo.setTip(tip);
+				jelo.setNaziv(nazivJela);
+				jelo.setCena(cenaJelaBaza);
+				jelo.setKolicina(gramaza);
+				jelo.setKuvar(kuvar);
+				
+				nova.setJelo(jelo);
+//				nova.setJelo(new Jelo(jeloId, new TipJela(tipId, vrstaJela), nazivJela, cenaJelaBaza, gramaza,
+//						new Kuvar(kuvarId, imeKuvara, prezimeKuvara)));
 				nova.setKolicina(kolicinaBaza);
 				nova.setCena(cenaBaza);
 				lista.add(nova);

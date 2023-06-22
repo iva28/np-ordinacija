@@ -114,13 +114,11 @@ public class DBBroker implements IRepozitorijum<OpstaDomenskaKlasa> {
 			System.out.println(sql);
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sql);
-			System.out.println("Result Set "+rs.getFetchSize());
 			List<OpstaDomenskaKlasa> list = param.konvertujUListu(rs);
 			rs.close();
 			st.close();
 			return list;
 		} catch (Exception e) {
-			e.printStackTrace();
 			System.err.println("Ne može da vrati sve: " + param.imeTabele());
 			throw e;
 		}

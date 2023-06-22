@@ -32,23 +32,22 @@ class SOUcitajListuPlanovaTest {
 	void testizvrsiSpecificnuOperaciju() throws Exception {
 		ucitajPlanove.izvrsiOperaciju(new PlanIshrane());
 		assertNotNull(ucitajPlanove.vratiListu());
-		System.out.println("Ucitani planovi: "+ucitajPlanove.vratiListu());
 		assertTrue(ucitajPlanove.vratiListu().size() > 0);
-//		for (OpstaDomenskaKlasa p : ucitajPlanove.vratiListu()) {
-//			assertNotNull(((PlanIshrane) p).getPlanIshraneId());
-//			assertNotNull(((PlanIshrane) p).getDatum());
-//			assertNotNull(((PlanIshrane) p).getCena());
-//			assertNotNull(((PlanIshrane) p).getBrojDana());
-//			assertNotNull(((PlanIshrane) p).getPacijent());
-//			assertNotNull(((PlanIshrane) p).getNutricionista());
-//			for (OpstaDomenskaKlasa st : ((PlanIshrane) p).getStavke()) {
-//				assertNotNull(((StavkaPlanaIshrane) st).getRb());
-//				assertNotNull(((StavkaPlanaIshrane) st).getCena());
-//				assertNotNull(((StavkaPlanaIshrane) st).getKolicina());
-//				assertNotNull(((StavkaPlanaIshrane) st).getJelo());
-//				assertNotNull(((StavkaPlanaIshrane) st).getPlanIshrane());
-//			}
-//		}
+		for (OpstaDomenskaKlasa p : ucitajPlanove.vratiListu()) {
+			assertNotNull(((PlanIshrane) p).getPlanIshraneId());
+			assertNotNull(((PlanIshrane) p).getDatum());
+			assertNotNull(((PlanIshrane) p).getCena());
+			assertNotNull(((PlanIshrane) p).getBrojDana());
+			assertNotNull(((PlanIshrane) p).getPacijent());
+			assertNotNull(((PlanIshrane) p).getNutricionista());
+			for (OpstaDomenskaKlasa st : ((PlanIshrane) p).getStavke()) {
+				assertNotNull(((StavkaPlanaIshrane) st).getRb());
+				assertNotNull(((StavkaPlanaIshrane) st).getCena());
+				assertNotNull(((StavkaPlanaIshrane) st).getKolicina());
+				assertNotNull(((StavkaPlanaIshrane) st).getJelo());
+				assertNotNull(((StavkaPlanaIshrane) st).getPlanIshrane());
+			}
+		}
 	}
 		
 	@Test

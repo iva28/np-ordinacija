@@ -58,7 +58,6 @@ public class KonekcijaSaBazom {
 					String password = jsonObject.get("password").getAsString();
 					konekcija = DriverManager.getConnection(url, username, password);
 					konekcija.setAutoCommit(false);
-					System.out.println("Otvorena konekcija.."+url+"\t"+username+"\t"+password);
 				} catch (IOException e) {
 					System.err.println("Greška pri čitanju fajla: " + e.getMessage());
 				}

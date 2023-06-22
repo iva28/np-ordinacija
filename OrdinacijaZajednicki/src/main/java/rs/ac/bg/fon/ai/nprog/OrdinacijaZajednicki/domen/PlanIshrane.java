@@ -16,6 +16,8 @@ import java.util.Objects;
  *
  */
 public class PlanIshrane extends OpstaDomenskaKlasa {
+	
+	
 	/**
 	 * Id plana ishrane kao Long
 	 */
@@ -60,8 +62,8 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 	 * @param stavke lista stavki na planu ishrane
 	 */
 	public void setStavke(List<StavkaPlanaIshrane> stavke) {
-//		if (stavke == null)
-//			throw new NullPointerException();
+		if (stavke == null)
+			throw new NullPointerException();
 //		if (stavke.size() == 0)
 //			throw new IllegalArgumentException("Plan mora imati stavke");
 		this.stavke = stavke;
@@ -393,7 +395,7 @@ public class PlanIshrane extends OpstaDomenskaKlasa {
 				planovi.add(pi);
 			}
 		} catch (Exception ex) {
-			System.err.println("Greška u konvertovanju ResultSet-a u Plan Ishrane klasi! " + ex.getMessage());
+			ex.printStackTrace();
 		}
 		return planovi;
 	}
